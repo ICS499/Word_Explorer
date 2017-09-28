@@ -60,7 +60,7 @@ session_cache_limiter(false);
             <?php
             require 'db_configuration.php';
 
-            $sql = "SELECT * FROM words";
+            $sql = "SELECT *FROM words";
             $result = run_sql($sql);
 
             if ($result->num_rows > 0) {
