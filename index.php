@@ -19,7 +19,7 @@
     ?>
     <?PHP echo getTopNav(); ?>
     <div class="divTitle" align="center">
-      <font class="font">Rebus Puzzle</font>
+      <font class="font"></font>
     </div>
     <br>
     <div align="center">

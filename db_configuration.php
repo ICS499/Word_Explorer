@@ -1,4 +1,4 @@
-<?php
+c<?php
 DEFINE('DATABASE_HOST', 'localhost');
 DEFINE('DATABASE_DATABASE', 'icsbinco_word_explorer');
 

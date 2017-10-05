@@ -43,6 +43,8 @@
 			<div class="name-wrapper"><font class="nav-font">WORD EXPLORER</font>
 			</div></div>
 			<div class="collapse navbar-collapse">
+			
+			
 			<!--
 			<ul class="nav navbar-nav" style="float: right;">
 				<li>
@@ -71,6 +73,8 @@
 			</button><a href="./index.php"><img class="logo" src="./pic/logo.png" /></a>
 			<div class="name-wrapper"><font class="nav-font">WORD EXPLORER</font>
 			</div></div><div class="collapse navbar-collapse">
+			
+			
 			<!--
 			<ul class="nav navbar-nav" style="float: right;">
 			<li>
@@ -101,6 +105,8 @@
 			</div>
 			</div>
 			<div class="collapse navbar-collapse">
+			
+			
 			<!--
 			<ul class="nav navbar-nav" style="float: right;">
 			<li>
