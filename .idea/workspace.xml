@@ -1,60 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f24e628-a074-4dc6-a05b-f1117e46c1c1" name="Default" comment="updates to table and word update php">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/addAWord.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/addPuzzle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/addWord.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/admin.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/adminAddWord.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/adminEdit.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/backUp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/configure.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/delete.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/delete.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/edit.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/equals.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/export.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/guess.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/if_Symbol-Help_49263.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/if_help_uestion_mark_308215.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/import.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/info_circle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/list.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/login.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/loginButton.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/manyWordsOnePuzzle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/many_from_a_list.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/mask1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/masked.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/oneWordManyPuzzles.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/oneWordManyPuzzlesPlus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/play.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/print.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/report.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/save_listPuzzle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/searchIcon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/showMe.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/silcLogo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/startProject.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/stopProject.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/thumbs_up.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/user_manual.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/users.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic/wordList.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/InsertUtil.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/add_words_process.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin_edit_synonyms.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/common_sql_functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/create_puzzle.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/language_processor_functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/styles/custom_nav.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/styles/main_style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/utility_functions.php" />
+    <list default="true" id="4f24e628-a074-4dc6-a05b-f1117e46c1c1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/list.php" afterPath="$PROJECT_DIR$/list.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -287,12 +235,20 @@
       <workItem from="1506567069703" duration="4480000" />
       <workItem from="1506642665665" duration="600000" />
       <workItem from="1507171099553" duration="479000" />
-      <workItem from="1507171605387" duration="6585000" />
+      <workItem from="1507171605387" duration="6610000" />
     </task>
+    <task id="LOCAL-00001" summary="updates to table and word update php">
+      <created>1507178278388</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1507178278388</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12211000" />
+    <option name="totallyTimeSpent" value="12236000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="721" y="0" width="1206" height="1047" extended-state="0" />
