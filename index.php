@@ -19,13 +19,15 @@
     ?>
     <?PHP echo getTopNav(); ?>
     <div class="divTitle" align="center">
-      <font class="font"></font>
+      <font class="font">Rebus Puzzle</font>
     </div>
     <br>
     <div align="center">
-
         <form id ="myform" action="list.php" method="post" onsubmit="process()">
             <input type="submit" value="List All Words">
+        </form>
+        <form id ="add_words" action="add_words.php" method="post" onsubmit="process()">
+            <input type="submit" value="Add a Word">
         </form>
     </div>
     <script>
@@ -33,9 +35,7 @@
             var form = document.getElementById('myform');
             var elements = form.elements;
             var values = [];
-
             values.push(encodeURIComponent(elements[0].name) + '=' + encodeURIComponent(elements[0].value));
-
             form.action += '?' + values.join('&');
         }
     </script>
