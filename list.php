@@ -47,19 +47,19 @@ session_cache_limiter(false);
                 <th>English Word</th>
                 <th>Telugu In English</th>
                 <th>English In Telugu</th>
-                <th>Image Name</th>
+                <th>Image</th>
                 <th>Audio Name</th>
                 <th>Description</th>
                 <th>Notes</th>
                 <th>Created Date</th>
                 <th>Last Updated</th>
+                <th>Modify</th>
             </tr>
             </thead>
             <tbody>
 
             <?php
             require 'db_configuration.php';
-
             $sql = "SELECT *FROM words";
             $result = run_sql($sql);
 
@@ -73,12 +73,25 @@ session_cache_limiter(false);
                         <td>" . $row["English_Word"] . "</td>
                         <td>" . $row["Telugu_in_English"] . "</td>
                         <td>" . $row["English_in_Telugu"] . "</td>
-                        <td>" . $row["Image_Name"] . "</td>
+                        <td><img class=\"thumbnailSize\" src=\"./Images/" . $row["Image_Name"] . "\"  alt =\"" . $row["Image_Name"] . "\" ></td>
                         <td>" . $row["Audio_Name"] . "</td>
                         <td>" . $row["Description"] . "</td>
-                        <td>" . $row["Notes"] . "</td>
+                        <td>" . $row["Notes"] . "</td> 
                         <td>" . $row["Created_Date"] . "</td>
-                        <td>" . $row["Last_Updated"] . "</td>
+                        <td>" . $row["Last_Updated"] . "</td>                       
+                        <td>
+                            <a href='admin_edit_synonyms.php?id=" . $row["word_id"] . "&button=edit'>
+                                <img class=\"table_image\" src=\"pic/edit.jpg\" alt=\"Edit " . $row["word_id"] . " word\">
+                            </a>
+                            <a href='list.php?id=" . $row["word_id"] . "&button=delete'>
+                                <img class=\"table_image\" src=\"pic/delete.png\" alt=\"deleteWord\">
+                            </a>
+                            <form class=\"upload\" method=\"post\" name=\"importFrom\" enctype=\"multipart/form-data\" onsubmit=\"return validateForm()\">
+                                  <label class=\"upload\"><input class=\"upload\" type=\"file\" name=\"fileToUpload\" id=\"fileToUpload\"></label>
+                                  <input class=\"upload\" type=\"hidden\" name=\"word_id\" value=\"" . $row["word_id"] . "\" />
+                                  <input class=\"upload\" type=\"submit\" value=\"Upload/Replace Image\" name=\"submit\">
+                            </form> 
+                        </td>
                         </tr>";
                 }
             } else {
@@ -87,7 +100,6 @@ session_cache_limiter(false);
 
             $result->close();
             // *** delete button functionality ***
-            /**
             if (isset($_GET['id'])) {
                 if ($_GET['button'] == 'delete') {
                     $id = $_GET['id'];
@@ -118,7 +130,6 @@ session_cache_limiter(false);
                     echo ' <script> alert(\'Image is not valid!\');</script>';
                 }
             }
-             **/
             ?>
 
             <script>
@@ -146,6 +157,7 @@ session_cache_limiter(false);
                 <th>Notes</th>
                 <th>Created Date</th>
                 <th>Last Updated</th>
+                <th>Modify</th>
             </tr>
             </tfoot>
         </table>
