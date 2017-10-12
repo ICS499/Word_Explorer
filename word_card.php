@@ -5,7 +5,7 @@
     require_once('db_configuration.php');
     require_once('create_puzzle.php');
     require_once('add_words_process.php');
-    require_once('InsertUtil.php');
+    require('InsertUtil.php');
     session_start();
     require('session_validation.php');
     ?>
@@ -22,28 +22,28 @@
     <link rel="stylesheet" href="styles/custom_nav.css" type="text/css">
 </head>
 <title>Word Explorer Edit Words</title>
-    <body>
-    <?PHP echo getTopNav();
+<body>
+<?PHP echo getTopNav();
 
-        if (isset($_GET['id'])) {
-            $word_id= $_GET['id'];
-            if ($word_id != NULL) {
-                $sqlcheck = 'SELECT * FROM words WHERE word_id = \'' . $word_id. '\';';
-                $result = run_sql($sqlcheck);
-                $row = $result->fetch_assoc();
-                $topic = $row["Topic"];
-                $telugu_word = $row["Telugu_Word"];
-                $english_word = $row["English_Word"];
-                $telugu_in_english = $row["Telugu_in_English"];
-                $english_in_telugu = $row["English_in_Telugu"];
-                $audio_name = $row["Audio_Name"];
-                $description = $row["Description"];
-                $notes = $row["Notes"];
-                $image_name = $row["Image_Name"];
-            }
-        }
+if (isset($_GET['id'])) {
+    $word_id= $_GET['id'];
+    if ($word_id != NULL) {
+        $sqlcheck = 'SELECT * FROM words WHERE word_id = \'' . $word_id. '\';';
+        $result = run_sql($sqlcheck);
+        $row = $result->fetch_assoc();
+        $topic = $row["Topic"];
+        $telugu_word = $row["Telugu_Word"];
+        $english_word = $row["English_Word"];
+        $telugu_in_english = $row["Telugu_in_English"];
+        $english_in_telugu = $row["English_in_Telugu"];
+        $audio_name = $row["Audio_Name"];
+        $description = $row["Description"];
+        $notes = $row["Notes"];
+        $image_name = $row["Image_Name"];
+    }
+}
 
-    echo '<div>
+echo '<div>
         <br>
         <br>
         <table class="table table-condensed main-tables" id="word_table" style="margin-left:11%;">
@@ -73,98 +73,98 @@
             </tbody>
         </table>
     </div>';
-        ?>
+?>
 
-            <?php
-            if (isset($_POST['submit'])) {
-                if (isset($_POST['topic'])) {
-                    $word = $_POST['topic'];
-                }
-                if (isset($_POST['telugu_word'])) {
-                    $word = $_POST['telugu_word'];
-                }
-                if (isset($_POST['english_word'])) {
-                    $eng = $_POST['english_word'];
-                }
-                if (isset($_POST['telugu_in_english'])) {
-                    $eng = $_POST['telugu_in_english'];
-                }
-                if (isset($_POST['english_in_telugu'])) {
-                    $eng = $_POST['english_in_telugu'];
-                }
-                if (isset($_POST['audio_name'])) {
-                    $eng = $_POST['audio_name'];
-                }
-                if (isset($_POST['description'])) {
-                    $eng = $_POST['description'];
-                }
-                if (isset($_POST['notes'])) {
-                    $eng = $_POST['notes'];
-                }
-                $inputFileName = $_FILES["fileToUpload"]["tmp_name"];
-                $target_dir = "./Images/";
-                $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-                $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-                $imageName = basename($_FILES["fileToUpload"]["name"]);
+<?php
+if (isset($_POST['submit'])) {
+    if (isset($_POST['topic'])) {
+        $word = $_POST['topic'];
+    }
+    if (isset($_POST['telugu_word'])) {
+        $word = $_POST['telugu_word'];
+    }
+    if (isset($_POST['english_word'])) {
+        $eng = $_POST['english_word'];
+    }
+    if (isset($_POST['telugu_in_english'])) {
+        $eng = $_POST['telugu_in_english'];
+    }
+    if (isset($_POST['english_in_telugu'])) {
+        $eng = $_POST['english_in_telugu'];
+    }
+    if (isset($_POST['audio_name'])) {
+        $eng = $_POST['audio_name'];
+    }
+    if (isset($_POST['description'])) {
+        $eng = $_POST['description'];
+    }
+    if (isset($_POST['notes'])) {
+        $eng = $_POST['notes'];
+    }
+    $inputFileName = $_FILES["fileToUpload"]["tmp_name"];
+    $target_dir = "./Images/";
+    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+    $imageName = basename($_FILES["fileToUpload"]["name"]);
 
-                if(!empty($imageName)) {
-                    copy($inputFileName, $target_file);
-                }
+    if(!empty($imageName)) {
+        copy($inputFileName, $target_file);
+    }
 
-                $deleteCharacters = 'DELETE FROM characters WHERE word_id = ' . $word_id . ' ; ';
-                run_sql($deleteCharacters);
+    $deleteCharacters = 'DELETE FROM characters WHERE word_id = ' . $word_id . ' ; ';
+    run_sql($deleteCharacters);
 
-                $sql = 'UPDATE words SET Topic = \''.$topic.
-                    '\', Telugu_Word = \''.$telugu_word.
-                    '\', English_Word = \''.$english_word.
-                    '\', Image_Name =\''.$image_name.
-                    '\', Telugu_in_English =\''.$telugu_in_english.
-                    '\', English_in_Telugu =\''.$english_in_telugu.
-                    '\', Audio_Name =\''.$audio_name.
-                    '\', Description =\''.$description.
-                    '\', Notes =\''.$notes.
-                    '\' WHERE word_id = '.$word_id.';';
-                $result = run_sql($sql);
-                $uploadOk = 1;
+    $sql = 'UPDATE words SET Topic = \''.$topic.
+        '\', Telugu_Word = \''.$telugu_word.
+        '\', English_Word = \''.$english_word.
+        '\', Image_Name =\''.$image_name.
+        '\', Telugu_in_English =\''.$telugu_in_english.
+        '\', English_in_Telugu =\''.$english_in_telugu.
+        '\', Audio_Name =\''.$audio_name.
+        '\', Description =\''.$description.
+        '\', Notes =\''.$notes.
+        '\' WHERE word_id = '.$word_id.';';
+    $result = run_sql($sql);
+    $uploadOk = 1;
 
-                //update the characters table
-                $logicalChars = getWordChars($word);
+    //update the characters table
+    $logicalChars = getWordChars($word);
 
-                for ($j = 0; $j < count($logicalChars); $j++) {
-                    //update each letter into char table.
-                    if($logicalChars[$j] != " ") {
-                        $sqlAddLetters = 'INSERT INTO characters (word_id, character_index, character_value) VALUES (\'' . $word_id . '\', \'' . $j . '\', \'' . $logicalChars[$j] . '\');';
-                        run_sql($sqlAddLetters);
-                    }
-                }
+    for ($j = 0; $j < count($logicalChars); $j++) {
+        //update each letter into char table.
+        if($logicalChars[$j] != " ") {
+            $sqlAddLetters = 'INSERT INTO characters (word_id, character_index, character_value) VALUES (\'' . $word_id . '\', \'' . $j . '\', \'' . $logicalChars[$j] . '\');';
+            run_sql($sqlAddLetters);
+        }
+    }
 
-                echo '<script>window.location.href = "list.php"</script>';
-            }
-            ?>
-            <script>
-                function validateForm() {
-                    var eng = document.forms["importFrom"]["fileToUpload"].value;
-                    if (eng == "") {
+    echo '<script>window.location.href = "list.php"</script>';
+}
+?>
+<script>
+    function validateForm() {
+        var eng = document.forms["importFrom"]["fileToUpload"].value;
+        if (eng == "") {
 
-                        document.getElementById("error").style = "display:block;background-color: #ce4646;padding:5px;color:#fff;";
-                        return false;
-                    }
-                }
+            document.getElementById("error").style = "display:block;background-color: #ce4646;padding:5px;color:#fff;";
+            return false;
+        }
+    }
 
-                function AddTableRows() {
-                    alert("add rows");
-                    // Find a <table> element with id="myTable":
-                    var table = document.getElementById("myTable");
+    function AddTableRows() {
+        alert("add rows");
+        // Find a <table> element with id="myTable":
+        var table = document.getElementById("myTable");
 
-                    // Create an empty <tr> element and add it to the 1st position of the table:
-                    var row = table.insertRow(git);
+        // Create an empty <tr> element and add it to the 1st position of the table:
+        var row = table.insertRow(git);
 
-                }
+    }
 
-                function success() {
-                    alert("The word has been updated. Please search for the word on the word list table.");
-                }
+    function success() {
+        alert("The word has been updated. Please search for the word on the word list table.");
+    }
 
-            </script>
-    </body>
+</script>
+</body>
 </html>

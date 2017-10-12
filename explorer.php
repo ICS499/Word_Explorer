@@ -5,7 +5,7 @@
     require_once('db_configuration.php');
     require_once('create_puzzle.php');
     require_once('add_words_process.php');
-    require_once('InsertUtil.php');
+    require('InsertUtil.php');
     session_start();
     require('session_validation.php');
     ?>
@@ -13,6 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/main_style.css" type="text/css">
+    <link rel="stylesheet" href="styles/cards.css" type="text/css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -23,14 +24,32 @@
 </head>
 <title>Word Explorer Edit Words</title>
 <body>
+
 <?PHP echo getTopNav();
 
-if (isset($_GET['id'])) {
-    $word_id= $_GET['id'];
-    if ($word_id != NULL) {
-        $sqlcheck = 'SELECT * FROM words WHERE word_id = \'' . $word_id. '\';';
+// Card objects are used in the carousel
+class Card {
+    public $topic = "";
+    public $telugu_word = "";
+    public $english_word = "";
+    public $telugu_in_english = "";
+    public $english_in_telugu = "";
+    public $audio_name = "";
+    public $description = "";
+    public $notes = "";
+    public $image_name = "";
+}
+
+if (!(isset($_GET['topic']))) {
+    $_GET['topic'] = 'Universe';
+}
+
+if (isset($_GET['topic'])) {
+    $topic = $_GET['topic'];
+        $sqlcheck = 'SELECT * FROM words WHERE topic = \'' . $topic . '\';';
         $result = run_sql($sqlcheck);
         $row = $result->fetch_assoc();
+        //foreach ( )
         $topic = $row["Topic"];
         $telugu_word = $row["Telugu_Word"];
         $english_word = $row["English_Word"];
@@ -40,7 +59,6 @@ if (isset($_GET['id'])) {
         $description = $row["Description"];
         $notes = $row["Notes"];
         $image_name = $row["Image_Name"];
-    }
 }
 
 echo '<div>
@@ -50,14 +68,9 @@ echo '<div>
             <tbody>
                 <form action="" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
                     <tr>
-                        <!--<td><input type="textbox" name="topic" id="topic" value='.$topic.'></td>-->
                         <td>'.$telugu_word.'</td>
                         <td></td>
                         <td>'.$english_word.'</td>
-                        <!--<td><input type="Label" name="description" id="description" value='.$description.'></td>-->
-                        <!--<td><input type="Label" name="notes" id="notes" value='.$notes.'></td>-->
-                        <!--<td><input class="upload" type="file" name="fileToUpload" id="fileToUpload" /></td>-->
-                        <!--<td><input class="upload" type="submit" value="Update Word" name="submit" onclick="success()"/></td>-->
                     </tr>
                     <tr>
                          <td></td>
@@ -72,7 +85,46 @@ echo '<div>
                 </form>
             </tbody>
         </table>
-    </div>';
+    </div>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="images/moon.jpg" alt="Test1" width="1200" height="700">
+                <div class="carousel-caption">
+                    <h3>Testing</h3>
+                    <p>Testing</p>
+                </div>
+            </div>
+    
+            <div class="item">
+                <img src="images/moon.jpg" alt="test2" width="1200" height="700">
+                <div class="carousel-caption">
+                    <h3>Testing</h3>
+                    <p>Testing</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    ';
 ?>
 
 <?php
@@ -141,7 +193,12 @@ if (isset($_POST['submit'])) {
     echo '<script>window.location.href = "list.php"</script>';
 }
 ?>
+
 <script>
+    function buildCards() {
+
+    }
+
     function validateForm() {
         var eng = document.forms["importFrom"]["fileToUpload"].value;
         if (eng == "") {
@@ -166,5 +223,7 @@ if (isset($_POST['submit'])) {
     }
 
 </script>
+
+
 </body>
 </html>
