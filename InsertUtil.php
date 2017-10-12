@@ -1,9 +1,9 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 require_once('db_configuration.php');
-require('language_processor_functions.php');
-require('utility_functions.php');
-require('common_sql_functions.php');
+require_once('language_processor_functions.php');
+require_once('utility_functions.php');
+require_once('common_sql_functions.php');
 
 /**
  * This method inserts given data into the Words table

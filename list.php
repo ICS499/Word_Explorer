@@ -53,7 +53,7 @@ session_cache_limiter(false);
                 <th>Notes</th>
                 <th>Created Date</th>
                 <th>Last Updated</th>
-                <th>Modify</th>
+                <th>Interactions</th>
             </tr>
             </thead>
             <tbody>
@@ -80,6 +80,9 @@ session_cache_limiter(false);
                         <td>" . $row["Created_Date"] . "</td>
                         <td>" . $row["Last_Updated"] . "</td>                       
                         <td>
+                            <a href='word_card.php?id=" . $row["word_id"] . "&button=edit'>
+                                <img class=\"table_image\" src=\"pic/play.png\" alt=\"Investigate " . $row["word_id"] . " word\">
+                            </a>
                             <a href='admin_edit_synonyms.php?id=" . $row["word_id"] . "&button=edit'>
                                 <img class=\"table_image\" src=\"pic/edit.jpg\" alt=\"Edit " . $row["word_id"] . " word\">
                             </a>
@@ -157,7 +160,7 @@ session_cache_limiter(false);
                 <th>Notes</th>
                 <th>Created Date</th>
                 <th>Last Updated</th>
-                <th>Modify</th>
+                <th>Interactions</th>
             </tr>
             </tfoot>
         </table>

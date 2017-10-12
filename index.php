@@ -23,6 +23,9 @@
     </div>
     <br>
     <div align="center">
+        <form id ="myform" action="explorer.php" method="post" onsubmit="process()">
+            <input type="submit" value="Explorer">
+        </form>
         <form id ="myform" action="list.php" method="post" onsubmit="process()">
             <input type="submit" value="List All Words">
         </form>
