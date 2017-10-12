@@ -24,8 +24,8 @@
 </head>
 <title>Word Explorer Edit Words</title>
 <body>
-
-<?PHP echo getTopNav();
+<?PHP
+echo getTopNav();
 
 // Card objects are used in the carousel
 class Card {
@@ -46,48 +46,100 @@ if (!(isset($_GET['topic']))) {
 
 if (isset($_GET['topic'])) {
     $topic = $_GET['topic'];
-        $sqlcheck = 'SELECT * FROM words WHERE topic = \'' . $topic . '\';';
-        $result = run_sql($sqlcheck);
-        $row = $result->fetch_assoc();
-        //foreach ( )
-        $topic = $row["Topic"];
-        $telugu_word = $row["Telugu_Word"];
-        $english_word = $row["English_Word"];
-        $telugu_in_english = $row["Telugu_in_English"];
-        $english_in_telugu = $row["English_in_Telugu"];
-        $audio_name = $row["Audio_Name"];
-        $description = $row["Description"];
-        $notes = $row["Notes"];
-        $image_name = $row["Image_Name"];
+    //$sqlcheck = 'SELECT * FROM words WHERE topic = \'' . $topic . '\';';
+    // don't have enough data in db to test specific topics, so grabbing all (two) words
+    $sqlcheck = 'SELECT * FROM words;';
+    $result = run_sql($sqlcheck);
+    $cards = array();
+    foreach( $result as $row){
+        $newCard = new Card();
+        $newCard->topic = $row["Topic"];
+        $newCard->telugu_word = $row["Telugu_Word"];
+        $newCard->english_word = $row["English_Word"];
+        $newCard->telugu_in_english = $row["Telugu_in_English"];
+        $newCard->english_in_telugu = $row["English_in_Telugu"];
+        $newCard->audio_name = $row["Audio_Name"];
+        $newCard->description = $row["Description"];
+        $newCard->notes = $row["Notes"];
+        $newCard->image_name = $row["Image_Name"];
+        echo $newCard->english_word . '<br>';
+        array_push($cards, $newCard);
+    }
+}
+echo '
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+    <ol class="carousel-indicators">
+';
+
+// The cards
+$count = 0;
+foreach($cards as $card) {
+    if ($count == 0){
+        echo '<li data-target="#myCarousel" data-slide-to="' . $count . '" class="active"></li>';
+    } else {
+        echo '<li data-target="#myCarousel" data-slide-to="' . $count . '></li>';
+    }
+    $count++;
+    $first = false;
 }
 
-echo '<div>
-        <br>
-        <br>
-        <table class="table table-condensed main-tables" id="word_table" style="margin-left:11%;">
-            <tbody>
-                <form action="" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
-                    <tr>
-                        <td>'.$telugu_word.'</td>
-                        <td></td>
-                        <td>'.$english_word.'</td>
-                    </tr>
-                    <tr>
-                         <td></td>
-                         <td><img class="thumbnailSize" src="./Images/' . $row['Image_Name'] . '" alt ="' . $row['Image_Name'] . '"></td>                        
-                         <td></td>                  
-                    </tr>
-                    <tr>
-                        <td>'.$telugu_in_english.'</td>
-                        <td><a href="./sound/'.$audio_name.'"><img src="./pic/sound.jpg" alt="'.$audio_name.'"/></a></td>
-                        <td>'.$english_in_telugu.'</td>
-                    </tr>
-                </form>
-            </tbody>
-        </table>
+echo '
+</ol>
+<div class="carousel-inner" role="listbox">
+';
+
+// The cards' content
+$count = 0;
+foreach ($cards as $card) {
+    var_dump($card);
+    if ($count == 0){
+        echo '<div class="item active">';
+    } else {
+        echo '<div class="item">';
+    }
+    echo '
+    <table class="table table-condensed main-tables" id="word_table" style="margin-left:11%;">
+        <tbody width="400" height="400">
+            <tr>
+                <td>' . $card->telugu_word . '</td>
+                <td></td>
+                <td>' . $card->english_word . '</td>
+            </tr>
+            <tr>
+                 <td></td>
+                 <td><img class="thumbnailSize" src="./Images/' . $card->image_name . '" alt ="' . $card->image_name . '" width="400" height="400"</td>                        
+                 <td></td>                  
+            </tr>
+            <tr>
+                <td>' . $card->telugu_in_english . '</td>
+                <td><a href="./sound/' . $card->audio_name . '"><img src="./pic/sound.jpg" alt="' . $card->audio_name . '"/></a></td>
+                <td>' . $card->english_in_telugu . '</td>
+            </tr>
+        </tbody>
+    </table>
     </div>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
+    ';
+}
+
+
+// Left and right arrows
+echo '        
+</div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+';
+?>
+
+<!--
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -95,7 +147,7 @@ echo '<div>
             <li data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
 
-        <!-- Wrapper for slides -->
+
         <div class="carousel-inner" role="listbox">
             <div class="item active">
                 <img src="images/moon.jpg" alt="Test1" width="1200" height="700">
@@ -114,7 +166,6 @@ echo '<div>
             </div>
         </div>
 
-        <!-- Left and right controls -->
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
@@ -124,106 +175,6 @@ echo '<div>
             <span class="sr-only">Next</span>
         </a>
     </div>
-    ';
-?>
-
-<?php
-if (isset($_POST['submit'])) {
-    if (isset($_POST['topic'])) {
-        $word = $_POST['topic'];
-    }
-    if (isset($_POST['telugu_word'])) {
-        $word = $_POST['telugu_word'];
-    }
-    if (isset($_POST['english_word'])) {
-        $eng = $_POST['english_word'];
-    }
-    if (isset($_POST['telugu_in_english'])) {
-        $eng = $_POST['telugu_in_english'];
-    }
-    if (isset($_POST['english_in_telugu'])) {
-        $eng = $_POST['english_in_telugu'];
-    }
-    if (isset($_POST['audio_name'])) {
-        $eng = $_POST['audio_name'];
-    }
-    if (isset($_POST['description'])) {
-        $eng = $_POST['description'];
-    }
-    if (isset($_POST['notes'])) {
-        $eng = $_POST['notes'];
-    }
-    $inputFileName = $_FILES["fileToUpload"]["tmp_name"];
-    $target_dir = "./Images/";
-    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-    $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-    $imageName = basename($_FILES["fileToUpload"]["name"]);
-
-    if(!empty($imageName)) {
-        copy($inputFileName, $target_file);
-    }
-
-    $deleteCharacters = 'DELETE FROM characters WHERE word_id = ' . $word_id . ' ; ';
-    run_sql($deleteCharacters);
-
-    $sql = 'UPDATE words SET Topic = \''.$topic.
-        '\', Telugu_Word = \''.$telugu_word.
-        '\', English_Word = \''.$english_word.
-        '\', Image_Name =\''.$image_name.
-        '\', Telugu_in_English =\''.$telugu_in_english.
-        '\', English_in_Telugu =\''.$english_in_telugu.
-        '\', Audio_Name =\''.$audio_name.
-        '\', Description =\''.$description.
-        '\', Notes =\''.$notes.
-        '\' WHERE word_id = '.$word_id.';';
-    $result = run_sql($sql);
-    $uploadOk = 1;
-
-    //update the characters table
-    $logicalChars = getWordChars($word);
-
-    for ($j = 0; $j < count($logicalChars); $j++) {
-        //update each letter into char table.
-        if($logicalChars[$j] != " ") {
-            $sqlAddLetters = 'INSERT INTO characters (word_id, character_index, character_value) VALUES (\'' . $word_id . '\', \'' . $j . '\', \'' . $logicalChars[$j] . '\');';
-            run_sql($sqlAddLetters);
-        }
-    }
-
-    echo '<script>window.location.href = "list.php"</script>';
-}
-?>
-
-<script>
-    function buildCards() {
-
-    }
-
-    function validateForm() {
-        var eng = document.forms["importFrom"]["fileToUpload"].value;
-        if (eng == "") {
-
-            document.getElementById("error").style = "display:block;background-color: #ce4646;padding:5px;color:#fff;";
-            return false;
-        }
-    }
-
-    function AddTableRows() {
-        alert("add rows");
-        // Find a <table> element with id="myTable":
-        var table = document.getElementById("myTable");
-
-        // Create an empty <tr> element and add it to the 1st position of the table:
-        var row = table.insertRow(git);
-
-    }
-
-    function success() {
-        alert("The word has been updated. Please search for the word on the word list table.");
-    }
-
-</script>
-
-
+    -->
 </body>
 </html>
