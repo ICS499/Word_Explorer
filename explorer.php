@@ -22,12 +22,39 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="styles/custom_nav.css" type="text/css">
     <style>
+        h2 {
+            margin: 0px;
+            padding: 5px;
+        }
+        h3 {
+            margin: 0px;
+            padding: 5px;
+        }
+        .topic-choice-selected {
+            padding-left: 10px;
+            background-color: #2bb0dc;
+            width: 100%;
+        }
+        .topic-choice {
+            width: 100%;
+        }
         .flow {
             display: inline-block;
             vertical-align: top;
         }
         #topic-list {
+            background-color: #bdbdbd;
+            margin-left: 10px;
             border: 1px solid #888;
+            max-height: 300px;
+            min-height: 300px;
+            min-width: 200px;
+            overflow-y: auto;
+        }
+        ul, li {
+            list-style:none;
+            padding:5px;
+            margin:0;
         }
         #myCarousel {
             width:800px !important;
@@ -47,7 +74,7 @@
             height: 500px !important;
         }
         .carousel-control {
-            /* Want skinnier buttons somehow */
+            width: 5% !important;
         }
     </style>
 </head>
@@ -73,49 +100,63 @@ if (!(isset($_GET['topic']))) {
     $_GET['topic'] = 'Universe';
 }
 
-if (isset($_GET['topic'])) {
-    $topic = $_GET['topic'];
-    //$sqlcheck = 'SELECT * FROM words WHERE topic = \'' . $topic . '\';';
-    // don't have enough data in db to test specific topics, so grabbing all (two) words
-    $sqlcheck = 'SELECT * FROM words;';
-    $result = run_sql($sqlcheck);
-    $cards = array();
-    foreach( $result as $row){
-        $newCard = new Card();
-        $newCard->topic = $row["Topic"];
-        $newCard->telugu_word = $row["Telugu_Word"];
-        $newCard->english_word = $row["English_Word"];
-        $newCard->telugu_in_english = $row["Telugu_in_English"];
-        $newCard->english_in_telugu = $row["English_in_Telugu"];
-        $newCard->audio_name = $row["Audio_Name"];
-        $newCard->description = $row["Description"];
-        $newCard->notes = $row["Notes"];
-        $newCard->image_name = $row["Image_Name"];
-        array_push($cards, $newCard);
-    }
+$topic = $_GET['topic'];
+$sqlQueryWords = 'SELECT * FROM words WHERE topic = \'' . $topic . '\';';
+// don't have enough data in db to test specific topics, so grabbing all (two) words
+//$sqlQueryWords = 'SELECT * FROM words;';
+$result = run_sql($sqlQueryWords);
+$cards = array();
+foreach( $result as $row){
+    $newCard = new Card();
+    $newCard->topic = $row["Topic"];
+    $newCard->telugu_word = $row["Telugu_Word"];
+    $newCard->english_word = $row["English_Word"];
+    $newCard->telugu_in_english = $row["Telugu_in_English"];
+    $newCard->english_in_telugu = $row["English_in_Telugu"];
+    $newCard->audio_name = $row["Audio_Name"];
+    $newCard->description = $row["Description"];
+    $newCard->notes = $row["Notes"];
+    $newCard->image_name = $row["Image_Name"];
+    array_push($cards, $newCard);
 }
 
-echo '
-<div id="topic-list" class="flow">
-    <ul>
-';
-
+// Build the topic list
 $sqlQueryTopics = 'SELECT * FROM topics';
 $result = run_sql($sqlQueryTopics);
+echo '
+<div id="topic-list" class="flow">
+    <h2>Choose Topic</h2>
+    <ul>
+';
 foreach ( $result as $topicChoice) {
-    echo '
-        <li>' . $topicChoice["topic"] . '</li>
-    ';
+    if ($topicChoice["topic"] == $_GET['topic']){
+        echo '
+        <li><h3>
+            <a class="topic-choice-selected" href="explorer.php?topic=' . $topicChoice["topic"] . '">
+                ' . $topicChoice["topic"] . '
+            </a>
+        </h3></li>
+        ';
+    } else {
+        echo '
+        <li><h3>
+            <a class="topic-choice" href="explorer.php?topic=' . $topicChoice["topic"] . '">
+                ' . $topicChoice["topic"] . '
+            </a>
+        </h3></li>
+        ';
+    }
 }
-
 echo '
     </ul>
 </div>
+';
+
+// Build the carousel
+echo '
 <div id="myCarousel" class="carousel flow" data-ride="carousel" data-interval="false" >
     <div class="carousel-inner" role="listbox" >
 ';
-
-// The cards' content
 $count = 0;
 foreach ($cards as $card) {
     //var_dump($card);
@@ -148,7 +189,6 @@ foreach ($cards as $card) {
     ';
     $count++;
 }
-
 
 // Left and right arrows
 echo '        

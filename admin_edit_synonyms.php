@@ -30,7 +30,7 @@
     <?PHP echo getTopNav();
 
         if (isset($_GET['id'])) {
-            $word_id= $_GET['id'];
+            $word_id = $_GET['id'];
             if ($word_id != NULL) {
                 $sqlcheck = 'SELECT * FROM words WHERE word_id = \'' . $word_id. '\';';
                 $result = run_sql($sqlcheck);
