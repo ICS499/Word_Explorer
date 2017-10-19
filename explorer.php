@@ -21,6 +21,35 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="styles/custom_nav.css" type="text/css">
+    <style>
+        .flow {
+            display: inline-block;
+            vertical-align: top;
+        }
+        #topic-list {
+            border: 1px solid #888;
+        }
+        #myCarousel {
+            width:800px !important;
+            margin-left: 10px !important;
+            border: 1px solid #888;
+            background-color: #bdbdbd;
+        }
+        .carousel-inner {
+            vertical-align:middle;
+            width: 500px;
+            height: 500px;
+            margin: auto;
+        }
+        #word_table {
+            margin:0px auto !important;
+            width: 500px !important;
+            height: 500px !important;
+        }
+        .carousel-control {
+            /* Want skinnier buttons somehow */
+        }
+    </style>
 </head>
 <title>Word Explorer Edit Words</title>
 <body>
@@ -62,82 +91,81 @@ if (isset($_GET['topic'])) {
         $newCard->description = $row["Description"];
         $newCard->notes = $row["Notes"];
         $newCard->image_name = $row["Image_Name"];
-        echo $newCard->english_word . '<br>';
         array_push($cards, $newCard);
     }
 }
+
 echo '
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-    <ol class="carousel-indicators">
+<div id="topic-list" class="flow">
+    <ul>
 ';
 
-// The cards
-$count = 0;
-foreach($cards as $card) {
-    if ($count == 0){
-        echo '<li data-target="#myCarousel" data-slide-to="' . $count . '" class="active"></li>';
-    } else {
-        echo '<li data-target="#myCarousel" data-slide-to="' . $count . '></li>';
-    }
-    $count++;
-    $first = false;
+$sqlQueryTopics = 'SELECT * FROM topics';
+$result = run_sql($sqlQueryTopics);
+foreach ( $result as $topicChoice) {
+    echo '
+        <li>' . $topicChoice["topic"] . '</li>
+    ';
 }
 
 echo '
-</ol>
-<div class="carousel-inner" role="listbox">
+    </ul>
+</div>
+<div id="myCarousel" class="carousel flow" data-ride="carousel" data-interval="false" >
+    <div class="carousel-inner" role="listbox" >
 ';
 
 // The cards' content
 $count = 0;
 foreach ($cards as $card) {
-    var_dump($card);
+    //var_dump($card);
     if ($count == 0){
         echo '<div class="item active">';
     } else {
         echo '<div class="item">';
     }
     echo '
-    <table class="table table-condensed main-tables" id="word_table" style="margin-left:11%;">
-        <tbody width="400" height="400">
-            <tr>
-                <td>' . $card->telugu_word . '</td>
-                <td></td>
-                <td>' . $card->english_word . '</td>
-            </tr>
-            <tr>
-                 <td></td>
-                 <td><img class="thumbnailSize" src="./Images/' . $card->image_name . '" alt ="' . $card->image_name . '" width="400" height="400"</td>                        
-                 <td></td>                  
-            </tr>
-            <tr>
-                <td>' . $card->telugu_in_english . '</td>
-                <td><a href="./sound/' . $card->audio_name . '"><img src="./pic/sound.jpg" alt="' . $card->audio_name . '"/></a></td>
-                <td>' . $card->english_in_telugu . '</td>
-            </tr>
-        </tbody>
-    </table>
-    </div>
+                <table class="table table-condensed main-tables" id="word_table" style=" ">
+                    <tbody >
+                        <tr>
+                            <td>' . $card->telugu_word . '</td>
+                            <td></td>
+                            <td>' . $card->english_word . '</td>
+                        </tr>
+                        <tr>
+                             <td></td>
+                             <td><img class="thumbnailSize" src="./Images/' . $card->image_name . '" alt ="' . $card->image_name . '" width="400" height="400"</td>                        
+                             <td></td>                  
+                        </tr>
+                        <tr>
+                            <td>' . $card->telugu_in_english . '</td>
+                            <td><a href="./sound/' . $card->audio_name . '"><img src="./pic/play.png" alt="' . $card->audio_name . '"/></a></td>
+                            <td>' . $card->english_in_telugu . '</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
     ';
+    $count++;
 }
 
 
 // Left and right arrows
 echo '        
-</div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="background:none !important;">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="background:none !important;">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 ';
 ?>
 
-<!--
+<!-- left this as reference for php carousel generation
     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 
         <ol class="carousel-indicators">

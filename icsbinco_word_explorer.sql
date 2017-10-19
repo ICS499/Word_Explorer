@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 12, 2017 at 05:13 AM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.8
+-- Generation Time: Oct 19, 2017 at 06:37 AM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -61,6 +61,31 @@ INSERT INTO `topics` (`topic`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `user_email` varchar(100) NOT NULL COMMENT 'email address is the key',
+  `username` varchar(50) NOT NULL COMMENT 'if the user doesn''t want to display the user name',
+  `user_password` varchar(65) NOT NULL COMMENT 'for storing the password',
+  `id_verified` tinyint(1) NOT NULL COMMENT '0 for false, 1 for true',
+  `activation_token` varchar(25) NOT NULL COMMENT 'for storing the activation code when the users register or forget password',
+  `role` tinyint(1) NOT NULL COMMENT '0 for ADMIN, 1 for registered user'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_email`, `username`, `user_password`, `id_verified`, `activation_token`, `role`) VALUES
+('fm2584uk@metrostate.edu', 'prashant', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 1, '753951', 0),
+('hp6449qy@metrostate.edu', 'tyler', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 1, '1234', 0),
+('test', 'test', 'test', 1, '751', 0),
+('user', 'user', 'user', 1, '751433', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `words`
 --
 
@@ -102,6 +127,12 @@ ALTER TABLE `characters`
 --
 ALTER TABLE `topics`
   ADD PRIMARY KEY (`topic`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_email`);
 
 --
 -- Indexes for table `words`

@@ -1,5 +1,5 @@
 ﻿<?php
-//require("telugu_parser.php");
+require("telugu_parser.php");
 
 
 /*

@@ -45,7 +45,7 @@
 			<div class="collapse navbar-collapse">
 			
 			
-			<!--
+			
 			<ul class="nav navbar-nav" style="float: right;">
 				<li>
 					<a href="./admin.php"><button id="admin" class="navOption">Admin</button></a>
@@ -60,7 +60,6 @@
 					<a href="./logout.php"><button id="logout" name ="logout" class="navOption">Logout</button></a>
 				</li>
 			</ul>
-			-->
 			</div><!--.nav-collapse --></div></nav>';
 		}
 		else if (sessionExists()) {
@@ -75,7 +74,7 @@
 			</div></div><div class="collapse navbar-collapse">
 			
 			
-			<!--
+			
 			<ul class="nav navbar-nav" style="float: right;">
 			<li>
 				<a href="./puzzle_list.php"><button id="list" class="navOption">List</button></a>
@@ -87,7 +86,7 @@
 				<a href="./logout.php"><button id="logout" name ="logout" class="navOption">Logout</button></a>
 			</li>
 			</ul>
-			-->
+			
 			</div><!--.nav-collapse --></div></nav>';
 		}
 		else{
@@ -107,7 +106,7 @@
 			<div class="collapse navbar-collapse">
 			
 			
-			<!--
+			
 			<ul class="nav navbar-nav" style="float: right;">
 			<li>
 				<a href="./puzzle_list.php"><button id="list" class="navOption">List</button></a>
@@ -119,7 +118,7 @@
 				<a href="./login.php"><button id="login" class="navOption">Login</button></a>
 			</li>
 			</ul>
-			-->
+			
 			</div>
 			<!--.nav-collapse -->
 			</div>

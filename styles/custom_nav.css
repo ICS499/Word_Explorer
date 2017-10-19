@@ -1,18 +1,21 @@
  body {
    font-family: Times New Roman, Times, serif;
  }
- 
+
+ /*
  .navbar {
    display: block;
    padding-left: 8px;
-   height: auto;
+   height: 50px;
+     max-height: 50px;
    border-style: none;
    font-size: 55px;
  }
  
  .navbar .container {
    width: 90%;
-   height: auto;
+   height: 50px;
+     max-height: 50px;
    border-radius: 25px;
    background-color: #92d050;
    max-width: 1700px;
@@ -22,6 +25,7 @@
    border-radius: 25px;
    background-color: #92d050;
  }
+ */
  
  .navOption {
    display: inline;

@@ -295,8 +295,8 @@ body {
 }
 
 .navBar {
-  max-height: 150px;
-  width: 1380px;
+  max-height: 50px;
+  width: 100%;
   display: block;
   background-color: #92d050;
   border-radius: 25px;
@@ -305,7 +305,7 @@ body {
 }
 
 .nav-wrapper {
-  max-height: 150px;
+  max-height: 50px;
   width: 100%;
   display: inline;
   font-size: 55px;
@@ -451,7 +451,6 @@ body {
   border-radius: .5em;
 }
 
-
 #strongUpload:hover{
   background-color: #7A942E;
 }
@@ -573,3 +572,4 @@ img {
   height: 150px;
   width:150px;
 }
+
