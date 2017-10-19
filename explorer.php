@@ -22,15 +22,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="styles/custom_nav.css" type="text/css">
     <style>
-        h2 {
-            margin: 0px;
-            padding: 5px;
-        }
-        h3 {
-            margin: 0px;
-            padding: 5px;
-        }
-        .topic-choice-selected {
+        .selected {
             padding-left: 10px;
             background-color: #2bb0dc;
             width: 100%;
@@ -38,40 +30,64 @@
         .topic-choice {
             width: 100%;
         }
+        .list-header {
+            margin: 10px;
+        }
         .flow {
             display: inline-block;
             vertical-align: top;
         }
+        .left-content {
+            height: 500px;
+            width: 300px;
+        }
+        #word-image {
+
+        }
+        .object-fit-cover {
+            max-height: 200px;
+            width: 100%;
+            object-fit: cover; /*magic*/
+        }
         #topic-list {
             background-color: #bdbdbd;
-            margin-left: 10px;
+            margin: 10px;
             border: 1px solid #888;
             max-height: 300px;
             min-height: 300px;
-            min-width: 200px;
+            width: 100%;
             overflow-y: auto;
         }
+        #mode-list {
+            background-color: #bdbdbd;
+            margin: 10px;
+            border: 1px solid #888;
+            max-height: 300px;
+            min-height: 300px;
+            width: 100%;
+        }
         ul, li {
-            list-style:none;
-            padding:5px;
-            margin:0;
+            list-style: none;
+            padding: 5px;
+            margin: 0px;
         }
         #myCarousel {
-            width:800px !important;
-            margin-left: 10px !important;
+            width:800px;
+            height: auto;
+            margin: 10px;
             border: 1px solid #888;
-            background-color: #bdbdbd;
+            background-color: #FFFFFF;
         }
         .carousel-inner {
             vertical-align:middle;
-            width: 500px;
-            height: 500px;
+            width: 100%;
+            height: 100%;
             margin: auto;
         }
         #word_table {
-            margin:0px auto !important;
-            width: 500px !important;
-            height: 500px !important;
+            margin: 1px auto !important;
+            width: 100% !important;
+            height: 100% !important;
         }
         .carousel-control {
             width: 5% !important;
@@ -96,12 +112,19 @@ class Card {
     public $image_name = "";
 }
 
+// Get the available topics
+$sqlQueryTopics = 'SELECT * FROM topics';
+$resultTopics = run_sql($sqlQueryTopics);
+
+// Set to first topic, if no topic is selected
 if (!(isset($_GET['topic']))) {
-    $_GET['topic'] = 'Universe';
+    $_GET['topic'] = 'Animals';
 }
 
+// Get the words related to the topic
 $topic = $_GET['topic'];
 $sqlQueryWords = 'SELECT * FROM words WHERE topic = \'' . $topic . '\';';
+
 // don't have enough data in db to test specific topics, so grabbing all (two) words
 //$sqlQueryWords = 'SELECT * FROM words;';
 $result = run_sql($sqlQueryWords);
@@ -120,30 +143,31 @@ foreach( $result as $row){
     array_push($cards, $newCard);
 }
 
+echo '
+<div class="left-content flow">
+    <h2 class="list-header">Choose Topic</h2>
+';
 // Build the topic list
-$sqlQueryTopics = 'SELECT * FROM topics';
-$result = run_sql($sqlQueryTopics);
 echo '
 <div id="topic-list" class="flow">
-    <h2>Choose Topic</h2>
     <ul>
 ';
-foreach ( $result as $topicChoice) {
+foreach ( $resultTopics as $topicChoice) {
     if ($topicChoice["topic"] == $_GET['topic']){
         echo '
-        <li><h3>
-            <a class="topic-choice-selected" href="explorer.php?topic=' . $topicChoice["topic"] . '">
+        <li>
+            <a class="topic-choice selected" href="explorer.php?topic=' . $topicChoice["topic"] . '">
                 ' . $topicChoice["topic"] . '
             </a>
-        </h3></li>
+        </li>
         ';
     } else {
         echo '
-        <li><h3>
+        <li>
             <a class="topic-choice" href="explorer.php?topic=' . $topicChoice["topic"] . '">
                 ' . $topicChoice["topic"] . '
             </a>
-        </h3></li>
+        </li>
         ';
     }
 }
@@ -151,6 +175,37 @@ echo '
     </ul>
 </div>
 ';
+
+// Build the explore mode list
+echo '
+<h2 class="list-header">Choose Mode</h2>
+<div id="mode-list" class="flow">
+    <ul>
+        <li>
+            <a class="mode-choice selected" href="explorer.php?mode=' . $topicChoice["topic"] . '">
+                Explore
+            </a>
+        </li>
+        <li>
+            <a class="mode-choice" href="explorer.php?mode=' . $topicChoice["topic"] . '">
+                Reading
+            </a>
+        </li>
+        <li>
+            <a class="mode-choice" href="explorer.php?mode=' . $topicChoice["topic"] . '">
+                Vocabulary
+            </a>
+        </li>
+        <li>
+            <a class="mode-choice" href="explorer.php?mode=' . $topicChoice["topic"] . '">
+                Quiz
+            </a>
+        </li>
+    </ul>
+</div>
+';
+
+echo '</div>';
 
 // Build the carousel
 echo '
@@ -166,25 +221,23 @@ foreach ($cards as $card) {
         echo '<div class="item">';
     }
     echo '
-                <table class="table table-condensed main-tables" id="word_table" style=" ">
-                    <tbody >
-                        <tr>
-                            <td>' . $card->telugu_word . '</td>
-                            <td></td>
-                            <td>' . $card->english_word . '</td>
-                        </tr>
-                        <tr>
-                             <td></td>
-                             <td><img class="thumbnailSize" src="./Images/' . $card->image_name . '" alt ="' . $card->image_name . '" width="400" height="400"</td>                        
-                             <td></td>                  
-                        </tr>
-                        <tr>
-                            <td>' . $card->telugu_in_english . '</td>
-                            <td><a href="./sound/' . $card->audio_name . '"><img src="./pic/play.png" alt="' . $card->audio_name . '"/></a></td>
-                            <td>' . $card->english_in_telugu . '</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="container" style="height: 100%; width: 100%; background-color: #FFF8DC; ">
+                    <div class="row" style="height: auto;">
+                        <div class="col-md-4 text-center" style="">' . $card->telugu_word . '</div>
+                        <div class="col-md-4 text-center"></div>
+                        <div class="col-md-4 text-center">' . $card->english_word . '</div>
+                    </div>
+                    <div class="row" style="height: 600px;">
+                        <div class="col-md-4 text-center"></div>
+                        <div class="col-md-4 text-center"><img id="word-image" class="thumbnailSize object-fit-cover" src="./Images/' . $card->image_name . '" alt ="' . $card->image_name . '" width="400" height="400" /></div>
+                        <div class="col-md-4 text-center"></div>
+                    </div>
+                    <div class="row" style="height: auto">
+                        <div class="col-md-4 text-center">' . $card->telugu_in_english . '</div>
+                        <div class="col-md-4 text-center"></div>
+                        <div class="col-md-4 text-center align-text-bottom">' . $card->english_in_telugu . '</div>
+                    </div>
+                </div>
             </div>
     ';
     $count++;
