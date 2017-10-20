@@ -52,7 +52,7 @@
         #topic-list {
             background-color: #bdbdbd;
             margin: 10px;
-            border: 1px solid #888;
+            border: 2px solid #888;
             max-height: 300px;
             min-height: 300px;
             width: 100%;
@@ -61,7 +61,7 @@
         #mode-list {
             background-color: #bdbdbd;
             margin: 10px;
-            border: 1px solid #888;
+            border: 2px solid #888;
             max-height: 300px;
             min-height: 300px;
             width: 100%;
@@ -74,8 +74,8 @@
         #myCarousel {
             width:800px;
             height: auto;
-            margin: 10px;
-            border: 1px solid #888;
+            margin: 20px;
+            border: 2px solid #888;
             background-color: #FFFFFF;
         }
         .carousel-inner {
@@ -83,11 +83,6 @@
             width: 100%;
             height: 100%;
             margin: auto;
-        }
-        #word_table {
-            margin: 1px auto !important;
-            width: 100% !important;
-            height: 100% !important;
         }
         .carousel-control {
             width: 5% !important;
@@ -118,7 +113,10 @@ $resultTopics = run_sql($sqlQueryTopics);
 
 // Set to first topic, if no topic is selected
 if (!(isset($_GET['topic']))) {
-    $_GET['topic'] = 'Animals';
+    foreach ($resultTopics as $row) {
+        $_GET['topic'] = $row['topic'];
+        break;
+    }
 }
 
 // Get the words related to the topic
@@ -212,15 +210,15 @@ echo '
 <div id="myCarousel" class="carousel flow" data-ride="carousel" data-interval="false" >
     <div class="carousel-inner" role="listbox" >
 ';
-$count = 0;
-foreach ($cards as $card) {
-    //var_dump($card);
-    if ($count == 0){
-        echo '<div class="item active">';
-    } else {
-        echo '<div class="item">';
-    }
-    echo '
+if (count($cards) > 0) {
+    $count = 0;
+    foreach ($cards as $card) {
+        if ($count == 0){
+            echo '<div class="item active">';
+        } else {
+            echo '<div class="item">';
+        }
+        echo '
                 <div class="container" style="height: 100%; width: 100%; background-color: #FFF8DC; ">
                     <div class="row" style="height: auto;">
                         <div class="col-md-4 text-center" style="">' . $card->telugu_word . '</div>
@@ -229,7 +227,7 @@ foreach ($cards as $card) {
                     </div>
                     <div class="row" style="height: 600px;">
                         <div class="col-md-4 text-center"></div>
-                        <div class="col-md-4 text-center"><img id="word-image" class="thumbnailSize object-fit-cover" src="./Images/' . $card->image_name . '" alt ="' . $card->image_name . '" width="400" height="400" /></div>
+                        <div class="col-md-4 text-center"><img id="word-image" class="object-fit-cover" src="./Images/' . $card->image_name . '" alt ="' . $card->image_name . '"/></div>
                         <div class="col-md-4 text-center"></div>
                     </div>
                     <div class="row" style="height: auto">
@@ -240,7 +238,10 @@ foreach ($cards as $card) {
                 </div>
             </div>
     ';
-    $count++;
+        $count++;
+    }
+} else {
+    echo 'No words in this category';
 }
 
 // Left and right arrows

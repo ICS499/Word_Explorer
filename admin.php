@@ -29,6 +29,7 @@ else{
 ?>
 
 <body>
+
 <?PHP
 session_start();
 echo getTopNav();
@@ -43,7 +44,7 @@ require('import.php');
 if ($error) {
     ?>
             <p id="error" style="display:block;background-color: #ce4646;padding:5px;color:#fff;">
-                <?php echo $result; ?>
+                <?php echo 'error'.$result; ?>
             </p>
         <?php } ?>
         <form class="upload" method="post" name="importFrom" enctype="multipart/form-data"
@@ -95,37 +96,26 @@ if ($error) {
             <a href="report.php"><img src="./pic/report.png" class="adminThumbnailSize">
         </td>
         <td align="center">
-            <a target="_blank" href="one_to_many.php"><img src="./pic/oneWordManyPuzzles.png"
-                                                           class="adminThumbnailSize"></a>
+            <a target="_blank" href="compile.php"><img src="./pic/compile.png" class="adminThumbnailSize"></a>
         </td>
         <td align="center">
-            <a target="_blank" href="many_to_one.php"><img src="./pic/manyWordsOnePuzzle.png"
-                                                           class="adminThumbnailSize"></a>
+            <a target="_blank" href="topic_management.php"><img src="./pic/topic_management.png" class="adminThumbnailSize"></a>
         </td>
         <td align="center">
-            <a target="_blank" href="one_to_many_plus.php"><img src="./pic/oneWordManyPuzzlesPlus.png"
-                                                                class="adminThumbnailSize">
+            <a target="_blank" href="kiosk.php"><img src="./pic/kiosk.png" class="adminThumbnailSize">
         </td>
         <td align="center">
-            <a href="userManual.php"><img src="./pic/user_manual.png" class="adminThumbnailSize"></a>
+            <a href="stop_project.php"><img src="./pic/stop_project.png" class="adminThumbnailSize"></a>
         </td>
     </tr>
     <tr>
         <td align="center"><a href="backup.php" onclick="backUpMessage()">Backup</a></td>
         <td align="center"><a href="report.php">Report</a></td>
-        <td align="center"><a target="_blank" href="one_to_many.php">One Word <br> Many Puzzle</a></td>
-        <td align="center"><a target="_blank" href="many_to_one.php">Many Words <br> One Puzzle</a></td>
-        <td align="center"><a target="_blank" href="one_to_many_plus.php">One Word <br> Many Puzzle <br> Plus</a></td>
-        <td align="center"><a href="userManual.php">User <br> Manual</a></td>
+        <td align="center"><a href="compile.php">Compile</a></td>
+        <td align="center"><a href="topic_management.php">Topic <br> Management</a></td>
+        <td align="center"><a href="kiosk.php">Kiosk</a></td>
+        <td align="center"><a href="stop_project.php">Stop <br> Project</a></td>
     </tr>
-	<tr>
-        <td align="center">
-            <a href="many_from_a_list.php"><img src="./pic/many_from_a_list.png" class="adminThumbnailSize">
-        </td>
-	</tr>
-    <tr>
-        <td align="center"><a href="many_from_a_list.php">Many from a list</a></td>
-	</tr>
 </table>
 </div>
 
