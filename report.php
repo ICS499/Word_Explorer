@@ -32,11 +32,11 @@ require('session_validation.php');
     $sql = "SELECT * FROM words";
     $wresult = run_sql($sql);
     $array["words"] = $wresult->num_rows;
-/*
+
     $sql = "SELECT * FROM characters";
     $cresult = run_sql($sql);
     $array["characters"] = $cresult->num_rows;
-*/
+
     $sql = "SELECT * FROM users";
     $uresult = run_sql($sql);
     $array["users"] = $uresult->num_rows;
@@ -58,6 +58,7 @@ require('session_validation.php');
     $arrData["data"] = array();
 
     // Push the data into the array
+    /*
     array_push($arrData["data"], array(
         "label" => "Words used in Puzzles",
         "value" => $pwresult->num_rows
@@ -66,6 +67,7 @@ require('session_validation.php');
         "label" => "Unused words",
         "value" => $wresult->num_rows - $pwresult->num_rows
     ));
+    */
 
     /*JSON Encode the data to retrieve the string containing the JSON representation of the data in the array. */
     $jsonEncodedData = json_encode($arrData);
@@ -119,7 +121,7 @@ require('session_validation.php');
 
     /* Report that displays number of words entry that do not have images */
 
-    $sql = "SELECT * FROM words where words.image = ''";
+    $sql = "SELECT * FROM words where words.image_name = ''";
     $result = run_sql($sql);
     $noimageWords = $result->num_rows;
 

@@ -49,7 +49,7 @@
 					<a href="./admin.php"><button id="admin" class="navOption">Admin</button></a>
 				</li>
 				<li>
-					<a href="./puzzle_list.php"><button id="list" class="navOption">List</button></a>
+					<a href="./list.php"><button id="list" class="navOption">List</button></a>
 				</li>
 				<li>
 					<a href="./about.php"><button id="addword" class="navOption">About</button></a>
@@ -73,7 +73,7 @@
 			
 			<ul class="nav navbar-nav" style="float: right;">
 			<li>
-				<a href="./puzzle_list.php"><button id="list" class="navOption">List</button></a>
+				<a href="./list.php"><button id="list" class="navOption">List</button></a>
 			</li>
 			<li>
 				<a href="./about.php"><button id="addword" class="navOption">Abour</button></a>
@@ -103,7 +103,7 @@
 
 			<ul class="nav navbar-nav" style="float: right;">
 			<li>
-				<a href="./puzzle_list.php"><button id="list" class="navOption">List</button></a>
+				<a href="./list.php"><button id="list" class="navOption">List</button></a>
 			</li>
 			<li>
 				<a href="./about.php"><button id="addword" class="navOption">About</button></a>

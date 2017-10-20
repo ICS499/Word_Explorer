@@ -42,33 +42,39 @@
             width: 300px;
         }
         #word-image {
-
-        }
-        .object-fit-cover {
-            max-height: 200px;
-            width: 100%;
-            object-fit: cover; /*magic*/
+            max-width: 600px;
+            max-height: 600px;
         }
         #topic-list {
-            background-color: #bdbdbd;
+            background-color: #FFFFFF;
             margin: 10px;
             border: 2px solid #888;
             max-height: 300px;
-            min-height: 300px;
             width: 100%;
             overflow-y: auto;
         }
+        .topic-choice {
+            border: 2px solid #888;
+            font-size: 30px;
+            padding: 2px;
+            margin: 0px;
+        }
         #mode-list {
-            background-color: #bdbdbd;
+            background-color: #FFFFFF;
             margin: 10px;
             border: 2px solid #888;
             max-height: 300px;
-            min-height: 300px;
             width: 100%;
+        }
+        .mode-choice {
+            border: 2px solid #888;
+            font-size: 30px;
+            padding: 2px;
+            margin: 0px;
         }
         ul, li {
             list-style: none;
-            padding: 5px;
+            padding: 0px;
             margin: 0px;
         }
         #myCarousel {
@@ -78,8 +84,14 @@
             border: 2px solid #888;
             background-color: #FFFFFF;
         }
+        .center-block {
+            vertical-align: middle;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
         .carousel-inner {
-            vertical-align:middle;
+            vertical-align: middle;
             width: 100%;
             height: 100%;
             margin: auto;
@@ -153,16 +165,16 @@ echo '
 foreach ( $resultTopics as $topicChoice) {
     if ($topicChoice["topic"] == $_GET['topic']){
         echo '
-        <li>
-            <a class="topic-choice selected" href="explorer.php?topic=' . $topicChoice["topic"] . '">
+        <li class="topic-choice selected">
+            <a href="explorer.php?topic=' . $topicChoice["topic"] . '">
                 ' . $topicChoice["topic"] . '
             </a>
         </li>
         ';
     } else {
         echo '
-        <li>
-            <a class="topic-choice" href="explorer.php?topic=' . $topicChoice["topic"] . '">
+        <li class="topic-choice">
+            <a href="explorer.php?topic=' . $topicChoice["topic"] . '">
                 ' . $topicChoice["topic"] . '
             </a>
         </li>
@@ -179,23 +191,23 @@ echo '
 <h2 class="list-header">Choose Mode</h2>
 <div id="mode-list" class="flow">
     <ul>
-        <li>
-            <a class="mode-choice selected" href="explorer.php?mode=' . $topicChoice["topic"] . '">
+        <li class="mode-choice selected">
+            <a href="explorer.php?mode=' . $topicChoice["topic"] . '">
                 Explore
             </a>
         </li>
-        <li>
-            <a class="mode-choice" href="explorer.php?mode=' . $topicChoice["topic"] . '">
+        <li class="mode-choice">
+            <a href="explorer.php?mode=' . $topicChoice["topic"] . '">
                 Reading
             </a>
         </li>
-        <li>
-            <a class="mode-choice" href="explorer.php?mode=' . $topicChoice["topic"] . '">
+        <li class="mode-choice">
+            <a href="explorer.php?mode=' . $topicChoice["topic"] . '">
                 Vocabulary
             </a>
         </li>
-        <li>
-            <a class="mode-choice" href="explorer.php?mode=' . $topicChoice["topic"] . '">
+        <li class="mode-choice">
+            <a href="explorer.php?mode=' . $topicChoice["topic"] . '">
                 Quiz
             </a>
         </li>
@@ -206,12 +218,13 @@ echo '
 echo '</div>';
 
 // Build the carousel
-echo '
-<div id="myCarousel" class="carousel flow" data-ride="carousel" data-interval="false" >
-    <div class="carousel-inner" role="listbox" >
-';
+
 if (count($cards) > 0) {
     $count = 0;
+    echo '
+    <div id="myCarousel" class="carousel flow" data-ride="carousel" data-interval="false" >
+        <div class="carousel-inner" role="listbox" >
+    ';
     foreach ($cards as $card) {
         if ($count == 0){
             echo '<div class="item active">';
@@ -221,42 +234,44 @@ if (count($cards) > 0) {
         echo '
                 <div class="container" style="height: 100%; width: 100%; background-color: #FFF8DC; ">
                     <div class="row" style="height: auto;">
-                        <div class="col-md-4 text-center" style="">' . $card->telugu_word . '</div>
+                        <div class="col-md-4 text-center" style="font-size: 30px">' . $card->telugu_word . '</div>
                         <div class="col-md-4 text-center"></div>
-                        <div class="col-md-4 text-center">' . $card->english_word . '</div>
+                        <div class="col-md-4 text-center" style="font-size: 30px">' . $card->english_word . '</div>
                     </div>
                     <div class="row" style="height: 600px;">
-                        <div class="col-md-4 text-center"></div>
-                        <div class="col-md-4 text-center"><img id="word-image" class="object-fit-cover" src="./Images/' . $card->image_name . '" alt ="' . $card->image_name . '"/></div>
-                        <div class="col-md-4 text-center"></div>
+                        <div class="col-md-12"><img id="word-image" class="center-block" src="./Images/' . $card->image_name . '" /></div>
                     </div>
                     <div class="row" style="height: auto">
-                        <div class="col-md-4 text-center">' . $card->telugu_in_english . '</div>
+                        <div class="col-md-4 text-center" style="font-size: 30px">' . $card->telugu_in_english . '</div>
                         <div class="col-md-4 text-center"></div>
-                        <div class="col-md-4 text-center align-text-bottom">' . $card->english_in_telugu . '</div>
+                        <div class="col-md-4 text-center" style="font-size: 30px">' . $card->english_in_telugu . '</div>
                     </div>
                 </div>
             </div>
     ';
         $count++;
     }
+
+    // Left and right arrows
+    echo '        
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="background:none !important; color: #000;">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true">
+                    <!--<img src="./pic/arrow_left.jpg" />-->
+                </span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="background:none !important; color: #000;">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">
+                    <!--<img src="./pic/arrow_right.png" />-->
+                </span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    ';
 } else {
     echo 'No words in this category';
 }
-
-// Left and right arrows
-echo '        
-        </div>
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="background:none !important;">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="background:none !important;">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-';
 ?>
 
 <!-- left this as reference for php carousel generation
