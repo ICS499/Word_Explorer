@@ -81,14 +81,24 @@
  
  .nav-font {
    vertical-align: bottom;
-   font-size: 1em;
+   font-size: 3em;
  }
  
  .name-wrapper {
    display: inline-block;
    padding-top: .6em;
-   padding-left: .4em;
+   /*padding-left: .4em; */
+
+
+     margin-right: auto; /* 1 */
+     margin-left:  auto; /* 1 */
+
+     max-width: 960px; /* 2 */
+
+     padding-right: 10px; /* 3 */
+     padding-left:  10px; /* 3 */
  }
+
  
  #admin {
    background-color: #2bb0dc;

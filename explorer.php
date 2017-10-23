@@ -120,7 +120,7 @@ class Card {
 }
 
 // Get the available topics
-$sqlQueryTopics = 'SELECT * FROM topics';
+$sqlQueryTopics = 'SELECT topic FROM words';// switched to words table need to filter still
 $resultTopics = run_sql($sqlQueryTopics);
 
 // Set to first topic, if no topic is selected

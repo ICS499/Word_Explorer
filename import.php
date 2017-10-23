@@ -29,22 +29,35 @@
   		
 		for ($row = 2; $row <= $highestRow; $row++) {
 			//  Read the row of data into an array
-			$word = $sheet->getCell('A' . $row )->getValue();
-			$english_word = $sheet->getCell('B'.$row)->getValue();
-			$image = $sheet->getCell('C'.$row)->getValue();
+            $topic = $sheet->getCell('B' . $row )->getValue();
+            $telugu_word = $sheet->getCell('C' . $row )->getValue();
+			$english_word = $sheet->getCell('D'.$row)->getValue();
+            $telugu_in_english = $sheet->getCell('E'.$row)->getValue();
+            $english_in_telugu = $sheet->getCell('F' . $row )->getValue();
+            $image_name = $sheet->getCell('G' . $row )->getValue();
+            $audio_name = $sheet->getCell('H' . $row )->getValue();
+            $description = $sheet->getCell('I' . $row )->getValue();
+            $notes = $sheet->getCell('J' . $row )->getValue();
 
 			// to remove invalid character eg: \u00a0
-            $word = validate_word($word);
-            $english_word = validate_input($english_word);
-            $image = validate_input($image);
+            $topic = validate_input($topic);
+            $telugu_word = validate_word($telugu_word);
+            $english_word  = validate_word($english_word );
+            $telugu_in_english = validate_word($telugu_in_english);
+            $english_in_telugu = validate_word($english_in_telugu);
+            $image_name = validate_input($image_name);
+            $audio_name = validate_input($audio_name);
+            $description = validate_input($description);
+            $notes = validate_input($notes);
 
 //			var_dump($word);
 //			var_dump($english_word);
 //			var_dump($image);
 
 			// Insert new data into Words & Characters Table
-			insertIntoWordsTable($word, $english_word, $image);
-			//insertIntoCharactersTable($word);
+			insertIntoWordsTable($topic,  $telugu_word, $english_word,$telugu_in_english, $english_in_telugu,
+				$image_name, $audio_name, $description, $notes);
+			//insertIntoCharactersTable($topic);
 		}
 		echo '<h2 style="color:	green;" class="upload">Import Successful!</h2>';
 	}

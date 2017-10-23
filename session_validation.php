@@ -68,8 +68,7 @@
 			<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span>
 			<span class="icon-bar"></span><span class="icon-bar"></span>
 			</button><a href="./index.php"><img class="logo" src="./pic/logo.png" /></a>
-			<div class="name-wrapper"><font class="nav-font">WORD EXPLORER</font>
-			</div></div><div class="collapse navbar-collapse">
+			<div class="name-wrapper"><font class="nav-font">WORD EXPLORER</font></div></div><div class="collapse navbar-collapse">
 			
 			<ul class="nav navbar-nav" style="float: right;">
 			<li>

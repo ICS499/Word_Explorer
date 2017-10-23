@@ -108,9 +108,9 @@ CREATE TABLE `words` (
 -- Dumping data for table `words`
 --
 
-INSERT INTO `words` (`word_id`, `Topic`, `Telugu_Word`, `English_Word`, `Telugu_in_English`, `English_in_Telugu`, `Image_Name`, `Audio_Name`, `Notes`, `Description`, `Created_Date`, `Last_Updated`) VALUES
-(2, 'Universe', 'చంద్రుడు', 'moon ', 'Candruḍu', 'మూన్', 'moon.jpg', 'moon.mpg', '', 'this is a word related to universe topic', '2017-09-27 05:00:00', '2017-09-28 18:19:12'),
-(3, 'Animals', 'కుక్క', 'dog', 'dog', 'కుక్క', 'dog.jpg', 'dog.mpg', '', 'this is a word related to the animal topic', '2017-09-28 18:31:11', '2017-10-12 02:49:28');
+INSERT INTO `words` ( `Topic`, `Telugu_Word`, `English_Word`, `Telugu_in_English`, `English_in_Telugu`, `Image_Name`, `Audio_Name`, `Notes`, `Description`, `Created_Date`, `Last_Updated`) VALUES
+( 'Universe', 'చంద్రుడు', 'moon ', 'Candruḍu', 'మూన్', 'moon.jpg', 'moon.mpg', '', 'this is a word related to universe topic', '2017-09-27 05:00:00', '2017-09-28 18:19:12'),
+( 'Animals', 'కుక్క', 'dog', 'dog', 'కుక్క', 'dog.jpg', 'dog.mpg', '', 'this is a word related to the animal topic', '2017-09-28 18:31:11', '2017-10-12 02:49:28');
 
 --
 -- Indexes for dumped tables

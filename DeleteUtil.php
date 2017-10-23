@@ -16,6 +16,4 @@ function deleteAllData()
     run_sql('SET foreign_key_checks = 0;');
     run_sql('ALTER TABLE words AUTO_INCREMENT = 1;');
 }
-
-
 ?>

@@ -6,24 +6,34 @@ require_once('utility_functions.php');
 require_once('common_sql_functions.php');
 
 /**
- * This method inserts given data into the Words table
- * @param $word
- * @param $eng_word
- * @param $image
+ * @param $topic
+ * @param $telugu_word
+ * @param $english_word
+ * @param $telugu_in_english
+ * @param $english_in_telugu
+ * @param $image_name
+ * @param $audio_name
+ * @param $description
+ * @param $notes
  */
-function insertIntoWordsTable($word, $eng_word, $image)
+function insertIntoWordsTable($topic, $telugu_word, $english_word, $telugu_in_english, $english_in_telugu,
+                              $image_name, $audio_name, $description, $notes)
 {
     //Check to see if entered words exists in the DB.
-    $sqlCheck = 'SELECT * FROM words WHERE word = \'' . $word . '\';';
+    $sqlCheck = 'SELECT * FROM words WHERE telugu_word = \'' . $telugu_word . '\';';
     $result = run_sql($sqlCheck);
     $num_rows = $result->num_rows;
 
     if ($num_rows == 0) {
         //insert each new word into words table.
-        $sqlAddWord = 'INSERT INTO words (word_id, word, english_word, image) VALUES (DEFAULT, \'' . $word . '\', \'' . $eng_word . '\', \'' . $image . '\');';
+        $sqlAddWord = 'INSERT INTO words (topic, telugu_word, english_word, telugu_in_english, english_in_telugu,
+				image_name, audio_name, description, notes) VALUES (\'' . $topic . '\', \'' . $telugu_word . '\',
+				 \'' . $english_word . '\', \'' . $telugu_in_english . '\', 
+				\'' . $english_in_telugu . '\', \'' . $image_name . '\', \'' . $audio_name . '\',
+				 \'' . $description . '\' ,\'' . $notes . '\');';
         $result = run_sql($sqlAddWord);
         $word_id = $result;
-        $logicalChars = getWordChars($word);
+        $logicalChars = getWordChars($topic);
 
         for ($j = 0; $j < count($logicalChars); $j++) {
             //insert each letter into char table.
