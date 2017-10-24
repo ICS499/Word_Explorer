@@ -1,6 +1,6 @@
 c<?php
 DEFINE('DATABASE_HOST', 'localhost');
-DEFINE('DATABASE_DATABASE', 'metroics_words');
+DEFINE('DATABASE_DATABASE', 'icsbinco_word_explorer');
 
 // To be used on the local host
 DEFINE('DATABASE_USER', 'root');
