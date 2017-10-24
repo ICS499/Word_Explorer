@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4f24e628-a074-4dc6-a05b-f1117e46c1c1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_configuration.php" afterPath="$PROJECT_DIR$/db_configuration.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -348,7 +347,7 @@
       <workItem from="1508725217912" duration="15509000" />
       <workItem from="1508742962533" duration="4144000" />
       <workItem from="1508803970370" duration="768000" />
-      <workItem from="1508806823995" duration="196000" />
+      <workItem from="1508806823995" duration="218000" />
     </task>
     <task id="LOCAL-00001" summary="updates to table and word update php">
       <created>1507178278388</created>
@@ -427,11 +426,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508745358036</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="import working. It broke topic table and carousel. Need to fix SQL statements to use topic table or words table and topic column.">
+      <created>1508807032625</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1508807032625</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91898000" />
+    <option name="totallyTimeSpent" value="91920000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-10" y="0" width="1934" height="1044" extended-state="0" />
