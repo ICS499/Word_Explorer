@@ -58,7 +58,7 @@
 			insertIntoWordsTable($topic,  $telugu_word, $english_word,$telugu_in_english, $english_in_telugu,
 				$image_name, $audio_name, $description, $notes);
 			//insertIntoCharactersTable($topic);
-			insertIntoTopicsTable($topic);
+
 		}
 		echo '<h2 style="color:	green;" class="upload">Import Successful!</h2>';
 	}
