@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4f24e628-a074-4dc6-a05b-f1117e46c1c1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InsertUtil.php" afterPath="$PROJECT_DIR$/InsertUtil.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_configuration.php" afterPath="$PROJECT_DIR$/db_configuration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/explorer.php" afterPath="$PROJECT_DIR$/explorer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/icsbinco_word_explorer.sql" afterPath="$PROJECT_DIR$/icsbinco_word_explorer.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/list.php" afterPath="$PROJECT_DIR$/list.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,10 +24,10 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49847654">
+    <splitter split-orientation="horizontal" split-proportion="0.80255944">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="explorer.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="explorer.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/explorer.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="575">
@@ -77,6 +73,16 @@
                     <marker date="1508815256955" expanded="true" signature="8302:8540" ph="..." />
                     <marker date="1508815256955" expanded="true" signature="8386:8473" ph="..." />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/index.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="268">
+                  <caret line="29" column="28" lean-forward="false" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -259,7 +265,6 @@
         <option value="$PROJECT_DIR$/list.php" />
         <option value="$PROJECT_DIR$/word_card.php" />
         <option value="$PROJECT_DIR$/IndicTextAnalyzer/word_processor.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/admin_edit_synonyms.php" />
         <option value="$PROJECT_DIR$/admin.php" />
@@ -275,6 +280,7 @@
         <option value="$PROJECT_DIR$/icsbinco_word_explorer.sql" />
         <option value="$PROJECT_DIR$/InsertUtil.php" />
         <option value="$PROJECT_DIR$/explorer.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -493,11 +499,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508807045498</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Filtered Topic Table in explorer.php">
+      <created>1508815341781</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1508815341781</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97714000" />
+    <option name="totallyTimeSpent" value="99067000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -546,7 +559,8 @@
     <MESSAGE value="updates" />
     <MESSAGE value="admin functionality" />
     <MESSAGE value="import working. It broke topic table and carousel. Need to fix SQL statements to use topic table or words table and topic column." />
-    <option name="LAST_COMMIT_MESSAGE" value="import working. It broke topic table and carousel. Need to fix SQL statements to use topic table or words table and topic column." />
+    <MESSAGE value="Filtered Topic Table in explorer.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Filtered Topic Table in explorer.php" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -837,14 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PHPExcel/PHPExcel/Cell.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-786">
@@ -1033,6 +1039,14 @@
             <marker date="1508815256955" expanded="true" signature="8302:8540" ph="..." />
             <marker date="1508815256955" expanded="true" signature="8386:8473" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="29" column="28" lean-forward="false" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>

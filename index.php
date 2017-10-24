@@ -12,6 +12,10 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <link rel="stylesheet" href="styles/custom_nav.css" type="text/css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <title>Word Explorer</title>
   <body>
@@ -23,9 +27,19 @@
     echo getTopNav();
     ?>
     <div class="divTitle" align="center">
-      <font class="font">Select Option</font>
+        <h1>Select An Option</h1>
     </div>
     <br>
+    <div align="center">
+    <div class="container">
+            <div class="btn-group-vertical">
+            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='explorer.php';">Word Explorer </button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='list.php';">List All Words</button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='add_words.php';">Add a Word    </button>
+        </div>
+    </div>
+    </div>
+<!--
     <div align="center">
         <form id ="myform" action="explorer.php" method="post" onsubmit="process()">
             <input type="submit" value="Word Explorer">
@@ -37,6 +51,7 @@
             <input type="submit" value="Add a Word">
         </form>
     </div>
+    -->
     <script>
         function process() {
             var form = document.getElementById('myform');
