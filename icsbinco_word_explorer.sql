@@ -20,6 +20,7 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `icsbinco_word_explorer`
+-- New Database: `metroics_words`
 --
 
 -- --------------------------------------------------------

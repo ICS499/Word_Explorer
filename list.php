@@ -93,7 +93,7 @@ session_cache_limiter(false);
                                   <label class=\"upload\"><input class=\"upload\" type=\"file\" name=\"fileToUpload\" id=\"fileToUpload\"></label>
                                   <input class=\"upload\" type=\"hidden\" name=\"word_id\" value=\"" . $row["word_id"] . "\" />
                                   <input class=\"upload\" type=\"submit\" value=\"Upload/Replace Image\" name=\"submit\">
-                            </form> 
+   vx bzc                            </form> 
                         </td>
                         </tr>";
                 }

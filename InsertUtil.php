@@ -38,7 +38,8 @@ function insertIntoWordsTable($topic, $telugu_word, $english_word, $telugu_in_en
         for ($j = 0; $j < count($logicalChars); $j++) {
             //insert each letter into char table.
             if($logicalChars[$j] != " ") {
-                $sqlAddLetters = 'INSERT INTO characters (word_id, character_index, character_value) VALUES (\'' . $word_id . '\', \'' . $j . '\', \'' . $logicalChars[$j] . '\');';
+                $sqlAddLetters = 'INSERT INTO characters (word_id, character_index, character_value) VALUES 
+(\'' . $word_id . '\', \'' . $j . '\', \'' . $logicalChars[$j] . '\');';
                 run_sql($sqlAddLetters);
             }
         }
@@ -51,11 +52,12 @@ function insertIntoWordsTable($topic, $telugu_word, $english_word, $telugu_in_en
 }
 
 function insetIntoTopicsTable($topic){
-    $sqlAddWord = 'INSERT INTO topic  VALUES (\'' . $topic . '\');';
+    $sqlAddWord = 'INSERT INTO topics select distinct on topic FROM words (\'' . $topic . '\');';
     $result = run_sql($sqlAddWord);
+
     $sqlCheck = 'SELECT DISTINCT topic FROM words = \'' . $topic . '\';';
     $result = run_sql($sqlCheck);
-    $num_rows = $result->num_rows;
+
 
 }
 
