@@ -50,6 +50,15 @@ function insertIntoWordsTable($topic, $telugu_word, $english_word, $telugu_in_en
     }
 }
 
+function insetIntoTopicsTable($topic){
+    $sqlAddWord = 'INSERT INTO topic  VALUES (\'' . $topic . '\');';
+    $result = run_sql($sqlAddWord);
+    $sqlCheck = 'SELECT DISTINCT topic FROM words = \'' . $topic . '\';';
+    $result = run_sql($sqlCheck);
+    $num_rows = $result->num_rows;
+
+}
+
 /**
  * Inserts the characters of the given word into the Characters Table
  * Uses IndicTextAnalyzer method to break down the words into characters
