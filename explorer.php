@@ -239,7 +239,7 @@ if (count($cards) > 0) {
                         <div class="col-md-4 text-center" style="font-size: 30px">' . $card->english_word . '</div>
                     </div>
                     <div class="row" style="height: 600px;">
-                        <div class="col-md-12"><img id="word-image" class="center-block" src="./Images/' . $card->image_name . '" /></div>
+                        <div class="col-md-12"><img id="word-image" class="center-block" src="images/' . $card->image_name . '" /></div>
                     </div>
                     <div class="row" style="height: auto">
                         <div class="col-md-4 text-center" style="font-size: 30px">' . $card->telugu_in_english . '</div>

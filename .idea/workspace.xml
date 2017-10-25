@@ -2,263 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f24e628-a074-4dc6-a05b-f1117e46c1c1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/cs/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/ru/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Autoloader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/CachedObjectStorage/APC.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/CachedObjectStorage/CacheBase.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/CachedObjectStorage/DiscISAM.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/CachedObjectStorage/ICache.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/CachedObjectStorage/Igbinary.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/CachedObjectStorage/Memcache.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/CachedObjectStorage/Memory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/CachedObjectStorage/MemoryGZip.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/CachedObjectStorage/MemorySerialized.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/CachedObjectStorage/PHPTemp.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/CachedObjectStorage/SQLite.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/CachedObjectStorage/SQLite3.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/CachedObjectStorage/Wincache.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/CachedObjectStorageFactory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/CalcEngine/CyclicReferenceStack.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/CalcEngine/Logger.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Calculation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Calculation/Database.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Calculation/DateTime.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Calculation/Engineering.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Calculation/Exception.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Calculation/ExceptionHandler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Calculation/Financial.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Calculation/FormulaParser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Calculation/FormulaToken.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Calculation/Function.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Calculation/Functions.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Calculation/Logical.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Calculation/LookupRef.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Calculation/MathTrig.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Calculation/Statistical.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Calculation/TextData.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Calculation/Token/Stack.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Calculation/functionlist.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Cell.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Cell/AdvancedValueBinder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Cell/DataType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Cell/DataValidation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Cell/DefaultValueBinder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Cell/Hyperlink.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Cell/IValueBinder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Chart.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Chart/Axis.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Chart/DataSeries.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Chart/DataSeriesValues.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Chart/Exception.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Chart/GridLines.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Chart/Layout.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Chart/Legend.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Chart/PlotArea.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Chart/Properties.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Chart/Renderer/PHP Charting Libraries.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Chart/Renderer/jpgraph.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Chart/Title.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Comment.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/DocumentProperties.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/DocumentSecurity.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Exception.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/HashTable.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Helper/HTML.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/IComparable.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/IOFactory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/NamedRange.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/Abstract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/CSV.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/DefaultReadFilter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/Excel2003XML.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/Excel2007.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/Excel2007/Chart.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/Excel2007/Theme.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/Excel5.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/Excel5/Color.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/Excel5/Color/BIFF5.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/Excel5/Color/BIFF8.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/Excel5/Color/BuiltIn.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/Excel5/ErrorCode.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/Excel5/Escher.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/Excel5/MD5.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/Excel5/RC4.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/Excel5/Style/Border.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/Excel5/Style/FillPattern.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/Exception.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/Gnumeric.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/HTML.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/IReadFilter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/IReader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/OOCalc.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Reader/SYLK.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/ReferenceHelper.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/RichText.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/RichText/ITextElement.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/RichText/Run.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/RichText/TextElement.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Settings.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/CodePage.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/Date.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/Drawing.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/Escher.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/Escher/DgContainer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/Escher/DgContainer/SpgrContainer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/Escher/DgContainer/SpgrContainer/SpContainer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/Escher/DggContainer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE/Blip.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/Excel5.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/File.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/Font.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/JAMA/CHANGELOG.TXT" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/JAMA/CholeskyDecomposition.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/JAMA/EigenvalueDecomposition.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/JAMA/LUDecomposition.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/JAMA/Matrix.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/JAMA/QRDecomposition.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/JAMA/SingularValueDecomposition.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/JAMA/utils/Error.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/JAMA/utils/Maths.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/OLE.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/OLE/ChainedBlockStream.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/OLE/PPS.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/OLE/PPS/File.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/OLE/PPS/Root.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/OLERead.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/PCLZip/gnu-lgpl.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/PCLZip/pclzip.lib.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/PCLZip/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/PasswordHasher.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/String.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/TimeZone.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/XMLWriter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/ZipArchive.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/ZipStreamWrapper.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/trend/bestFitClass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/trend/exponentialBestFitClass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/trend/linearBestFitClass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/trend/logarithmicBestFitClass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/trend/polynomialBestFitClass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/trend/powerBestFitClass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Shared/trend/trendClass.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Style.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Style/Alignment.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Style/Border.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Style/Borders.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Style/Color.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Style/Conditional.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Style/Fill.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Style/Font.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Style/NumberFormat.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Style/Protection.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Style/Supervisor.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/AutoFilter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/AutoFilter/Column.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/AutoFilter/Column/Rule.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/BaseDrawing.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/CellIterator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/Column.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/ColumnCellIterator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/ColumnDimension.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/ColumnIterator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/Dimension.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/Drawing.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/Drawing/Shadow.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/HeaderFooter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/HeaderFooterDrawing.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/MemoryDrawing.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/PageMargins.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/PageSetup.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/Protection.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/Row.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/RowCellIterator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/RowDimension.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/RowIterator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Worksheet/SheetView.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/WorksheetIterator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Abstract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/CSV.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel2007.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel2007/Chart.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel2007/Comments.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel2007/ContentTypes.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel2007/DocProps.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel2007/Drawing.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel2007/Rels.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel2007/RelsRibbon.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel2007/RelsVBA.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel2007/StringTable.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel2007/Style.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel2007/Theme.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel2007/Workbook.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel2007/Worksheet.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel2007/WriterPart.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel5.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel5/BIFFwriter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel5/Escher.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel5/Font.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel5/Parser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel5/Workbook.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel5/Worksheet.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Excel5/Xf.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/Exception.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/HTML.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/IWriter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/OpenDocument.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/OpenDocument/Cell/Comment.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/OpenDocument/Content.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/OpenDocument/Meta.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/OpenDocument/MetaInf.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/OpenDocument/Mimetype.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/OpenDocument/Settings.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/OpenDocument/Styles.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/OpenDocument/Thumbnails.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/OpenDocument/WriterPart.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/PDF.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/PDF/Core.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/PDF/DomPDF.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/PDF/mPDF.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/Writer/PDF/tcPDF.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/bg/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/cs/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/da/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/da/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/de/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/de/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/en/uk/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/es/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/es/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/fi/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/fi/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/fr/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/fr/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/hu/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/hu/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/it/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/it/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/nl/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/nl/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/no/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/no/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/pl/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/pl/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/pt/br/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/pt/br/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/pt/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/pt/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/ru/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/sv/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/sv/functions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/tr/config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PHPExcel/PHPExcel/locale/tr/functions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/word_explorer_word_list.xlsx" afterPath="$PROJECT_DIR$/word_explorer_word_list.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_configuration.php" afterPath="$PROJECT_DIR$/db_configuration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/import.php" afterPath="$PROJECT_DIR$/import.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/explorer.php" afterPath="$PROJECT_DIR$/explorer.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -280,12 +26,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="explorer.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="explorer.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/explorer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2074">
-              <caret line="122" column="54" lean-forward="false" selection-start-line="122" selection-start-column="54" selection-end-line="122" selection-end-column="54" />
-              <folding />
+            <state relative-caret-position="25">
+              <caret line="241" column="100" lean-forward="false" selection-start-line="241" selection-start-column="100" selection-end-line="241" selection-end-column="100" />
+              <folding>
+                <marker date="1508889389663" expanded="true" signature="3418:3450" ph="SELECT DISTI... words" />
+                <marker date="1508889389663" expanded="true" signature="3805:3857" ph="SELECT * FRO... words" />
+                <marker date="1508889389663" expanded="true" signature="4610:4657" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="4725:4735" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="4888:5037" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="4960:5023" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="5110:5259" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="5182:5245" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="5419:6090" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="5428:6083" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="5470:5596" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="5541:5582" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="5629:5755" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="5700:5741" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="5788:5917" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="5859:5903" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="5950:6073" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="6021:6059" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="6276:6335" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="6329:6335" ph="..." />
+                <marker date="1508889389663" expanded="false" signature="6570:6624" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="6625:7649" ph="..." />
+                <marker date="1508889389663" expanded="false" signature="6671:6684" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="6685:7008" ph="..." />
+                <marker date="1508889389663" expanded="false" signature="6752:6767" ph="..." />
+                <marker date="1508889389663" expanded="false" signature="6932:6947" ph="..." />
+                <marker date="1508889389663" expanded="false" signature="7054:7068" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="7069:7233" ph="..." />
+                <marker date="1508889389663" expanded="false" signature="7279:7291" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="7292:7626" ph="..." />
+                <marker date="1508889389663" expanded="false" signature="7359:7374" ph="..." />
+                <marker date="1508889389663" expanded="false" signature="7545:7560" ph="..." />
+                <marker date="1508889389663" expanded="false" signature="7872:7912" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="7913:8153" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="7996:8082" ph="..." />
+                <marker date="1508889389663" expanded="false" signature="8259:8299" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="8300:8538" ph="..." />
+                <marker date="1508889389663" expanded="true" signature="8384:8471" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -293,11 +78,9 @@
       <file leaf-file-name="import.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/import.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
+            <state relative-caret-position="1500">
               <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-              <folding>
-                <marker date="1508818883072" expanded="true" signature="2441:2454" ph="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -306,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/PHPExcel/PHPExcel/Cell/DataType.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+              <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -315,7 +98,7 @@
       <file leaf-file-name="icsbinco_word_explorer.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/icsbinco_word_explorer.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1921">
+            <state relative-caret-position="2825">
               <caret line="113" column="3" lean-forward="false" selection-start-line="113" selection-start-column="3" selection-end-line="113" selection-end-column="3" />
               <folding />
             </state>
@@ -325,7 +108,7 @@
       <file leaf-file-name="InsertUtil.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/InsertUtil.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
+            <state relative-caret-position="1075">
               <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
               <folding />
             </state>
@@ -335,20 +118,9 @@
       <file leaf-file-name="list.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
+            <state relative-caret-position="3200">
               <caret line="128" column="113" lean-forward="false" selection-start-line="128" selection-start-column="113" selection-end-line="128" selection-end-column="113" />
-              <folding>
-                <marker date="1508818107949" expanded="true" signature="2248:2266" ph="SELECT *FROM... words" />
-                <marker date="1508818107949" expanded="true" signature="2472:4736" ph="..." />
-                <marker date="1508818107949" expanded="true" signature="3341:4706" ph="..." />
-                <marker date="1508818107949" expanded="true" signature="3433:3596" ph="..." />
-                <marker date="1508818107949" expanded="true" signature="3698:3854" ph="..." />
-                <marker date="1508818107949" expanded="true" signature="3943:4078" ph="..." />
-                <marker date="1508818107949" expanded="true" signature="4233:4675" ph="..." />
-                <marker date="1508818107949" expanded="true" signature="5066:5103" ph="DELETE FROM " />
-                <marker date="1508818107949" expanded="true" signature="5195:5227" ph="DELETE FROM " />
-                <marker date="1508818107949" expanded="true" signature="6049:6135" ph="UPDATE words... " />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -356,17 +128,17 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
+            <state relative-caret-position="875">
               <caret line="35" column="128" lean-forward="false" selection-start-line="35" selection-start-column="128" selection-end-line="35" selection-end-column="128" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db_configuration.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="db_configuration.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db_configuration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="575">
               <caret line="23" column="73" lean-forward="false" selection-start-line="23" selection-start-column="73" selection-end-line="23" selection-end-column="73" />
               <folding />
             </state>
@@ -386,7 +158,7 @@
       <file leaf-file-name="admin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="575">
               <caret line="23" column="69" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="23" selection-end-column="69" />
               <folding />
             </state>
@@ -437,9 +209,9 @@
         <option value="$PROJECT_DIR$/icsbinco_word_explorer.sql" />
         <option value="$PROJECT_DIR$/InsertUtil.php" />
         <option value="$PROJECT_DIR$/list.php" />
-        <option value="$PROJECT_DIR$/explorer.php" />
         <option value="$PROJECT_DIR$/import.php" />
         <option value="$PROJECT_DIR$/db_configuration.php" />
+        <option value="$PROJECT_DIR$/explorer.php" />
       </list>
     </option>
   </component>
@@ -479,6 +251,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -490,7 +263,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -558,6 +330,8 @@
       <workItem from="1508803970370" duration="768000" />
       <workItem from="1508806823995" duration="6075000" />
       <workItem from="1508818112758" duration="1543000" />
+      <workItem from="1508885949976" duration="2695000" />
+      <workItem from="1508891358044" duration="37000" />
     </task>
     <task id="LOCAL-00001" summary="updates to table and word update php">
       <created>1507178278388</created>
@@ -668,14 +442,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99320000" />
+    <option name="totallyTimeSpent" value="102052000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-11" y="-11" width="1942" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24307036" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17405406" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3239264" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -771,18 +545,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="35" lean-forward="true" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-          <folding>
-            <marker date="1508818107949" expanded="true" signature="2248:2266" ph="SELECT *FROM... words" />
-            <marker date="1508818107949" expanded="true" signature="2472:4736" ph="..." />
-            <marker date="1508818107949" expanded="true" signature="3341:4706" ph="..." />
-            <marker date="1508818107949" expanded="true" signature="3433:3596" ph="..." />
-            <marker date="1508818107949" expanded="true" signature="3698:3854" ph="..." />
-            <marker date="1508818107949" expanded="true" signature="3943:4078" ph="..." />
-            <marker date="1508818107949" expanded="true" signature="4233:4675" ph="..." />
-            <marker date="1508818107949" expanded="true" signature="5066:5103" ph="DELETE FROM " />
-            <marker date="1508818107949" expanded="true" signature="5195:5227" ph="DELETE FROM " />
-            <marker date="1508818107949" expanded="true" signature="6049:6135" ph="UPDATE words... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -869,7 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -877,7 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="1118" column="20" lean-forward="false" selection-start-line="1118" selection-start-column="20" selection-end-line="1118" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -892,7 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -900,7 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -940,7 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
           <caret line="52" column="35" lean-forward="true" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -968,7 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-832">
           <caret line="86" column="16" lean-forward="false" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1000,7 +757,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="3" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1015,7 +771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,7 +778,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2193">
           <caret line="129" column="33" lean-forward="false" selection-start-line="129" selection-start-column="33" selection-end-line="129" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,17 +789,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/explorer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2074">
-          <caret line="122" column="54" lean-forward="false" selection-start-line="122" selection-start-column="54" selection-end-line="122" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/InsertUtil.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
+        <state relative-caret-position="1075">
           <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
           <folding />
         </state>
@@ -1053,7 +799,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/icsbinco_word_explorer.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1921">
+        <state relative-caret-position="2825">
           <caret line="113" column="3" lean-forward="false" selection-start-line="113" selection-start-column="3" selection-end-line="113" selection-end-column="3" />
           <folding />
         </state>
@@ -1061,26 +807,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
+        <state relative-caret-position="3200">
           <caret line="128" column="113" lean-forward="false" selection-start-line="128" selection-start-column="113" selection-end-line="128" selection-end-column="113" />
-          <folding>
-            <marker date="1508818107949" expanded="true" signature="2248:2266" ph="SELECT *FROM... words" />
-            <marker date="1508818107949" expanded="true" signature="2472:4736" ph="..." />
-            <marker date="1508818107949" expanded="true" signature="3341:4706" ph="..." />
-            <marker date="1508818107949" expanded="true" signature="3433:3596" ph="..." />
-            <marker date="1508818107949" expanded="true" signature="3698:3854" ph="..." />
-            <marker date="1508818107949" expanded="true" signature="3943:4078" ph="..." />
-            <marker date="1508818107949" expanded="true" signature="4233:4675" ph="..." />
-            <marker date="1508818107949" expanded="true" signature="5066:5103" ph="DELETE FROM " />
-            <marker date="1508818107949" expanded="true" signature="5195:5227" ph="DELETE FROM " />
-            <marker date="1508818107949" expanded="true" signature="6049:6135" ph="UPDATE words... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
+        <state relative-caret-position="875">
           <caret line="35" column="128" lean-forward="false" selection-start-line="35" selection-start-column="128" selection-end-line="35" selection-end-column="128" />
           <folding />
         </state>
@@ -1088,7 +823,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
+        <state relative-caret-position="575">
           <caret line="23" column="69" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="23" selection-end-column="69" />
           <folding />
         </state>
@@ -1097,26 +832,71 @@
     <entry file="file://$PROJECT_DIR$/PHPExcel/PHPExcel/Cell/DataType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/import.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
+        <state relative-caret-position="1500">
           <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding>
-            <marker date="1508818883072" expanded="true" signature="2441:2454" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db_configuration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
+        <state relative-caret-position="575">
           <caret line="23" column="73" lean-forward="false" selection-start-line="23" selection-start-column="73" selection-end-line="23" selection-end-column="73" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/explorer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="241" column="100" lean-forward="false" selection-start-line="241" selection-start-column="100" selection-end-line="241" selection-end-column="100" />
+          <folding>
+            <marker date="1508889389663" expanded="true" signature="3418:3450" ph="SELECT DISTI... words" />
+            <marker date="1508889389663" expanded="true" signature="3805:3857" ph="SELECT * FRO... words" />
+            <marker date="1508889389663" expanded="true" signature="4610:4657" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="4725:4735" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="4888:5037" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="4960:5023" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="5110:5259" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="5182:5245" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="5419:6090" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="5428:6083" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="5470:5596" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="5541:5582" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="5629:5755" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="5700:5741" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="5788:5917" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="5859:5903" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="5950:6073" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="6021:6059" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="6276:6335" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="6329:6335" ph="..." />
+            <marker date="1508889389663" expanded="false" signature="6570:6624" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="6625:7649" ph="..." />
+            <marker date="1508889389663" expanded="false" signature="6671:6684" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="6685:7008" ph="..." />
+            <marker date="1508889389663" expanded="false" signature="6752:6767" ph="..." />
+            <marker date="1508889389663" expanded="false" signature="6932:6947" ph="..." />
+            <marker date="1508889389663" expanded="false" signature="7054:7068" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="7069:7233" ph="..." />
+            <marker date="1508889389663" expanded="false" signature="7279:7291" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="7292:7626" ph="..." />
+            <marker date="1508889389663" expanded="false" signature="7359:7374" ph="..." />
+            <marker date="1508889389663" expanded="false" signature="7545:7560" ph="..." />
+            <marker date="1508889389663" expanded="false" signature="7872:7912" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="7913:8153" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="7996:8082" ph="..." />
+            <marker date="1508889389663" expanded="false" signature="8259:8299" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="8300:8538" ph="..." />
+            <marker date="1508889389663" expanded="true" signature="8384:8471" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
