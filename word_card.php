@@ -37,6 +37,7 @@ if (isset($_GET['id'])) {
         $telugu_in_english = $row["Telugu_in_English"];
         $english_in_telugu = $row["English_in_Telugu"];
         $audio_name = $row["Audio_Name"];
+        var_dump($audio_name);
         $description = $row["Description"];
         $notes = $row["Notes"];
         $image_name = $row["Image_Name"];
@@ -54,10 +55,6 @@ echo '<div>
                         <td>'.$telugu_word.'</td>
                         <td></td>
                         <td>'.$english_word.'</td>
-                        <!--<td><input type="Label" name="description" id="description" value='.$description.'></td>-->
-                        <!--<td><input type="Label" name="notes" id="notes" value='.$notes.'></td>-->
-                        <!--<td><input class="upload" type="file" name="fileToUpload" id="fileToUpload" /></td>-->
-                        <!--<td><input class="upload" type="submit" value="Update Word" name="submit" onclick="success()"/></td>-->
                     </tr>
                     <tr>
                          <td></td>
@@ -66,7 +63,9 @@ echo '<div>
                     </tr>
                     <tr>
                         <td>'.$telugu_in_english.'</td>
-                        <td><a href="./sound/'.$audio_name.'"><img src="./pic/sound.jpg" alt="'.$audio_name.'"/></a></td>
+                        <td><audio controls>
+                            <source src="./audio/' . $audio_name . '" alt="' . $audio_name . '">
+                        </audio></td>
                         <td>'.$english_in_telugu.'</td>
                     </tr>
                 </form>

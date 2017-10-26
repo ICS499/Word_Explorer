@@ -43,6 +43,7 @@ session_cache_limiter(false);
             <tr>
                 <th>Word ID</th>
                 <th>Topic</th>
+                <th>Length</th>
                 <th>Telugu Word</th>
                 <th>English Word</th>
                 <th>Telugu In English</th>
@@ -69,16 +70,19 @@ session_cache_limiter(false);
                     echo '<tr>
                         <td>' . $row["word_id"] . "</td>  
                         <td>" . $row["Topic"] . "</td>
+                        <td>" . $row["Length"] . "</td>
                         <td>" . $row["Telugu_Word"] . "</td>
                         <td>" . $row["English_Word"] . "</td>
                         <td>" . $row["Telugu_in_English"] . "</td>
                         <td>" . $row["English_in_Telugu"] . "</td>
-                        <td><img class=\"thumbnailSize\" src=\"./Images/" . $row["Image_Name"] . "\"  alt =\"" . $row["Image_Name"] . "\" ></td>
-                        <td>" . $row["Audio_Name"] . "</td>
+                        <td><img class=\"thumbnailSize\" src=\"./Images/" . $row["Image_Name"] . "\" alt =\"" . $row["Image_Name"] . "\" ></td>
+                        <td><audio controls>
+                            <source src=\"./audio/" . $row["Audio_Name"] . "\" alt=\"" . $row["Audio_Name"] . "\">
+                        </audio></td>
                         <td>" . $row["Description"] . "</td>
                         <td>" . $row["Notes"] . "</td> 
                         <td>" . $row["Created_Date"] . "</td>
-                        <td>" . $row["Last_Updated"] . "</td>                       
+                        <td>" . $row["Last_Updated"] . "</td>
                         <td>
                             <a href='word_card.php?id=" . $row["word_id"] . "&button=edit'>
                                 <img class=\"table_image\" src=\"pic/play.png\" alt=\"Investigate " . $row["word_id"] . " word\">
@@ -93,7 +97,7 @@ session_cache_limiter(false);
                                   <label class=\"upload\"><input class=\"upload\" type=\"file\" name=\"fileToUpload\" id=\"fileToUpload\"></label>
                                   <input class=\"upload\" type=\"hidden\" name=\"word_id\" value=\"" . $row["word_id"] . "\" />
                                   <input class=\"upload\" type=\"submit\" value=\"Upload/Replace Image\" name=\"submit\">
-   vx bzc                            </form> 
+                            </form> 
                         </td>
                         </tr>";
                 }
@@ -150,6 +154,7 @@ session_cache_limiter(false);
             <tr>
                 <th>Word ID</th>
                 <th>Topic</th>
+                <th>Length</th>
                 <th>Telugu Word</th>
                 <th>English Word</th>
                 <th>Telugu In English</th>

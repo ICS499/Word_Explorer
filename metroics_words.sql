@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2017 at 06:37 AM
+-- Generation Time: Oct 26, 2017 at 07:02 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `icsbinco_word_explorer`
+-- Database: `metroics_words`
 --
 
 -- --------------------------------------------------------
@@ -92,6 +92,7 @@ INSERT INTO `users` (`user_email`, `username`, `user_password`, `id_verified`, `
 CREATE TABLE `words` (
   `word_id` int(11) NOT NULL,
   `Topic` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Length` int(11) NOT NULL,
   `Telugu_Word` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `English_Word` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `Telugu_in_English` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -108,9 +109,9 @@ CREATE TABLE `words` (
 -- Dumping data for table `words`
 --
 
-INSERT INTO `words` (`word_id`, `Topic`, `Telugu_Word`, `English_Word`, `Telugu_in_English`, `English_in_Telugu`, `Image_Name`, `Audio_Name`, `Notes`, `Description`, `Created_Date`, `Last_Updated`) VALUES
-(2, 'Universe', 'చంద్రుడు', 'moon ', 'Candruḍu', 'మూన్', 'moon.jpg', 'moon.mpg', '', 'this is a word related to universe topic', '2017-09-27 05:00:00', '2017-09-28 18:19:12'),
-(3, 'Animals', 'కుక్క', 'dog', 'dog', 'కుక్క', 'dog.jpg', 'dog.mpg', '', 'this is a word related to the animal topic', '2017-09-28 18:31:11', '2017-10-12 02:49:28');
+INSERT INTO `words` (`word_id`, `Topic`, `Length`, `Telugu_Word`, `English_Word`, `Telugu_in_English`, `English_in_Telugu`, `Image_Name`, `Audio_Name`, `Notes`, `Description`, `Created_Date`, `Last_Updated`) VALUES
+(2, 'Universe', 0, 'చంద్రుడు', 'moon ', 'Candruḍu', 'మూన్', 'moon.jpg', 'moon.mpg', '', 'this is a word related to universe topic', '2017-09-27 05:00:00', '2017-09-28 18:19:12'),
+(3, 'Animals', 0, 'కుక్క', 'dog', 'dog', 'కుక్క', 'dog.jpg', 'dog.mpg', '', 'this is a word related to the animal topic', '2017-09-28 18:31:11', '2017-10-12 02:49:28');
 
 --
 -- Indexes for dumped tables
@@ -153,6 +154,12 @@ ALTER TABLE `words`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `characters`
+--
+ALTER TABLE `characters`
+  ADD CONSTRAINT `characters_ibfk_1` FOREIGN KEY (`word_id`) REFERENCES `words` (`word_id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `words`

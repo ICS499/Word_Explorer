@@ -243,7 +243,9 @@ if (count($cards) > 0) {
                     </div>
                     <div class="row" style="height: auto">
                         <div class="col-md-4 text-center" style="font-size: 30px">' . $card->telugu_in_english . '</div>
-                        <div class="col-md-4 text-center"></div>
+                        <div class="col-md-4 text-center"><audio controls>
+                            <source src="./audio/' . $card->audio_name . '" alt="' . $card->audio_name . '">
+                        </audio></div>
                         <div class="col-md-4 text-center" style="font-size: 30px">' . $card->english_in_telugu . '</div>
                     </div>
                 </div>
