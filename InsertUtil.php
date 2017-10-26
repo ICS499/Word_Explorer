@@ -7,6 +7,7 @@ require_once('common_sql_functions.php');
 
 /**
  * @param $topic
+ * @param $length
  * @param $telugu_word
  * @param $english_word
  * @param $telugu_in_english
@@ -16,7 +17,7 @@ require_once('common_sql_functions.php');
  * @param $description
  * @param $notes
  */
-function insertIntoWordsTable($topic, $telugu_word, $english_word, $telugu_in_english, $english_in_telugu,
+function insertIntoWordsTable($topic, $length, $telugu_word, $english_word, $telugu_in_english, $english_in_telugu,
                               $image_name, $audio_name, $description, $notes)
 {
     //Check to see if entered words exists in the DB.
@@ -26,8 +27,8 @@ function insertIntoWordsTable($topic, $telugu_word, $english_word, $telugu_in_en
 
     if ($num_rows == 0) {
         //insert each new word into words table.
-        $sqlAddWord = 'INSERT INTO words (topic, telugu_word, english_word, telugu_in_english, english_in_telugu,
-				image_name, audio_name, description, notes) VALUES (\'' . $topic . '\', \'' . $telugu_word . '\',
+        $sqlAddWord = 'INSERT INTO words (topic, $length, telugu_word, english_word, telugu_in_english, english_in_telugu,
+				image_name, audio_name, description, notes) VALUES (\'' . $topic . '\', \'' . $length . '\', \'' . $telugu_word . '\',
 				 \'' . $english_word . '\', \'' . $telugu_in_english . '\', 
 				\'' . $english_in_telugu . '\', \'' . $image_name . '\', \'' . $audio_name . '\',
 				 \'' . $description . '\' ,\'' . $notes . '\');';
@@ -51,7 +52,11 @@ function insertIntoWordsTable($topic, $telugu_word, $english_word, $telugu_in_en
     }
 }
 
-function insetIntoTopicsTable($topic){
+/**
+ * Inserts a new topic into the Topics table
+ * @param $topic
+ */
+function insertIntoTopicsTable($topic){
     $sqlAddWord = 'INSERT INTO topics select distinct on topic FROM words (\'' . $topic . '\');';
     $result = run_sql($sqlAddWord);
 

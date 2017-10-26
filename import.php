@@ -30,17 +30,19 @@
 		for ($row = 2; $row <= $highestRow; $row++) {
 			//  Read the row of data into an array
             $topic = $sheet->getCell('B' . $row )->getValue();
-            $telugu_word = $sheet->getCell('C' . $row )->getValue();
-			$english_word = $sheet->getCell('D'.$row)->getValue();
-            $telugu_in_english = $sheet->getCell('E'.$row)->getValue();
-            $english_in_telugu = $sheet->getCell('F' . $row )->getValue();
-            $image_name = $sheet->getCell('G' . $row )->getValue();
-            $audio_name = $sheet->getCell('H' . $row )->getValue();
-            $description = $sheet->getCell('I' . $row )->getValue();
-            $notes = $sheet->getCell('J' . $row )->getValue();
+            $length = $sheet->getCell('C' . $row )->getValue();
+            $telugu_word = $sheet->getCell('D' . $row )->getValue();
+			$english_word = $sheet->getCell('E'.$row)->getValue();
+            $telugu_in_english = $sheet->getCell('F'.$row)->getValue();
+            $english_in_telugu = $sheet->getCell('G' . $row )->getValue();
+            $image_name = $sheet->getCell('H' . $row )->getValue();
+            $audio_name = $sheet->getCell('I' . $row )->getValue();
+            $description = $sheet->getCell('J' . $row )->getValue();
+            $notes = $sheet->getCell('K' . $row )->getValue();
 
 			// to remove invalid character eg: \u00a0
             $topic = validate_input($topic);
+            $topic = validate_input($length);
             $telugu_word = validate_word($telugu_word);
             $english_word  = validate_word($english_word );
             $telugu_in_english = validate_word($telugu_in_english);
@@ -55,7 +57,7 @@
 //			var_dump($image);
 
 			// Insert new data into Words & Characters Table
-			insertIntoWordsTable($topic,  $telugu_word, $english_word,$telugu_in_english, $english_in_telugu,
+			insertIntoWordsTable($topic, $length, $telugu_word, $english_word,$telugu_in_english, $english_in_telugu,
 				$image_name, $audio_name, $description, $notes);
 			//insertIntoCharactersTable($topic);
 

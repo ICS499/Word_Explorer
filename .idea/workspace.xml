@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f24e628-a074-4dc6-a05b-f1117e46c1c1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/audio/dog.mp3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/explorer.php" afterPath="$PROJECT_DIR$/explorer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/list.php" afterPath="$PROJECT_DIR$/list.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/metroics_words.sql" afterPath="$PROJECT_DIR$/metroics_words.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/word_card.php" afterPath="$PROJECT_DIR$/word_card.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InsertUtil.php" afterPath="$PROJECT_DIR$/InsertUtil.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/import.php" afterPath="$PROJECT_DIR$/import.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,7 +26,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="explorer.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="explorer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/explorer.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="407">
@@ -94,19 +91,33 @@
       <file leaf-file-name="import.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/import.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="38" />
+            <state relative-caret-position="748">
+              <caret line="59" column="18" lean-forward="true" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="32" />
               <folding>
-                <marker date="1509036354774" expanded="true" signature="2441:2454" ph="..." />
+                <marker date="1509042722588" expanded="true" signature="2559:2572" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addAWord.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pic/addAWord.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="InsertUtil.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/InsertUtil.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="62" column="71" lean-forward="false" selection-start-line="62" selection-start-column="71" selection-end-line="62" selection-end-column="71" />
+              <folding>
+                <marker date="1509042722538" expanded="true" signature="725:789" ph="SELECT * FRO... words" />
+                <marker date="1509042722538" expanded="true" signature="961:1385" ph="INSERT INTO words... " />
+                <marker date="1509042722538" expanded="true" signature="1687:1831" ph="INSERT INTO characters... " />
+                <marker date="1509042722538" expanded="true" signature="1925:1938" ph="..." />
+                <marker date="1509042722538" expanded="true" signature="2076:2087" ph="..." />
+                <marker date="1509042722538" expanded="true" signature="2346:2421" ph="INSERT INTO topics... " />
+                <marker date="1509042722538" expanded="true" signature="2365:2380" ph="select disti... " />
+                <marker date="1509042722538" expanded="true" signature="2479:2532" ph="SELECT DISTI... words" />
+                <marker date="1509042722538" expanded="true" signature="2818:2873" ph="SELECT word_... words" />
+                <marker date="1509042722538" expanded="true" signature="3183:3326" ph="INSERT INTO characters... " />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -236,7 +247,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/language_processor_functions.php" />
-        <option value="$PROJECT_DIR$/InsertUtil.php" />
         <option value="$PROJECT_DIR$/IndicTextAnalyzer/word_processor.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/login.php" />
@@ -251,6 +261,8 @@
         <option value="$PROJECT_DIR$/list.php" />
         <option value="$PROJECT_DIR$/word_card.php" />
         <option value="$PROJECT_DIR$/explorer.php" />
+        <option value="$PROJECT_DIR$/import.php" />
+        <option value="$PROJECT_DIR$/InsertUtil.php" />
       </list>
     </option>
   </component>
@@ -365,7 +377,7 @@
       <workItem from="1508380349782" duration="7667000" />
       <workItem from="1508423008215" duration="14913000" />
       <workItem from="1508454352189" duration="9930000" />
-      <workItem from="1509036422259" duration="3609000" />
+      <workItem from="1509036422259" duration="4656000" />
     </task>
     <task id="LOCAL-00001" summary="updates to table and word update php">
       <created>1507178278388</created>
@@ -437,17 +449,25 @@
       <option name="project" value="LOCAL" />
       <updated>1508457662614</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="admin functionality">
+      <created>1509040802455</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1509040802455</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74890000" />
+    <option name="totallyTimeSpent" value="75937000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="23" y="16" width="1885" height="1010" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16907437" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16907437" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -703,14 +723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/InsertUtil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/mysqli/mysqli.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -902,16 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/import.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="38" />
-          <folding>
-            <marker date="1509036354774" expanded="true" signature="2441:2454" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/list.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1013,6 +1015,35 @@
             <marker date="1509040637846" expanded="false" signature="8417:8457" ph="..." />
             <marker date="1509040637846" expanded="true" signature="8458:8696" ph="..." />
             <marker date="1509040637846" expanded="true" signature="8542:8629" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/import.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="59" column="18" lean-forward="true" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="32" />
+          <folding>
+            <marker date="1509042722588" expanded="true" signature="2559:2572" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InsertUtil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="62" column="71" lean-forward="false" selection-start-line="62" selection-start-column="71" selection-end-line="62" selection-end-column="71" />
+          <folding>
+            <marker date="1509042722538" expanded="true" signature="725:789" ph="SELECT * FRO... words" />
+            <marker date="1509042722538" expanded="true" signature="961:1385" ph="INSERT INTO words... " />
+            <marker date="1509042722538" expanded="true" signature="1687:1831" ph="INSERT INTO characters... " />
+            <marker date="1509042722538" expanded="true" signature="1925:1938" ph="..." />
+            <marker date="1509042722538" expanded="true" signature="2076:2087" ph="..." />
+            <marker date="1509042722538" expanded="true" signature="2346:2421" ph="INSERT INTO topics... " />
+            <marker date="1509042722538" expanded="true" signature="2365:2380" ph="select disti... " />
+            <marker date="1509042722538" expanded="true" signature="2479:2532" ph="SELECT DISTI... words" />
+            <marker date="1509042722538" expanded="true" signature="2818:2873" ph="SELECT word_... words" />
+            <marker date="1509042722538" expanded="true" signature="3183:3326" ph="INSERT INTO characters... " />
           </folding>
         </state>
       </provider>
