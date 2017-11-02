@@ -151,7 +151,7 @@ foreach( $result as $row){
     $newCard->description = $row["Description"];
     $newCard->notes = $row["Notes"];
     // Display a default image if nothing was provided, or file didn't exist
-    if (IsNullOrEmptyString($row["Image_Name"]) ||  !file_exists( ("images/".$row["Image_Name"]))){
+    if (IsNullOrEmptyString($row["Image_Name"]) || !file_exists( ("images/".$row["Image_Name"]))){
         $newCard->image_name = "default.png";
     } else {
         $newCard->image_name = $row["Image_Name"];
@@ -229,15 +229,38 @@ if (count($cards) > 0) {
     $count = 0;
     echo '
     <div id="myCarousel" class="carousel flow" data-ride="carousel" data-interval="false" >
+    ';
+
+    echo '
         <div class="carousel-inner" role="listbox" >
     ';
     foreach ($cards as $card) {
         if ($count == 0){
-            echo '<div class="item active">';
+            echo '<div class="item active">
+        <div style="font-size: 30px; background-color: white;">';
         } else {
-            echo '<div class="item">';
+            echo '<div class="item">
+        <div style="font-size: 30px; background-color: white;">';
         }
+
+        if (sessionExists()){
+            echo '
+            Welcome ' . $_SESSION['valid_user'] . '! You are now exploring ' . (array_search($card, $cards) + 1) . '/' . count($cards) . ' 
+            in <div class="flow" style="color: #2bb0dc;">' . $_GET['topic'] . '</div>';
+        } else if (adminSessionExists()){
+            echo '
+            Welcome ' . $_SESSION['valid_admin'] . '! You are now exploring ' . (array_search($card, $cards) + 1) . '/' . count($cards) . ' 
+            in <div class="flow" style="color: #2bb0dc;">' . $_GET['topic'] . '</div>';
+
+        } else {
+            echo '
+            You are now exploring ' . (array_search($card, $cards) + 1) . '/' . count($cards) . ' 
+            in <div class="flow" style="color: #2bb0dc;">' . $_GET['topic'] . '</div>';
+        }
+
+
         echo '
+            </div>
                 <div class="container" style="height: 100%; width: 100%; background-color: white; ">
                     <div class="row" style="height: auto;">
                         <div class="col-md-4 text-center" style="font-size: 30px">' . $card->telugu_word . '</div>

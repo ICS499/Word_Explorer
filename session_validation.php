@@ -105,7 +105,7 @@
 
 			<ul class="nav navbar-nav" style="float: right;">
 				<li>
-					<label><input style="font-size: 30px;" type="search" aria-controls="info" placeholder="search"></label>
+					<input style="font-size: 30px; margin: 2px;" type="search" aria-controls="info" placeholder="search">
 				</li>
 				<!--
 				<li>
@@ -113,10 +113,10 @@
 				</li>
 				-->
 				<li>
-					<a href="./help.php" style="padding: 0; margin: 2px;"><button id="help" name ="help"><img style="height: 50px;" src="./pic/help.png"></button></a>
+					<a href="./help.php" style="padding: 0; margin: 2px;"><img style="height: 75px;" src="./pic/help.png"></a>
 				</li>
 				<li> 
-					<a href="./logout.php" style="padding: 0; margin: 2px;"><button id="logout" name ="logout" ><img style="height: 50px;" src="./pic/Login.png"></button></a>
+					<a href="./logout.php" style="padding: 0; margin: 2px;"><img style="height: 75px;" src="./pic/Login.png"></a>
 				</li>
 			</ul>
 			</div>

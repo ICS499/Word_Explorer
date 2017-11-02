@@ -116,6 +116,14 @@ if ($error) {
         <td align="center"><a href="kiosk.php">Kiosk</a></td>
         <td align="center"><a href="stop_project.php">Stop <br> Project</a></td>
     </tr>
+    <tr>
+        <td align="center">
+            <a href="length.php" onclick="lengthMessage()"><img src="./pic/equals.png" class="adminThumbnailSize"></a>
+        </td>
+    </tr>
+    <tr>
+        <td align="center"><a href="length.php" onclick="lengthMessage()">Backup</a></td>
+    </tr>
 </table>
 </div>
 
@@ -134,6 +142,9 @@ if ($error) {
     function backUpMessage() {
         //document.getElementById("demo").innerHTML = "The database backup has been saved in the Sql_Scripts Folder.";
         alert('The database backup has been saved in the Sql_Scripts Folder.');
+    }
+    function lengthMessage(){
+
     }
 
 </script>
