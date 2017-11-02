@@ -132,11 +132,11 @@ if (!(isset($_GET['topic']))) {
 }
 
 // Get the words related to the topic
+function IsNullOrEmptyString($question){
+    return (!isset($question) || trim($question)==='');
+}
 $topic = $_GET['topic'];
 $sqlQueryWords = 'SELECT * FROM words WHERE topic = \'' . $topic . '\';';
-
-// don't have enough data in db to test specific topics, so grabbing all (two) words
-//$sqlQueryWords = 'SELECT * FROM words;';
 $result = run_sql($sqlQueryWords);
 $cards = array();
 foreach( $result as $row){
@@ -149,7 +149,12 @@ foreach( $result as $row){
     $newCard->audio_name = $row["Audio_Name"];
     $newCard->description = $row["Description"];
     $newCard->notes = $row["Notes"];
-    $newCard->image_name = $row["Image_Name"];
+    // Display a default image if nothing was provided, or file didn't exist
+    if (IsNullOrEmptyString($row["Image_Name"]) ||  !file_exists( ("images/".$row["Image_Name"]))){
+        $newCard->image_name = "default.png";
+    } else {
+        $newCard->image_name = $row["Image_Name"];
+    }
     array_push($cards, $newCard);
 }
 

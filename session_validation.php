@@ -51,9 +51,11 @@
 				<li>
 					<a href="./list.php"><button id="list" class="navOption">List</button></a>
 				</li>
+				<!--
 				<li>
 					<a href="./about.php"><button id="addword" class="navOption">About</button></a>
 				</li>
+				-->
 				<li> 
 					<a href="./logout.php"><button id="logout" name ="logout" class="navOption">Logout</button></a>
 				</li>
@@ -74,9 +76,11 @@
 			<li>
 				<a href="./list.php"><button id="list" class="navOption">List</button></a>
 			</li>
+				<!--
 			<li>
 				<a href="./about.php"><button id="addword" class="navOption">Abour</button></a>
 			</li>
+				-->
 			<li>
 				<a href="./logout.php"><button id="logout" name ="logout" class="navOption">Logout</button></a>
 			</li>
@@ -104,9 +108,11 @@
 			<li>
 				<a href="./list.php"><button id="list" class="navOption">List</button></a>
 			</li>
+				<!--
 			<li>
 				<a href="./about.php"><button id="addword" class="navOption">About</button></a>
 			</li>
+				-->
 			<li>
 				<a href="./login.php"><button id="login" class="navOption">Login</button></a>
 			</li>
