@@ -3,6 +3,8 @@
 	require('InsertUtil.php');
 	require('DeleteUtil.php');
 	include './PHPExcel/PHPExcel/IOFactory.php';
+
+	$discrepancies = new ArrayObject();
 	
 	$error = false;
 	$result = "";
@@ -52,9 +54,12 @@
             $description = validate_input($description);
             $notes = validate_input($notes);
 
-//			var_dump($word);
-//			var_dump($english_word);
-//			var_dump($image);
+			// Length checker/fixer
+			$calculatedLength = getWordChars($telugu_word);
+			if ($calculatedLength != $length){
+				$discrepancies += $telugu_word;
+				$length = $calculatedLength;
+			}
 
 			// Insert new data into Words & Characters Table
 			insertIntoWordsTable($topic, $length, $telugu_word, $english_word,$telugu_in_english, $english_in_telugu,

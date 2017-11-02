@@ -81,9 +81,10 @@
             width:800px;
             height: auto;
             margin: 20px;
-            border: 3px solid #888;
-            border-color: #2bb0dc;
             background-color: #FFFFFF;
+        }
+        .carousel-border {
+            border: 3px solid #2bb0dc;
         }
         .center-block {
             vertical-align: middle;
@@ -202,6 +203,14 @@ echo '
                 Explore
             </a>
         </li>
+        <li class="mode-choice selected">
+            <a href="explorer.php?mode=' . $topicChoice["topic"] . '">
+                Level
+                <!--
+                Add level field for word data.
+                -->
+            </a>
+        </li>
         <li class="mode-choice">
             <a href="explorer.php?mode=' . $topicChoice["topic"] . '">
                 Reading
@@ -261,7 +270,7 @@ if (count($cards) > 0) {
 
         echo '
             </div>
-                <div class="container" style="height: 100%; width: 100%; background-color: white; ">
+                <div class="container carousel-border" style="height: 100%; width: 100%; background-color: white; ">
                     <div class="row" style="height: auto;">
                         <div class="col-md-4 text-center" style="font-size: 30px">' . $card->telugu_word . '</div>
                         <div class="col-md-4 text-center"></div>
@@ -304,7 +313,6 @@ if (count($cards) > 0) {
     echo 'No words in this category';
 }
 ?>
-
 <!-- left this as reference for php carousel generation
     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 
@@ -344,5 +352,10 @@ if (count($cards) > 0) {
         </a>
     </div>
     -->
+
+<div class="footer">
+    <p>@ School of India for Languages and Culture (SILC)</p>
+</div>
+
 </body>
 </html>

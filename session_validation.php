@@ -39,26 +39,27 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
-			</button><a href="./index.php"><img class="logo" src="./pic/logo.png" /></a>
-			<div class="name-wrapper"><font class="nav-font">WORD EXPLORER</font>
-			</div></div>
-			<div class="collapse navbar-collapse">
+			</button>
+			<a href="./index.php"><img class="logo" src="./pic/logo.png" /></a>
+			<a href="./index.php"><img class="logo" src="./pic/home.png" /></a>
+			</div>
 			
+			<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav" style="float: right;">
 				<li>
-					<label class="navOption"><input type="search" aria-controls="info" placeholder="search"></label>
+					<input style="font-size: 30px; margin: 2px;" type="search" aria-controls="info" placeholder="search">
 				</li>
 				<li>
-					<a href="./admin.php"><button id="admin" class="navOption">Admin</button></a>
+					<a href="./admin.php" style="margin: 2px; padding: 0px"><button id="admin" class="navOption">Admin</button></a>
 				</li>
 				<li>
-					<a href="./list.php"><button id="list" class="navOption">List</button></a>
+					<a href="./list.php" style="margin: 2px; padding: 0px"><button id="list" class="navOption">List</button></a>
 				</li>
 				<li>
-					<a href="./help.php" style="padding: 0; margin: 2px;"><button id="help" name ="help"><img style="height: 50px;" src="./pic/help.png"></button></a>
+					<a href="./help.php" style="padding: 0; margin: 2px;"><img style="height: 75px;" src="./pic/help.png"></a>
 				</li>
 				<li> 
-					<a href="./logout.php" style="padding: 0; margin: 2px;"><button id="logout" name ="logout" ><img style="height: 50px;" src="./pic/Login.png"></button></a>
+					<a href="./logout.php" style="padding: 0; margin: 2px;"><img style="height: 75px;" src="./pic/Logout.png"></a>
 				</li>
 			</ul>
 			</div><!--.nav-collapse --></div></nav>';
@@ -70,21 +71,24 @@
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 			<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span>
 			<span class="icon-bar"></span><span class="icon-bar"></span>
-			</button><a href="./index.php"><img class="logo" src="./pic/logo.png" /></a>
-			<div class="name-wrapper"><font class="nav-font">WORD EXPLORER</font></div></div><div class="collapse navbar-collapse">
+			</button>
+			<a href="./index.php"><img class="logo" src="./pic/logo.png" /></a>
+			<a href="./index.php"><img class="logo" src="./pic/home.png" /></a>
+			</div>
 			
+			<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav" style="float: right;">
 				<li>
-					<label class="navOption"><input type="search" aria-controls="info" placeholder="search"></label>
+					<input style="font-size: 30px; margin: 2px;" type="search" aria-controls="info" placeholder="search">
 				</li>
 				<li>
 					<a href="./list.php"><button id="list" class="navOption">List</button></a>
 				</li>
 				<li>
-					<a href="./help.php" style="padding: 0; margin: 2px;"><button id="help" name ="help"><img style="height: 50px;" src="./pic/help.png"></button></a>
+					<a href="./help.php" style="padding: 0; margin: 2px;"><img style="height: 75px;" src="./pic/help.png"></a>
 				</li>
 				<li> 
-					<a href="./logout.php" style="padding: 0; margin: 2px;"><button id="logout" name ="logout" ><img style="height: 50px;" src="./pic/Login.png"></button></a>
+					<a href="./logout.php" style="padding: 0; margin: 2px;"><img style="height: 75px;" src="./pic/Logout.png"></a>
 				</li>
 			</ul>
 			</div><!--.nav-collapse --></div></nav>';
@@ -101,8 +105,8 @@
 			<a href="./index.php"><img class="logo" src="./pic/logo.png" /></a>
 			<a href="./index.php"><img class="logo" src="./pic/home.png" /></a>
 			</div>
+			
 			<div class="collapse navbar-collapse">
-
 			<ul class="nav navbar-nav" style="float: right;">
 				<li>
 					<input style="font-size: 30px; margin: 2px;" type="search" aria-controls="info" placeholder="search">
@@ -124,6 +128,7 @@
 			</div>
         </nav>';
 		}
+
 		return $topNav;
 	}
 ?>

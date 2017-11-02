@@ -1,5 +1,6 @@
 <?php //include 'navbar.php';
 require('session_validation.php');
+require('language_processor_functions.php');
 // Start session to store variables
 if (!isset($_SESSION)) {
     session_start();
@@ -22,8 +23,8 @@ session_cache_limiter(false);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="styles/custom_nav.css" type="text/css">
     <link rel="stylesheet" href="styles/main_style.css" type="text/css">
+    <link rel="stylesheet" href="styles/custom_nav.css" type="text/css">
     <title>Word Explorer Word List</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
 
@@ -75,7 +76,7 @@ session_cache_limiter(false);
                     echo '<tr>
                         <td>' . $row["word_id"] . "</td>  
                         <td>" . $row["Topic"] . "</td>
-                        <td>" . $row["Length"] . "</td>
+                        <td>" . $row["Telugu_Word"] . "</td>
                         <td>" . $row["Telugu_Word"] . "</td>
                         <td>" . $row["English_Word"] . "</td>
                         <td>" . $row["Telugu_in_English"] . "</td>
@@ -135,7 +136,7 @@ session_cache_limiter(false);
                 copy($inputFileName, $target_file);
                 $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
                 if ($check !== false) {
-                    $sql = 'UPDATE words SET image=\'' . $imageName . '\' WHERE word_id=' . $_POST['word_id'] . '';
+                    $sql = 'UPDATE words SET image=\'' . $imageName . '\' WHERE word_id=' . $_POST['word_id'] . ';';
                     $result = run_sql($sql);
                     echo ' <script> alert(\'Image Upload Successful!!\'); window.location.replace("list.php"); </script>';
                 } else {
@@ -176,7 +177,9 @@ session_cache_limiter(false);
         </table>
     </div>
 </div>
-
+<div class="footer">
+    <p>@ School of India for Languages and Culture (SILC)</p>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>

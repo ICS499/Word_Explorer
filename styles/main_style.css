@@ -577,3 +577,18 @@ img {
   margin-left: 20px; !important
 }
 
+.footer {
+  height: 50px;
+  border: 3px solid #4c66a4;
+  background-color: #2bb0dc;
+  padding-left: 10px;
+  margin: 5px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.footer p {
+  font-size: 30px;
+}

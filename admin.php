@@ -18,6 +18,7 @@
 </head>
 <?PHP
 require('session_validation.php');
+require('language_processor_functions.php');
 //require('import.php');
 /*
 if ((!isset($_SESSION['valid_admin'])){
@@ -122,11 +123,13 @@ if ($error) {
         </td>
     </tr>
     <tr>
-        <td align="center"><a href="length.php" onclick="lengthMessage()">Backup</a></td>
+        <td align="center"><a href="length.php" onclick="lengthMessage()">Lengths</a></td>
     </tr>
 </table>
 </div>
-
+<div class="footer">
+    <p>@ School of India for Languages and Culture (SILC)</p>
+</div>
 <script>
 
     //    function backUpMessage(){
