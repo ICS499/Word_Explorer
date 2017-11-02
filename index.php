@@ -22,6 +22,7 @@
     <?PHP
     session_start();
     require('session_validation.php');
+    header("Location: explorer.php")
     ?>
     <?PHP
     echo getTopNav();
@@ -35,23 +36,10 @@
             <div class="btn-group-vertical">
             <button type="button" class="btn btn-primary btn-lg" onclick="location.href='explorer.php';">Word Explorer </button>
             <button type="button" class="btn btn-primary btn-lg" onclick="location.href='list.php';">List All Words</button>
-            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='add_words.php';">Add a Word    </button>
+            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='add_words.php';">Add a Word</button>
         </div>
     </div>
     </div>
-<!--
-    <div align="center">
-        <form id ="myform" action="explorer.php" method="post" onsubmit="process()">
-            <input type="submit" value="Word Explorer">
-        </form>
-        <form id ="myform" action="list.php" method="post" onsubmit="process()">
-            <input type="submit" value="List All Words">
-        </form>
-        <form id ="add_words" action="add_words.php" method="post" onsubmit="process()">
-            <input type="submit" value="Add a Word">
-        </form>
-    </div>
-    -->
     <script>
         function process() {
             var form = document.getElementById('myform');

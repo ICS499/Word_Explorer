@@ -27,7 +27,7 @@ function insertIntoWordsTable($topic, $length, $telugu_word, $english_word, $tel
 
     if ($num_rows == 0) {
         //insert each new word into words table.
-        $sqlAddWord = 'INSERT INTO words (topic, $length, telugu_word, english_word, telugu_in_english, english_in_telugu,
+        $sqlAddWord = 'INSERT INTO words (topic, length, telugu_word, english_word, telugu_in_english, english_in_telugu,
 				image_name, audio_name, description, notes) VALUES (\'' . $topic . '\', \'' . $length . '\', \'' . $telugu_word . '\',
 				 \'' . $english_word . '\', \'' . $telugu_in_english . '\', 
 				\'' . $english_in_telugu . '\', \'' . $image_name . '\', \'' . $audio_name . '\',
