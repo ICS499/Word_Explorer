@@ -81,7 +81,8 @@
             width:800px;
             height: auto;
             margin: 20px;
-            border: 2px solid #888;
+            border: 3px solid #888;
+            border-color: #2bb0dc;
             background-color: #FFFFFF;
         }
         .center-block {
@@ -160,7 +161,7 @@ foreach( $result as $row){
 
 echo '
 <div class="left-content flow">
-    <h2 class="list-header">Choose Topic</h2>
+    <h2 class="list-header" style="font-weight: bold !important;">Select a Topic</h2>
 ';
 // Build the topic list
 echo '
@@ -193,7 +194,7 @@ echo '
 
 // Build the explore mode list
 echo '
-<h2 class="list-header">Choose Mode</h2>
+<h2 class="list-header" style="font-weight: bold !important;">Change Mode</h2>
 <div id="mode-list" class="flow">
     <ul>
         <li class="mode-choice selected">
@@ -237,7 +238,7 @@ if (count($cards) > 0) {
             echo '<div class="item">';
         }
         echo '
-                <div class="container" style="height: 100%; width: 100%; background-color: #FFF8DC; ">
+                <div class="container" style="height: 100%; width: 100%; background-color: white; ">
                     <div class="row" style="height: auto;">
                         <div class="col-md-4 text-center" style="font-size: 30px">' . $card->telugu_word . '</div>
                         <div class="col-md-4 text-center"></div>

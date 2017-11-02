@@ -46,18 +46,19 @@
 			
 			<ul class="nav navbar-nav" style="float: right;">
 				<li>
+					<label class="navOption"><input type="search" aria-controls="info" placeholder="search"></label>
+				</li>
+				<li>
 					<a href="./admin.php"><button id="admin" class="navOption">Admin</button></a>
 				</li>
 				<li>
 					<a href="./list.php"><button id="list" class="navOption">List</button></a>
 				</li>
-				<!--
 				<li>
-					<a href="./about.php"><button id="addword" class="navOption">About</button></a>
+					<a href="./help.php" style="padding: 0; margin: 2px;"><button id="help" name ="help"><img style="height: 50px;" src="./pic/help.png"></button></a>
 				</li>
-				-->
 				<li> 
-					<a href="./logout.php"><button id="logout" name ="logout" class="navOption">Logout</button></a>
+					<a href="./logout.php" style="padding: 0; margin: 2px;"><button id="logout" name ="logout" ><img style="height: 50px;" src="./pic/Login.png"></button></a>
 				</li>
 			</ul>
 			</div><!--.nav-collapse --></div></nav>';
@@ -73,19 +74,19 @@
 			<div class="name-wrapper"><font class="nav-font">WORD EXPLORER</font></div></div><div class="collapse navbar-collapse">
 			
 			<ul class="nav navbar-nav" style="float: right;">
-			<li>
-				<a href="./list.php"><button id="list" class="navOption">List</button></a>
-			</li>
-				<!--
-			<li>
-				<a href="./about.php"><button id="addword" class="navOption">Abour</button></a>
-			</li>
-				-->
-			<li>
-				<a href="./logout.php"><button id="logout" name ="logout" class="navOption">Logout</button></a>
-			</li>
+				<li>
+					<label class="navOption"><input type="search" aria-controls="info" placeholder="search"></label>
+				</li>
+				<li>
+					<a href="./list.php"><button id="list" class="navOption">List</button></a>
+				</li>
+				<li>
+					<a href="./help.php" style="padding: 0; margin: 2px;"><button id="help" name ="help"><img style="height: 50px;" src="./pic/help.png"></button></a>
+				</li>
+				<li> 
+					<a href="./logout.php" style="padding: 0; margin: 2px;"><button id="logout" name ="logout" ><img style="height: 50px;" src="./pic/Login.png"></button></a>
+				</li>
 			</ul>
-			
 			</div><!--.nav-collapse --></div></nav>';
 		}
 		else{
@@ -98,26 +99,26 @@
 			<span class="icon-bar"></span>
 			</button>
 			<a href="./index.php"><img class="logo" src="./pic/logo.png" /></a>
-			<div class="name-wrapper">
-			<font class="nav-font">WORD EXPLORER</font>
-			</div>
+			<a href="./index.php"><img class="logo" src="./pic/home.png" /></a>
 			</div>
 			<div class="collapse navbar-collapse">
 
 			<ul class="nav navbar-nav" style="float: right;">
-			<li>
-				<a href="./list.php"><button id="list" class="navOption">List</button></a>
-			</li>
+				<li>
+					<label><input style="font-size: 30px;" type="search" aria-controls="info" placeholder="search"></label>
+				</li>
 				<!--
-			<li>
-				<a href="./about.php"><button id="addword" class="navOption">About</button></a>
-			</li>
+				<li>
+					<a href="./list.php"><button id="list" class="navOption">List</button></a>
+				</li>
 				-->
-			<li>
-				<a href="./login.php"><button id="login" class="navOption">Login</button></a>
-			</li>
+				<li>
+					<a href="./help.php" style="padding: 0; margin: 2px;"><button id="help" name ="help"><img style="height: 50px;" src="./pic/help.png"></button></a>
+				</li>
+				<li> 
+					<a href="./logout.php" style="padding: 0; margin: 2px;"><button id="logout" name ="logout" ><img style="height: 50px;" src="./pic/Login.png"></button></a>
+				</li>
 			</ul>
-			
 			</div>
 			<!--.nav-collapse -->
 			</div>
