@@ -106,7 +106,7 @@ if ($error) {
             <a target="_blank" href="kiosk.php"><img src="./pic/kiosk.png" class="adminThumbnailSize">
         </td>
         <td align="center">
-            <a href="stop_project.php"><img src="./pic/stop_project.png" class="adminThumbnailSize"></a>
+            <a href="length.php" onclick="lengthMessage()"><img src="./pic/equals.png" class="adminThumbnailSize"></a>
         </td>
     </tr>
     <tr>
@@ -115,15 +115,7 @@ if ($error) {
         <td align="center"><a href="compile.php">Compile</a></td>
         <td align="center"><a href="topic_management.php">Topic <br> Management</a></td>
         <td align="center"><a href="kiosk.php">Kiosk</a></td>
-        <td align="center"><a href="stop_project.php">Stop <br> Project</a></td>
-    </tr>
-    <tr>
-        <td align="center">
-            <a href="length.php" onclick="lengthMessage()"><img src="./pic/equals.png" class="adminThumbnailSize"></a>
-        </td>
-    </tr>
-    <tr>
-        <td align="center"><a href="length.php" onclick="lengthMessage()">Lengths</a></td>
+        <td align="center"><a href="lengths.php" onclick="lengthMessage()">Calculate <br> Lengths</a></td>
     </tr>
 </table>
 </div>

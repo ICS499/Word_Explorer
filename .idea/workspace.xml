@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f24e628-a074-4dc6-a05b-f1117e46c1c1" name="Default" comment="">
+    <list default="true" id="4f24e628-a074-4dc6-a05b-f1117e46c1c1" name="Default" comment="import edit, style ecdits">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/icsbinco_word_explorer.sql" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IndicTextAnalyzer/word_processor.php" afterPath="$PROJECT_DIR$/IndicTextAnalyzer/word_processor.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin.php" afterPath="$PROJECT_DIR$/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/explorer.php" afterPath="$PROJECT_DIR$/explorer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/import.php" afterPath="$PROJECT_DIR$/import.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/list.php" afterPath="$PROJECT_DIR$/list.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/session_validation.php" afterPath="$PROJECT_DIR$/session_validation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/custom_nav.css" afterPath="$PROJECT_DIR$/styles/custom_nav.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/main_style.css" afterPath="$PROJECT_DIR$/styles/main_style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backup.php" afterPath="$PROJECT_DIR$/backup.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,8 +30,8 @@
       <file leaf-file-name="explorer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/explorer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="203" column="16" lean-forward="true" selection-start-line="203" selection-start-column="16" selection-end-line="203" selection-end-column="16" />
+            <state relative-caret-position="339">
+              <caret line="209" column="46" lean-forward="true" selection-start-line="209" selection-start-column="46" selection-end-line="209" selection-end-column="46" />
               <folding>
                 <marker date="1509665405855" expanded="true" signature="3458:3490" ph="SELECT DISTI... words" />
                 <marker date="1509665405855" expanded="true" signature="3944:3996" ph="SELECT * FRO... words" />
@@ -135,7 +129,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="import.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="import.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/import.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
@@ -160,19 +154,37 @@
       <file leaf-file-name="admin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="730">
-              <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+            <state relative-caret-position="492">
+              <caret line="133" column="27" lean-forward="true" selection-start-line="133" selection-start-column="27" selection-end-line="133" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="word_processor.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/IndicTextAnalyzer/word_processor.php">
+      <file leaf-file-name="lengths.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lengths.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="59" column="32" lean-forward="false" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="32" />
-              <folding />
+            <state relative-caret-position="85">
+              <caret line="5" column="72" lean-forward="false" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="72" />
+              <folding>
+                <marker date="1505487511000" expanded="true" signature="821:842" ph="DROP TABLE I... " />
+                <marker date="1505487511000" expanded="true" signature="967:981" ph="SELECT * FRO... ${$table}" />
+                <marker date="1505487511000" expanded="true" signature="1374:1404" ph="INSERT INTO ${$table}... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="backup.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backup.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+              <folding>
+                <marker date="1509667343201" expanded="true" signature="806:827" ph="DROP TABLE I... " />
+                <marker date="1509667343201" expanded="true" signature="952:966" ph="SELECT * FRO... ${$table}" />
+                <marker date="1509667343201" expanded="true" signature="1359:1389" ph="INSERT INTO ${$table}... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -327,11 +339,12 @@
         <option value="$PROJECT_DIR$/styles/custom_nav.css" />
         <option value="$PROJECT_DIR$/session_validation.php" />
         <option value="$PROJECT_DIR$/styles/main_style.css" />
-        <option value="$PROJECT_DIR$/admin.php" />
         <option value="$PROJECT_DIR$/IndicTextAnalyzer/telugu_parser.php" />
         <option value="$PROJECT_DIR$/explorer.php" />
         <option value="$PROJECT_DIR$/import.php" />
         <option value="$PROJECT_DIR$/list.php" />
+        <option value="$PROJECT_DIR$/admin.php" />
+        <option value="$PROJECT_DIR$/backup.php" />
       </list>
     </option>
   </component>
@@ -445,7 +458,7 @@
       <workItem from="1509058761765" duration="2293000" />
       <workItem from="1509588300550" duration="843000" />
       <workItem from="1509631467571" duration="15125000" />
-      <workItem from="1509660729578" duration="6169000" />
+      <workItem from="1509660729578" duration="6806000" />
     </task>
     <task id="LOCAL-00001" summary="updates to table and word update php">
       <created>1507178278388</created>
@@ -559,11 +572,18 @@
       <option name="project" value="LOCAL" />
       <updated>1509644319178</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="import edit, style ecdits">
+      <created>1509666940797</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1509666940797</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100588000" />
+    <option name="totallyTimeSpent" value="101225000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="23" y="16" width="1884" height="1010" extended-state="0" />
@@ -604,20 +624,14 @@
     <MESSAGE value="import fix, style fixes" />
     <MESSAGE value="defualt image, style fixes" />
     <MESSAGE value="explorer.php edits" />
-    <option name="LAST_COMMIT_MESSAGE" value="explorer.php edits" />
+    <MESSAGE value="import edit, style ecdits" />
+    <option name="LAST_COMMIT_MESSAGE" value="import edit, style ecdits" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nbproject/private/private.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nbproject/project.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -886,18 +900,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1505487511000" expanded="true" signature="821:842" ph="DROP TABLE I... " />
-            <marker date="1505487511000" expanded="true" signature="967:981" ph="SELECT * FRO... ${$table}" />
-            <marker date="1505487511000" expanded="true" signature="1374:1404" ph="INSERT INTO ${$table}... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/report.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
@@ -1081,22 +1083,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="730">
-          <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles/main_style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="584" column="14" lean-forward="false" selection-start-line="584" selection-start-column="14" selection-end-line="584" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/session_validation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1417">
@@ -1169,26 +1155,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/language_processor_functions.php">
+    <entry file="file://$PROJECT_DIR$/styles/main_style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="44" lean-forward="false" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IndicTextAnalyzer/word_processor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="59" column="32" lean-forward="false" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="32" />
+        <state relative-caret-position="524">
+          <caret line="584" column="14" lean-forward="false" selection-start-line="584" selection-start-column="14" selection-end-line="584" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/explorer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="203" column="16" lean-forward="true" selection-start-line="203" selection-start-column="16" selection-end-line="203" selection-end-column="16" />
+        <state relative-caret-position="339">
+          <caret line="209" column="46" lean-forward="true" selection-start-line="209" selection-start-column="46" selection-end-line="209" selection-end-column="46" />
           <folding>
             <marker date="1509665405855" expanded="true" signature="3458:3490" ph="SELECT DISTI... words" />
             <marker date="1509665405855" expanded="true" signature="3944:3996" ph="SELECT * FRO... words" />
@@ -1289,6 +1267,54 @@
           <caret line="54" column="44" lean-forward="false" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
           <folding>
             <marker date="1509666910909" expanded="true" signature="2713:2726" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IndicTextAnalyzer/word_processor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="49" column="66" lean-forward="true" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/language_processor_functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="44" lean-forward="false" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="133" column="27" lean-forward="true" selection-start-line="133" selection-start-column="27" selection-end-line="133" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lengths.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="72" lean-forward="false" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="72" />
+          <folding>
+            <marker date="1505487511000" expanded="true" signature="821:842" ph="DROP TABLE I... " />
+            <marker date="1505487511000" expanded="true" signature="967:981" ph="SELECT * FRO... ${$table}" />
+            <marker date="1505487511000" expanded="true" signature="1374:1404" ph="INSERT INTO ${$table}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <marker date="1509667343201" expanded="true" signature="806:827" ph="DROP TABLE I... " />
+            <marker date="1509667343201" expanded="true" signature="952:966" ph="SELECT * FRO... ${$table}" />
+            <marker date="1509667343201" expanded="true" signature="1359:1389" ph="INSERT INTO ${$table}... " />
           </folding>
         </state>
       </provider>

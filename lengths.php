@@ -3,7 +3,7 @@ require('db_configuration.php');
 backup_tables(DATABASE_HOST,DATABASE_USER,DATABASE_PASSWORD,DATABASE_DATABASE);
 
 /* backup the db OR just a table */
-function backup_tables($host,$user,$pass,$name,$tables = 'words, topics, characters, users')
+function backup_tables($host,$user,$pass,$name,$tables = 'words, puzzles, puzzle_words, characters, users')
 {
 
     $link = mysqli_connect($host,$user,$pass);
