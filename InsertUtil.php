@@ -17,7 +17,7 @@ require_once('common_sql_functions.php');
  * @param $description
  * @param $notes
  */
-function insertIntoWordsTable($topic, $length, $telugu_word, $english_word, $telugu_in_english, $english_in_telugu,
+function insertIntoWordsTable($topic, $length, $level, $telugu_word, $english_word, $telugu_in_english, $english_in_telugu,
                               $image_name, $audio_name, $description, $notes)
 {
     //Check to see if entered words exists in the DB.

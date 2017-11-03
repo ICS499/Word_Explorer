@@ -1,4 +1,4 @@
-<?php //include 'navbar.php';
+<?php
 require('session_validation.php');
 require('language_processor_functions.php');
 // Start session to store variables
@@ -50,6 +50,7 @@ session_cache_limiter(false);
                 <th>Word ID</th>
                 <th>Topic</th>
                 <th>Length</th>
+                <th>Level</th>
                 <th>Telugu Word</th>
                 <th>English Word</th>
                 <th>Telugu In English</th>
@@ -67,7 +68,7 @@ session_cache_limiter(false);
 
             <?php
             require 'db_configuration.php';
-            $sql = "SELECT *FROM words";
+            $sql = "SELECT * FROM words";
             $result = run_sql($sql);
 
             if ($result->num_rows > 0) {
@@ -75,7 +76,9 @@ session_cache_limiter(false);
                 while ($row = $result->fetch_assoc()) {
                     echo '<tr>
                         <td>' . $row["word_id"] . "</td>  
-                        <td>" . $row["Topic"] . "</td>
+                        <td>" . $row["Topic"] . "</td> 
+                        <td>" . $row["Length"] . "</td> 
+                        <td>" . $row["Level"] . "</td>
                         <td>" . $row["Telugu_Word"] . "</td>
                         <td>" . $row["Telugu_Word"] . "</td>
                         <td>" . $row["English_Word"] . "</td>
@@ -136,7 +139,7 @@ session_cache_limiter(false);
                 copy($inputFileName, $target_file);
                 $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
                 if ($check !== false) {
-                    $sql = 'UPDATE words SET image=\'' . $imageName . '\' WHERE word_id=' . $_POST['word_id'] . ';';
+                    $sql = 'UPDATE words SET image_name=\'' . $imageName . '\' WHERE word_id=' . $_POST['word_id'] . ';';
                     $result = run_sql($sql);
                     echo ' <script> alert(\'Image Upload Successful!!\'); window.location.replace("list.php"); </script>';
                 } else {
@@ -161,6 +164,7 @@ session_cache_limiter(false);
                 <th>Word ID</th>
                 <th>Topic</th>
                 <th>Length</th>
+                <th>Level</th>
                 <th>Telugu Word</th>
                 <th>English Word</th>
                 <th>Telugu In English</th>

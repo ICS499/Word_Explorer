@@ -106,7 +106,7 @@ if ($error) {
             <a target="_blank" href="kiosk.php"><img src="./pic/kiosk.png" class="adminThumbnailSize">
         </td>
         <td align="center">
-            <a href="length.php" onclick="lengthMessage()"><img src="./pic/equals.png" class="adminThumbnailSize"></a>
+            <a href="lengths.php" onclick="lengthMessage()"><img src="./pic/equals.png" class="adminThumbnailSize"></a>
         </td>
     </tr>
     <tr>
