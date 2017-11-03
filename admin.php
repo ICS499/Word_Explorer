@@ -115,7 +115,7 @@ if ($error) {
         <td align="center"><a href="compile.php">Compile</a></td>
         <td align="center"><a href="topic_management.php">Topic <br> Management</a></td>
         <td align="center"><a href="kiosk.php">Kiosk</a></td>
-        <td align="center"><a href="lengths.php" onclick="lengthMessage()">Calculate <br> Lengths</a></td>
+        <td align="center"><a href="lengths.php">Calculate <br> Lengths</a></td>
     </tr>
 </table>
 </div>
@@ -136,10 +136,11 @@ if ($error) {
 
     function backUpMessage() {
         //document.getElementById("demo").innerHTML = "The database backup has been saved in the Sql_Scripts Folder.";
-        alert('The database backup has been saved in the Sql_Scripts Folder.');
+        alert('The database backup has been saved in the htdocs Folder.');
     }
-    function lengthMessage(){
 
+    function lengthMessage() {
+        alert('The word lengths have been calculated.');
     }
 
 </script>

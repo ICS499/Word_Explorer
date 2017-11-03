@@ -91,6 +91,15 @@ require('InsertUtil.php');
                         newEntryCell8.appendChild(newEntryField8);
 
                         // Telugu Word
+                        var newEntryCell9 = document.createElement("td");
+                        var newEntryField9 = document.createElement("input");
+                        newEntryField9.setAttribute("style", "width:100px;");
+                        newEntryField9.setAttribute("type", "textbox");
+                        newEntryField9.setAttribute("name", "level" + entry);
+                        newEntryField9.setAttribute("id", "level" + entry);
+                        newEntryCell9.appendChild(newEntryField9);
+
+                        // Telugu Word
                         var newEntryCell0 = document.createElement("td");
                         var newEntryField0 = document.createElement("input");
                         newEntryField0.setAttribute("style", "width:100px;");
@@ -185,6 +194,8 @@ require('InsertUtil.php');
                 if (isset($_POST['submit'])) {
                     // Add all the submitted elements to three arrays, representing fields of each entry
                     $arrayTopic = array();
+                    $arrayLength = array();
+                    $arrayLevel = array();
                     $arrayTelugu = array();
                     $arrayEnglish = array();
                     $arrayTeluguInEnglish = array();
@@ -203,7 +214,14 @@ require('InsertUtil.php');
                             } else {
                                 array_push($arrayTopic, null);
                             }
-
+                            // Length
+                            array_push($arrayLength, count(getWordChars($_POST['telugu_word'.$counter])));
+                            // Level
+                            if ( isset($_POST['level'.$counter])) {
+                                array_push($arrayLevel, $_POST['level'.$counter]);
+                            } else {
+                                array_push($arrayLevel, 0);
+                            }
                             // Telugu words
                             array_push($arrayTelugu, $_POST['telugu_word'.$counter]);
                             // English words
@@ -268,6 +286,8 @@ require('InsertUtil.php');
                     for ($i = 0; $i < count($arrayTelugu); $i++) {
                         insertIntoWordsTable(
                                 $arrayTopic[$i],
+                                $arrayLength[$i],
+                                $arrayLevel[$i],
                                 $arrayTelugu[$i],
                                 $arrayEnglish[$i],
                                 $arrayTeluguInEnglish[$i],

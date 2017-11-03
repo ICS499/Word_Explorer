@@ -55,22 +55,18 @@
             $notes = validate_input($notes);
 
 			// Length checker/fixer
-			/*
 			$calculatedLength = getWordChars($telugu_word);
 			if ($calculatedLength != $length){
 				$discrepancies += $telugu_word;
 				$length = $calculatedLength;
 			}
-			*/
 
 			// Insert new data into Words & Characters Table
-			insertIntoWordsTable($topic, $length, $level, $telugu_word, $english_word,$telugu_in_english, $english_in_telugu,
+			insertIntoWordsTable($topic, $length, $level, $telugu_word, $english_word, $telugu_in_english, $english_in_telugu,
 				$image_name, $audio_name, $description, $notes);
 			//insertIntoCharactersTable($topic);
 
 		}
 		echo '<h2 style="color:	green;" class="upload">Import Successful!</h2>';
 	}
-
-
 ?>

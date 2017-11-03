@@ -80,7 +80,6 @@ session_cache_limiter(false);
                         <td>" . $row["Length"] . "</td> 
                         <td>" . $row["Level"] . "</td>
                         <td>" . $row["Telugu_Word"] . "</td>
-                        <td>" . $row["Telugu_Word"] . "</td>
                         <td>" . $row["English_Word"] . "</td>
                         <td>" . $row["Telugu_in_English"] . "</td>
                         <td>" . $row["English_in_Telugu"] . "</td>
