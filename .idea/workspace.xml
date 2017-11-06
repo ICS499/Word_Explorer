@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4f24e628-a074-4dc6-a05b-f1117e46c1c1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db_configuration.php" afterPath="$PROJECT_DIR$/db_configuration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/import.php" afterPath="$PROJECT_DIR$/import.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -225,7 +223,7 @@
     </servers>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP from XAMPP" />
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="23" />
     <option name="y" value="16" />
     <option name="width" value="1612" />
@@ -325,7 +323,7 @@
       <workItem from="1509631467571" duration="15125000" />
       <workItem from="1509660729578" duration="13184000" />
       <workItem from="1509674094143" duration="7000" />
-      <workItem from="1509926170442" duration="578000" />
+      <workItem from="1509926170442" duration="624000" />
     </task>
     <task id="LOCAL-00001" summary="updates to table and word update php">
       <created>1507178278388</created>
@@ -460,18 +458,25 @@
       <option name="project" value="LOCAL" />
       <updated>1509671478481</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="edits">
+      <created>1509926772572</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1509926772573</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108188000" />
+    <option name="totallyTimeSpent" value="108234000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="23" y="16" width="1612" height="912" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17139176" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17095116" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -508,7 +513,8 @@
     <MESSAGE value="import edit, style ecdits" />
     <MESSAGE value="backup edits, new lengths.php file" />
     <MESSAGE value="import fixed for levels, excel updated, database updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="import fixed for levels, excel updated, database updated" />
+    <MESSAGE value="edits" />
+    <option name="LAST_COMMIT_MESSAGE" value="edits" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
