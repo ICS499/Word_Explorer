@@ -6,6 +6,12 @@ DEFINE('DATABASE_DATABASE', 'metroics_words');
 DEFINE('DATABASE_USER', 'root');
 DEFINE('DATABASE_PASSWORD', '');
 
+// To be used on the local host
+//DEFINE('DATABASE_USER', 'metroics_499');
+//DEFINE('DATABASE_PASSWORD', 'Metro_ics123');
+
+
+
 $db = new mysqli(DATABASE_HOST, DATABASE_USER, DATABASE_PASSWORD, DATABASE_DATABASE);
 $db->set_charset("utf8");
 function run_sql($sql_script)

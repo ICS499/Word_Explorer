@@ -45,6 +45,8 @@
 
 			// to remove invalid character eg: \u00a0
             $topic = validate_input($topic);
+
+
             $telugu_word = validate_word($telugu_word);
             $english_word  = validate_word($english_word );
             $telugu_in_english = validate_word($telugu_in_english);
