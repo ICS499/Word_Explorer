@@ -8,6 +8,7 @@ require_once('common_sql_functions.php');
 /**
  * @param $topic
  * @param $length
+ * @param $level
  * @param $telugu_word
  * @param $english_word
  * @param $telugu_in_english
@@ -27,11 +28,12 @@ function insertIntoWordsTable($topic, $length, $level, $telugu_word, $english_wo
 
     if ($num_rows == 0) {
         //insert each new word into words table.
-        $sqlAddWord = 'INSERT INTO words (topic, length, telugu_word, english_word, telugu_in_english, english_in_telugu,
-				image_name, audio_name, description, notes) VALUES (\'' . $topic . '\', \'' . $length . '\', \'' . $telugu_word . '\',
+        $sqlAddWord = 'INSERT INTO words (topic, length, level, telugu_word, english_word, telugu_in_english, english_in_telugu,
+				image_name, audio_name, description, notes) VALUES (\'' . $topic . '\', \'' . $length . '\', \'' . $level . '\', \'' . $telugu_word . '\',
 				 \'' . $english_word . '\', \'' . $telugu_in_english . '\', 
 				\'' . $english_in_telugu . '\', \'' . $image_name . '\', \'' . $audio_name . '\',
 				 \'' . $description . '\' ,\'' . $notes . '\');';
+
         $result = run_sql($sqlAddWord);
         $word_id = $result;
         $logicalChars = getWordChars($topic);

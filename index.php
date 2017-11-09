@@ -20,14 +20,18 @@
   <title>Word Explorer</title>
   <body>
     <?PHP
+    [
+        'cookie_lifetime' => 86400,
+        'read_and_close'  => true,
+    ];
     session_start();
     require('session_validation.php');
-    header("Location: explorer.php")
+    header("Location: explorer.php");
     ?>
     <?PHP
     echo getTopNav();
     ?>
-    <div class="divTitle" align="center">
+     <div class="divTitle" align="center">
         <h1>Select An Option</h1>
     </div>
     <br>

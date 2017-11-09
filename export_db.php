@@ -47,17 +47,14 @@ class Table
             $sql .= 'FROM ' . $this->tableName;
         }
         // NOTE: sql statements were changed to make them more user friendly
-        if (strcmp($this->tableName, "puzzles") === 0) {
-            $sql .= ' ORDER BY puzzle_name';
+        if (strcmp($this->tableName, "words") === 0) {
+            $sql .= ' ORDER BY Telugu_Word';
         } else if (strcmp($this->tableName, "characters") === 0) {
-            $sql = 'SELECT characters.character_value, words.word, characters.character_index  FROM `characters` JOIN words ON characters.word_id=words.word_id ORDER BY words.word_id, characters.character_index';
-            $this->fields = array("character_value", "word", "character_index");
+            $sql = 'SELECT characters.character_value, words.Telugu_Word, characters.character_index  FROM `characters` JOIN words ON characters.word_id=words.word_id ORDER BY words.word_id, characters.character_index';
+            $this->fields = array("character_value", "Telugu_Word", "character_index");
         } else if (strcmp($this->tableName, "words") === 0) {
             $sql = 'SELECT * FROM words ORDER BY word_id';
-            $this->fields = array("No", "Words", "English_word", "image");
-        } else if (strcmp($this->tableName, "puzzle_words") === 0) {
-            $sql = 'SELECT puzzles.puzzle_name, p.word, p.clue, p.position_in_name FROM puzzle_words p JOIN puzzles ON p.puzzle_id=puzzles.puzzle_id ORDER BY puzzles.puzzle_name, p.position_in_name';
-            $this->fields = array("puzzle_name", "word", "clue", "position_in_name");
+            $this->fields = [`word_id`, `Topic`, `Length`, `Level`, `Telugu_Word`, `English_Word`, `Telugu_in_English`, `English_in_Telugu`, `Image_Name`, `Audio_Name`, `Notes`, `Description`];
         }
         $this->exportSql = $sql;
     }
@@ -167,38 +164,6 @@ class ExcelExporter
     }
 }
 
-/**
- * Gets all of the puzzle_id's from the puzzles table
- * @return array all of the puzzle_id's
- */
-function getPuzzleIds()
-{ /* NOTE: Puzzles sorted by puzzle_name instead of puzzle_id */
-    $ids = array();
-    $sqlGetPuzzleIds = "SELECT puzzle_id FROM puzzles ORDER BY puzzle_name";
-    $result = run_sql($sqlGetPuzzleIds);
-    $num_rows = $result->num_rows;
-    if ($num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            array_push($ids, $row['puzzle_id']);
-        }
-    }
-    return $ids;
-
-}
-
-function countDistinctRepIds()
-{
-    $count = "";
-    $sqlCountDistinctRepIds = "SELECT COUNT(DISTINCT word_id) as number FROM words";
-    $result = run_sql($sqlCountDistinctRepIds);
-    $num_rows = $result->num_rows;
-    if ($num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $count = $row['number'];
-        }
-    }
-    return $count;
-}
 
 
 /**
@@ -207,11 +172,10 @@ function countDistinctRepIds()
  */
 function createAllTables()
 {
-    $wordsTable = new Table('words', array('word_id', 'word', 'english_word', 'image'));
+    $wordsTable = new Table('words', array(`word_id`, `Topic`, `Length`, `Level`, `Telugu_Word`, `English_Word`, `Telugu_in_English`, `English_in_Telugu`, `Image_Name`, `Audio_Name`, `Notes`, `Description`));
     $charTable = new Table('characters', array('word_id', 'character_index', 'character_value'));
-    $puzzleTable = new Table('puzzles', array('puzzle_id', 'puzzle_name', 'creator_email'));
-    $puzzleWordsTable = new Table('puzzle_words', array('puzzle_id', 'position_in_name', 'word', 'clue'));
-    return array($wordsTable, $charTable, $puzzleTable, $puzzleWordsTable);
+
+    return array($wordsTable, $charTable);
 }
 
 /**

@@ -45,10 +45,10 @@
 
 			// to remove invalid character eg: \u00a0
             $topic = validate_input($topic);
-
-
+            $length = validate_input($length);
+            $level = validate_input($level);
             $telugu_word = validate_word($telugu_word);
-            $english_word  = validate_word($english_word );
+            $english_word  = validate_word($english_word);
             $telugu_in_english = validate_word($telugu_in_english);
             $english_in_telugu = validate_word($english_in_telugu);
             $image_name = validate_input($image_name);
@@ -57,11 +57,11 @@
             $notes = validate_input($notes);
 
 			// Length checker/fixer
-			$calculatedLength = getWordChars($telugu_word);
-			if ($calculatedLength != $length){
-				$discrepancies += $telugu_word;
-				$length = $calculatedLength;
-			}
+//			$calculatedLength = getWordChars($telugu_word);
+//			if ($calculatedLength != $length){
+//				$discrepancies += $telugu_word;
+//				$length = $calculatedLength;
+//			}
 
 			// Insert new data into Words & Characters Table
 			insertIntoWordsTable($topic, $length, $level, $telugu_word, $english_word, $telugu_in_english, $english_in_telugu,

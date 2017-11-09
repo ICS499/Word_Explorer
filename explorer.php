@@ -88,7 +88,12 @@
         }
         .center-block {
             vertical-align: middle;
+
             display: block;
+            width: 400px;
+            height: 400px;
+            margin-top: 50px;
+
             margin-left: auto;
             margin-right: auto;
         }
@@ -152,7 +157,7 @@ foreach( $result as $row){
     $newCard->description = $row["Description"];
     $newCard->notes = $row["Notes"];
     // Display a default image if nothing was provided, or file didn't exist
-    if (IsNullOrEmptyString($row["Image_Name"]) || !file_exists( ("images/".$row["Image_Name"]))){
+    if (IsNullOrEmptyString($row["Image_Name"]) || !file_exists( ("images/" . $row["Image_Name"]))){
         $newCard->image_name = "default.png";
     } else {
         $newCard->image_name = $row["Image_Name"];
@@ -277,7 +282,7 @@ if (count($cards) > 0) {
                         <div class="col-md-4 text-center" style="font-size: 30px">' . $card->english_word . '</div>
                     </div>
                     <div class="row" style="height: 600px;">
-                        <div class="col-md-12"><img id="word-image" class="center-block" src="images/' . $card->image_name . '" /></div>
+                        <div class="col-md-12"><img id="word-image" class="center-block" src="./images/' . $card->image_name . '" /></div>
                     </div>
                     <div class="row" style="height: auto">
                         <div class="col-md-4 text-center" style="font-size: 30px">' . $card->telugu_in_english . '</div>

@@ -39,6 +39,7 @@ echo getTopNav();
         <p id="error" style="display: none;">Error: You must select a file to import</p>
         <?php
         require('import.php');
+        $error ="";
         if ($error) {
             ?>
             <p id="error" style="display:block;background-color: #ce4646;padding:5px;color:#fff;">
