@@ -22,7 +22,7 @@
     <?PHP
     session_start();
     require('session_validation.php');
-  //  header("Location: explorer.php");
+    header("Location: explorer.php");
     ?>
     <?PHP
     echo getTopNav();

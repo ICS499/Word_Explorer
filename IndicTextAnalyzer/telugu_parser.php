@@ -1,4 +1,4 @@
-﻿<?php
+﻿﻿<?php
 
 // telugu_parser.php primarily deals with splitting an input string
 // into a series of logical characters 
