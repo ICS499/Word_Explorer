@@ -78,7 +78,7 @@
             margin: 0px;
         }
         #myCarousel {
-            width:800px;
+            width:auto;
             height: auto;
             margin: 20px;
             background-color: #FFFFFF;
@@ -157,7 +157,7 @@ foreach( $result as $row){
     $newCard->description = $row["Description"];
     $newCard->notes = $row["Notes"];
     // Display a default image if nothing was provided, or file didn't exist
-    if (IsNullOrEmptyString($row["Image_Name"]) || !file_exists( ("images/" . $row["Image_Name"]))){
+    if (IsNullOrEmptyString($row["Image_Name"]) || !file_exists( ("./images/" . $row["Image_Name"]))){
         $newCard->image_name = "default.png";
     } else {
         $newCard->image_name = $row["Image_Name"];

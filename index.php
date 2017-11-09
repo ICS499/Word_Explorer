@@ -20,28 +20,30 @@
   <title>Word Explorer</title>
   <body>
     <?PHP
-    [
-        'cookie_lifetime' => 86400,
-        'read_and_close'  => true,
-    ];
     session_start();
     require('session_validation.php');
-    header("Location: explorer.php");
+  //  header("Location: explorer.php");
     ?>
     <?PHP
     echo getTopNav();
     ?>
      <div class="divTitle" align="center">
-        <h1>Select An Option</h1>
+<!--        <h1>Select An Option</h1>-->
     </div>
     <br>
     <div align="center">
     <div class="container">
-            <div class="btn-group-vertical">
-            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='explorer.php';">Word Explorer </button>
-            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='list.php';">List All Words</button>
-            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='add_words.php';">Add a Word</button>
+        <div class="container">
+            <img src="./images/WordExplorerSpace.jpg " class="img-rounded img-responsive" alt="Cinque Terre" width=auto height=auto onclick="location.href='explorer.php';" >
         </div>
+<!--        <h1>Click Image to Explore!</h1>-->
+        <p><a href="explorer.php">  <h1>Click Image to Explore!</h1></a></p>
+
+<!--        <div class="btn-group-vertical">-->
+<!--            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='explorer.php';">Word Explorer </button>-->
+<!--            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='list.php';">List All Words</button>-->
+<!--            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='add_words.php';">Add a Word</button>-->
+<!--        </div>-->
     </div>
     </div>
     <script>
@@ -53,5 +55,9 @@
             form.action += '?' + values.join('&');
         }
     </script>
+
+    <div class="footer">
+        <p>@ School of India for Languages and Culture (SILC)</p>
+    </div>
   </body>
 </html>
