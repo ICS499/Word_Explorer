@@ -70,7 +70,7 @@ class Table
         if ($num_rows > 0) {
             $i = 0;
             $tableName = $this->tableName;
-            $puzzleids = getPuzzleIds();
+            //$puzzleids = getPuzzleIds();
             while ($row = $result->fetch_assoc()) {
                 $info [$i] = array_reverse($row);
                 $i++;
@@ -172,7 +172,7 @@ class ExcelExporter
  */
 function createAllTables()
 {
-    $wordsTable = new Table('words', array(`word_id`, `Topic`, `Length`, `Level`, `Telugu_Word`, `English_Word`, `Telugu_in_English`, `English_in_Telugu`, `Image_Name`, `Audio_Name`, `Notes`, `Description`));
+    $wordsTable = new Table('words', array('word_id', 'Topic', 'Length', 'Level', 'Telugu_Word', 'English_Word', 'Telugu_in_English', 'English_in_Telugu', 'Image_Name', 'Audio_Name', 'Notes', 'Description'));
     $charTable = new Table('characters', array('word_id', 'character_index', 'character_value'));
 
     return array($wordsTable, $charTable);
