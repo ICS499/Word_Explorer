@@ -100,29 +100,30 @@ function parseToCharacter($logical_char) {
 	return json_decode('"'.$telugu_char.'"');
 }
 
+// new fixed casting in parser
 function explode_telugu($to_explode) {
-	$pos=0;
-	$e_pos=0;
-	$exploded = array();
-	while($pos < strlen($to_explode) - 1) {
-		if(strcmp($to_explode[$pos], "\"") == 0) {
-			$pos++;
-			continue;
-		}
-		if(strcmp($to_explode[$pos], "\\") == 0) { // if the the character in question is a slash...
-			if(strcmp($to_explode[$pos + 1], "u") == 0) { // ...followed by a u...
-				$char = 0 . ("0x" . substr($to_explode, $pos + 2, 4)); // convert to a number
-				if(isTelugu($char)) {
-					// if it matches, add it as a character, bump the counter up by six, and continue
-					$exploded[$e_pos++] = $char;
-					$pos += 6;
-					continue;
-				}
-			}
-		}
-		$exploded[$e_pos++] = ord($to_explode[$pos++]);
-	}
-	return $exploded;
+    $pos=0;
+    $e_pos=0;
+    $exploded = array();
+    while($pos < strlen($to_explode) - 1) {
+        if(strcmp($to_explode[$pos], "\"") == 0) {
+            $pos++;
+            continue;
+        }
+        if(strcmp($to_explode[$pos], "\\") == 0) { // if the the character in question is a slash...
+            if(strcmp($to_explode[$pos + 1], "u") == 0) { // ...followed by a u...
+                $char = 0 + hexdec(("0x" . substr($to_explode, $pos + 2, 4))); // convert to a number
+                if(isTelugu($char)) {
+                    // if it matches, add it as a character, bump the counter up by six, and continue
+                    $exploded[$e_pos++] = $char;
+                    $pos += 6;
+                    continue;
+                }
+            }
+        }
+        $exploded[$e_pos++] = ord($to_explode[$pos++]);
+    }
+    return $exploded;
 }
 
 function isConsonant($ch) {
