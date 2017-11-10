@@ -7,7 +7,7 @@ DEFINE('DATABASE_USER', 'root');
 DEFINE('DATABASE_PASSWORD', '');
 
 // To be used on the remote host
-//DEFINE('DATABASE_USER', 'metroics_ics499');
+//DEFINE('DATABASE_USER', 'metro_ics499');
 //DEFINE('DATABASE_PASSWORD', 'Metro_ics123');
 
 

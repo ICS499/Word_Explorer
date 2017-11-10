@@ -27,8 +27,8 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `characters`
 --
-
-CREATE TABLE `characters` (
+DROP TABLE IF EXISTS `characters`;
+CREATE TABLE IF NOT EXISTS `characters` (
   `word_id` int(11) NOT NULL,
   `character_index` tinyint(4) NOT NULL,
   `character_value` varchar(7) NOT NULL
@@ -232,35 +232,14 @@ INSERT INTO `characters` (`word_id`, `character_index`, `character_value`) VALUE
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `topics`
---
-
-CREATE TABLE `topics` (
-  `topic` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `topics`
---
-
-INSERT INTO `topics` (`topic`) VALUES
-('Animals'),
-('Foods'),
-('Household'),
-('Machines'),
-('Plants'),
-('School'),
-('Toys'),
-('Universe');
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `users`
 --
-
-CREATE TABLE `users` (
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users`(
   `user_email` varchar(100) NOT NULL COMMENT 'email address is the key',
   `username` varchar(50) NOT NULL COMMENT 'if the user doesn''t want to display the user name',
   `user_password` varchar(65) NOT NULL COMMENT 'for storing the password',
@@ -284,8 +263,8 @@ INSERT INTO `users` (`user_email`, `username`, `user_password`, `id_verified`, `
 --
 -- Table structure for table `words`
 --
-
-CREATE TABLE `words` (
+DROP TABLE IF EXISTS `words`;
+CREATE TABLE IF NOT EXISTS `words`(
   `word_id` int(11) NOT NULL,
   `Topic` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `Length` int(11) NOT NULL,
@@ -298,7 +277,7 @@ CREATE TABLE `words` (
   `Audio_Name` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `Description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `Notes` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `Created_Date` timestamp NOT NULL  DEFAULT CURRENT_TIMESTAMP,
+  `Created_Date` timestamp NOT NULL  DEFAULT 0,
   `Last_Updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -306,7 +285,7 @@ CREATE TABLE `words` (
 -- Dumping data for table `words`
 --
 
- INSERT INTO `words` (`word_id`, `Topic`, `Length`, `Level`, `Telugu_Word`, `English_Word`, `Telugu_in_English`, `English_in_Telugu`, `Image_Name`, `Audio_Name`, `Notes`, `Description`, `Created_Date`, `Last_Updated`) VALUES
+#  INSERT INTO `words` (`word_id`, `Topic`, `Length`, `Level`, `Telugu_Word`, `English_Word`, `Telugu_in_English`, `English_in_Telugu`, `Image_Name`, `Audio_Name`, `Notes`, `Description`, `Created_Date`, `Last_Updated`) VALUES
 #  (1, 'animal', 1, 0, 'చీమ', 'ant', 'chiima', 'యాంట్', 'ant.jpg', 'ant.jpg', 'getbetterpicture', 'descexists', '2017-11-03 01:01:08', '2017-11-03 01:01:20');
 # (2, 'animal', 1, 0, 'పిల్లి', 'cat', 'pilli', 'క్యాట్', 'cat.jpg', 'cat.mp3', '', '', '2017-11-03 01:01:08', '2017-11-03 01:01:20'),
 # (3, 'animal', 1, 0, 'కుక్క', 'dog', 'kukka', 'డాగ్', 'dog.jpg', 'dog.mp3', '', '', '2017-11-03 01:01:08', '2017-11-03 01:01:20'),
@@ -342,6 +321,30 @@ CREATE TABLE `words` (
 # (33, 'house1', 1, 0, 'కుండ', '', '', 'paat', 'pot.jpg', 'pot.mp3', '', '', '2017-11-03 01:01:08', '2017-11-03 01:01:20'),
 # (34, 'house1', 1, 0, 'చరవాణి', '', '', '', 'cell_phone.png', 'cell_phone.mp3', '', '', '2017-11-03 01:01:08', '2017-11-03 01:01:20'),
 # (35, 'house1', 1, 0, 'తలగడ', '', '', '', '', 'pillow.mp3', '', '', '2017-11-03 01:01:08', '2017-11-03 01:01:20');
+
+
+
+--
+-- Table structure for table `topics`
+--
+DROP TABLE IF EXISTS `topics`;
+CREATE TABLE IF NOT EXISTS `topics`(
+  `topic` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `topics`
+--
+
+INSERT INTO `topics` (`topic`) VALUES
+  ('Animals'),
+  ('Foods'),
+  ('Household'),
+  ('Machines'),
+  ('Plants'),
+  ('School'),
+  ('Toys'),
+  ('Universe');
 
 --
 -- Indexes for dumped tables
@@ -385,6 +388,8 @@ ALTER TABLE `words`
 -- Constraints for dumped tables
 --
 
+
+
 --
 -- Constraints for table `words`
 --
@@ -395,3 +400,5 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
