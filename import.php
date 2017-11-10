@@ -57,9 +57,9 @@
             $notes = validate_input($notes);
 
 			// Length checker/fixer
-			$calculatedLength = getWordChars($telugu_word);
+			$calculatedLength = count(getWordChars($telugu_word));
 			if ($calculatedLength != $length){
-				$discrepancies += $telugu_word;
+				array($discrepancies, $telugu_word);
 				$length = $calculatedLength;
 			}
 

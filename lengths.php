@@ -1,5 +1,7 @@
 <?php
-header( 'Content-Type: text/html; charset=utf-8' );
+// This is not best practice. Supposedly, an ajax operation on the previous page will perform this redirect.
+header('Location: ' . $_SERVER['HTTP_REFERER']);
+
 require('db_configuration.php');
 require('language_processor_functions.php');
 calculate_lengths(DATABASE_HOST,DATABASE_USER,DATABASE_PASSWORD,DATABASE_DATABASE);

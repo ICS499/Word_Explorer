@@ -21,7 +21,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <script src="javascript/typeahead.min.js"></script>
     <title>Word Explorer Add Word</title>
+    <style>
+        .table {
+            width: 90% !important;
+        }
+    </style>
 </head>
+
 <body>
 <?php
 require('db_configuration.php');
@@ -53,6 +59,7 @@ require('InsertUtil.php');
             <thead>
                 <tr>
                     <th>Topic</th>
+                    <th>Level</th>
                     <th>Telugu Word</th>
                     <th>English Word</th>
                     <th>Telugu in English</th>
@@ -94,7 +101,7 @@ require('InsertUtil.php');
                         var newEntryCell9 = document.createElement("td");
                         var newEntryField9 = document.createElement("input");
                         newEntryField9.setAttribute("style", "width:100px;");
-                        newEntryField9.setAttribute("type", "textbox");
+                        newEntryField9.setAttribute("type", "number");
                         newEntryField9.setAttribute("name", "level" + entry);
                         newEntryField9.setAttribute("id", "level" + entry);
                         newEntryCell9.appendChild(newEntryField9);
@@ -175,6 +182,7 @@ require('InsertUtil.php');
 
                         // Build the entry/row
                         newEntryRow.appendChild(newEntryCell8);
+                        newEntryRow.appendChild(newEntryCell9);
                         newEntryRow.appendChild(newEntryCell0);
                         newEntryRow.appendChild(newEntryCell1);
                         newEntryRow.appendChild(newEntryCell2);
@@ -214,7 +222,7 @@ require('InsertUtil.php');
                             } else {
                                 array_push($arrayTopic, null);
                             }
-                            // Length
+                            // Length - auto calculated
                             array_push($arrayLength, count(getWordChars($_POST['telugu_word'.$counter])));
                             // Level
                             if ( isset($_POST['level'.$counter])) {
