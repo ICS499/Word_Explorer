@@ -60,7 +60,8 @@ function backup_tables($host,$user,$pass,$name,$tables = 'words, topics, charact
 
     //save file
     $today = date("m.d.y");
-    $handle = fopen('..\\..\\htdocs\\Backup_'.$today.'.sql','w+');
+    // 171109 - Changed to backup to running directory
+    $handle = fopen('.\Backup_'.$today.'.sql','w+');
     fwrite($handle,$return);
     fclose($handle);
 }
