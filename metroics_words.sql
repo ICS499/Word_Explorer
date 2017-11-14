@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `characters`
 --
 DROP TABLE IF EXISTS `characters`;
-CREATE TABLE IF NOT EXISTS `characters` (
+CREATE TABLE IF NOT EXISTS `characters`(
   `word_id` int(11) NOT NULL,
   `character_index` tinyint(4) NOT NULL,
   `character_value` varchar(7) NOT NULL
@@ -39,176 +39,176 @@ CREATE TABLE IF NOT EXISTS `characters` (
 --
 
 INSERT INTO `characters` (`word_id`, `character_index`, `character_value`) VALUES
-(1, 0, 'a'),
-(1, 1, 'n'),
-(1, 2, 'i'),
-(1, 3, 'm'),
-(1, 4, 'a'),
-(1, 5, 'l'),
-(2, 0, 'a'),
-(2, 1, 'n'),
-(2, 2, 'i'),
-(2, 3, 'm'),
-(2, 4, 'a'),
-(2, 5, 'l'),
-(3, 0, 'a'),
-(3, 1, 'n'),
-(3, 2, 'i'),
-(3, 3, 'm'),
-(3, 4, 'a'),
-(3, 5, 'l'),
-(4, 0, 'a'),
-(4, 1, 'n'),
-(4, 2, 'i'),
-(4, 3, 'm'),
-(4, 4, 'a'),
-(4, 5, 'l'),
-(5, 0, 'a'),
-(5, 1, 'n'),
-(5, 2, 'i'),
-(5, 3, 'm'),
-(5, 4, 'a'),
-(5, 5, 'l'),
-(6, 0, 'a'),
-(6, 1, 'n'),
-(6, 2, 'i'),
-(6, 3, 'm'),
-(6, 4, 'a'),
-(6, 5, 'l'),
-(7, 0, 'a'),
-(7, 1, 'n'),
-(7, 2, 'i'),
-(7, 3, 'm'),
-(7, 4, 'a'),
-(7, 5, 'l'),
-(8, 0, 'a'),
-(8, 1, 'n'),
-(8, 2, 'i'),
-(8, 3, 'm'),
-(8, 4, 'a'),
-(8, 5, 'l'),
-(9, 0, 'a'),
-(9, 1, 'n'),
-(9, 2, 'i'),
-(9, 3, 'm'),
-(9, 4, 'a'),
-(9, 5, 'l'),
-(10, 0, 'a'),
-(10, 1, 'n'),
-(10, 2, 'i'),
-(10, 3, 'm'),
-(10, 4, 'a'),
-(10, 5, 'l'),
-(11, 0, 's'),
-(11, 1, 'c'),
-(11, 2, 'h'),
-(11, 3, 'o'),
-(11, 4, 'o'),
-(11, 5, 'l'),
-(12, 0, 's'),
-(12, 1, 'c'),
-(12, 2, 'h'),
-(12, 3, 'o'),
-(12, 4, 'o'),
-(12, 5, 'l'),
-(13, 0, 's'),
-(13, 1, 'c'),
-(13, 2, 'h'),
-(13, 3, 'o'),
-(13, 4, 'o'),
-(13, 5, 'l'),
-(14, 0, 's'),
-(14, 1, 'c'),
-(14, 2, 'h'),
-(14, 3, 'o'),
-(14, 4, 'o'),
-(14, 5, 'l'),
-(15, 0, 's'),
-(15, 1, 'c'),
-(15, 2, 'h'),
-(15, 3, 'o'),
-(15, 4, 'o'),
-(15, 5, 'l'),
-(16, 0, 's'),
-(16, 1, 'c'),
-(16, 2, 'h'),
-(16, 3, 'o'),
-(16, 4, 'o'),
-(16, 5, 'l'),
-(17, 0, 's'),
-(17, 1, 'c'),
-(17, 2, 'h'),
-(17, 3, 'o'),
-(17, 4, 'o'),
-(17, 5, 'l'),
-(18, 0, 's'),
-(18, 1, 'c'),
-(18, 2, 'h'),
-(18, 3, 'o'),
-(18, 4, 'o'),
-(18, 5, 'l'),
-(19, 0, 's'),
-(19, 1, 'c'),
-(19, 2, 'h'),
-(19, 3, 'o'),
-(19, 4, 'o'),
-(19, 5, 'l'),
-(20, 0, 's'),
-(20, 1, 'c'),
-(20, 2, 'h'),
-(20, 3, 'o'),
-(20, 4, 'o'),
-(20, 5, 'l'),
-(21, 0, 'f'),
-(21, 1, 'o'),
-(21, 2, 'o'),
-(21, 3, 'd'),
-(22, 0, 'f'),
-(22, 1, 'o'),
-(22, 2, 'o'),
-(22, 3, 'd'),
-(23, 0, 'f'),
-(23, 1, 'o'),
-(23, 2, 'o'),
-(23, 3, 'd'),
-(24, 0, 'f'),
-(24, 1, 'o'),
-(24, 2, 'o'),
-(24, 3, 'd'),
-(25, 0, 'f'),
-(25, 1, 'o'),
-(25, 2, 'o'),
-(25, 3, 'd'),
-(26, 0, 'f'),
-(26, 1, 'o'),
-(26, 2, 'o'),
-(26, 3, 'd'),
-(27, 0, 'f'),
-(27, 1, 'o'),
-(27, 2, 'o'),
-(27, 3, 'd'),
-(28, 0, 'f'),
-(28, 1, 'o'),
-(28, 2, 'o'),
-(28, 3, 'd'),
-(29, 0, 'f'),
-(29, 1, 'o'),
-(29, 2, 'o'),
-(29, 3, 'd'),
-(30, 0, 'f'),
-(30, 1, 'o'),
-(30, 2, 'o'),
-(30, 3, 'd'),
-(31, 0, 'h'),
-(31, 1, 'o'),
-(31, 2, 'u'),
-(31, 3, 's'),
-(31, 4, 'e'),
-(31, 5, '1'),
-(32, 0, 'h'),
-(32, 1, 'o'),
-(32, 2, 'u'),
-(32, 3, 's'),
+  (1, 0, 'a'),
+  (1, 1, 'n'),
+  (1, 2, 'i'),
+  (1, 3, 'm'),
+  (1, 4, 'a'),
+  (1, 5, 'l'),
+  (2, 0, 'a'),
+  (2, 1, 'n'),
+  (2, 2, 'i'),
+  (2, 3, 'm'),
+  (2, 4, 'a'),
+  (2, 5, 'l'),
+  (3, 0, 'a'),
+  (3, 1, 'n'),
+  (3, 2, 'i'),
+  (3, 3, 'm'),
+  (3, 4, 'a'),
+  (3, 5, 'l'),
+  (4, 0, 'a'),
+  (4, 1, 'n'),
+  (4, 2, 'i'),
+  (4, 3, 'm'),
+  (4, 4, 'a'),
+  (4, 5, 'l'),
+  (5, 0, 'a'),
+  (5, 1, 'n'),
+  (5, 2, 'i'),
+  (5, 3, 'm'),
+  (5, 4, 'a'),
+  (5, 5, 'l'),
+  (6, 0, 'a'),
+  (6, 1, 'n'),
+  (6, 2, 'i'),
+  (6, 3, 'm'),
+  (6, 4, 'a'),
+  (6, 5, 'l'),
+  (7, 0, 'a'),
+  (7, 1, 'n'),
+  (7, 2, 'i'),
+  (7, 3, 'm'),
+  (7, 4, 'a'),
+  (7, 5, 'l'),
+  (8, 0, 'a'),
+  (8, 1, 'n'),
+  (8, 2, 'i'),
+  (8, 3, 'm'),
+  (8, 4, 'a'),
+  (8, 5, 'l'),
+  (9, 0, 'a'),
+  (9, 1, 'n'),
+  (9, 2, 'i'),
+  (9, 3, 'm'),
+  (9, 4, 'a'),
+  (9, 5, 'l'),
+  (10, 0, 'a'),
+  (10, 1, 'n'),
+  (10, 2, 'i'),
+  (10, 3, 'm'),
+  (10, 4, 'a'),
+  (10, 5, 'l'),
+  (11, 0, 's'),
+  (11, 1, 'c'),
+  (11, 2, 'h'),
+  (11, 3, 'o'),
+  (11, 4, 'o'),
+  (11, 5, 'l'),
+  (12, 0, 's'),
+  (12, 1, 'c'),
+  (12, 2, 'h'),
+  (12, 3, 'o'),
+  (12, 4, 'o'),
+  (12, 5, 'l'),
+  (13, 0, 's'),
+  (13, 1, 'c'),
+  (13, 2, 'h'),
+  (13, 3, 'o'),
+  (13, 4, 'o'),
+  (13, 5, 'l'),
+  (14, 0, 's'),
+  (14, 1, 'c'),
+  (14, 2, 'h'),
+  (14, 3, 'o'),
+  (14, 4, 'o'),
+  (14, 5, 'l'),
+  (15, 0, 's'),
+  (15, 1, 'c'),
+  (15, 2, 'h'),
+  (15, 3, 'o'),
+  (15, 4, 'o'),
+  (15, 5, 'l'),
+  (16, 0, 's'),
+  (16, 1, 'c'),
+  (16, 2, 'h'),
+  (16, 3, 'o'),
+  (16, 4, 'o'),
+  (16, 5, 'l'),
+  (17, 0, 's'),
+  (17, 1, 'c'),
+  (17, 2, 'h'),
+  (17, 3, 'o'),
+  (17, 4, 'o'),
+  (17, 5, 'l'),
+  (18, 0, 's'),
+  (18, 1, 'c'),
+  (18, 2, 'h'),
+  (18, 3, 'o'),
+  (18, 4, 'o'),
+  (18, 5, 'l'),
+  (19, 0, 's'),
+  (19, 1, 'c'),
+  (19, 2, 'h'),
+  (19, 3, 'o'),
+  (19, 4, 'o'),
+  (19, 5, 'l'),
+  (20, 0, 's'),
+  (20, 1, 'c'),
+  (20, 2, 'h'),
+  (20, 3, 'o'),
+  (20, 4, 'o'),
+  (20, 5, 'l'),
+  (21, 0, 'f'),
+  (21, 1, 'o'),
+  (21, 2, 'o'),
+  (21, 3, 'd'),
+  (22, 0, 'f'),
+  (22, 1, 'o'),
+  (22, 2, 'o'),
+  (22, 3, 'd'),
+  (23, 0, 'f'),
+  (23, 1, 'o'),
+  (23, 2, 'o'),
+  (23, 3, 'd'),
+  (24, 0, 'f'),
+  (24, 1, 'o'),
+  (24, 2, 'o'),
+  (24, 3, 'd'),
+  (25, 0, 'f'),
+  (25, 1, 'o'),
+  (25, 2, 'o'),
+  (25, 3, 'd'),
+  (26, 0, 'f'),
+  (26, 1, 'o'),
+  (26, 2, 'o'),
+  (26, 3, 'd'),
+  (27, 0, 'f'),
+  (27, 1, 'o'),
+  (27, 2, 'o'),
+  (27, 3, 'd'),
+  (28, 0, 'f'),
+  (28, 1, 'o'),
+  (28, 2, 'o'),
+  (28, 3, 'd'),
+  (29, 0, 'f'),
+  (29, 1, 'o'),
+  (29, 2, 'o'),
+  (29, 3, 'd'),
+  (30, 0, 'f'),
+  (30, 1, 'o'),
+  (30, 2, 'o'),
+  (30, 3, 'd'),
+  (31, 0, 'h'),
+  (31, 1, 'o'),
+  (31, 2, 'u'),
+  (31, 3, 's'),
+  (31, 4, 'e'),
+  (31, 5, '1'),
+  (32, 0, 'h'),
+  (32, 1, 'o'),
+  (32, 2, 'u'),
+  (32, 3, 's'),
 (32, 4, 'e'),
 (32, 5, '1'),
 (33, 0, 'h'),
@@ -232,9 +232,6 @@ INSERT INTO `characters` (`word_id`, `character_index`, `character_value`) VALUE
 
 -- --------------------------------------------------------
 
-
--- --------------------------------------------------------
-
 --
 -- Table structure for table `users`
 --
@@ -247,23 +244,30 @@ CREATE TABLE IF NOT EXISTS `users`(
   `activation_token` varchar(25) NOT NULL COMMENT 'for storing the activation code when the users register or forget password',
   `role` tinyint(1) NOT NULL COMMENT '0 for ADMIN, 1 for registered user'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+--
+-- Table structure for table `topics`
+--
+
+
+-- --------------------------------------------------------
+
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_email`, `username`, `user_password`, `id_verified`, `activation_token`, `role`) VALUES
-('fm2584uk@metrostate.edu', 'prashant', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 1, '753951', 0),
-('hp6449qy@metrostate.edu', 'tyler', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 1, '1234', 0),
-('test', 'test', 'test', 1, '751', 0),
-('user', 'user', 'user', 1, '751433', 1);
+  ('fm2584uk@metrostate.edu', 'prashant', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 1, '753951', 0),
+  ('hp6449qy@metrostate.edu', 'tyler', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 1, '1234', 0),
+  ('test', 'test', 'test', 1, '751', 0),
+  ('user', 'user', 'user', 1, '751433', 1);
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `words`
 --
-DROP TABLE IF EXISTS `words`;
+-- DROP TABLE IF EXISTS `words`;
 CREATE TABLE IF NOT EXISTS `words`(
   `word_id` int(11) NOT NULL,
   `Topic` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -278,14 +282,33 @@ CREATE TABLE IF NOT EXISTS `words`(
   `Description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `Notes` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `Created_Date` timestamp NOT NULL  DEFAULT 0,
-  `Last_Updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `Last_Updated` timestamp NOT NULL DEFAULT now()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- DROP TABLE IF EXISTS `topics`;
+CREATE TABLE IF NOT EXISTS `topics`(
+`topic` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `topics`
+--
+
+INSERT INTO `topics` (`topic`) VALUES
+('Animals'),
+('Foods'),
+('Household'),
+('Machines'),
+('Plants'),
+('School'),
+('Toys'),
+('Universe');
 
 --
 -- Dumping data for table `words`
 --
 
-#  INSERT INTO `words` (`word_id`, `Topic`, `Length`, `Level`, `Telugu_Word`, `English_Word`, `Telugu_in_English`, `English_in_Telugu`, `Image_Name`, `Audio_Name`, `Notes`, `Description`, `Created_Date`, `Last_Updated`) VALUES
+# INSERT INTO `words` (`word_id`, `Topic`, `Length`, `Level`, `Telugu_Word`, `English_Word`, `Telugu_in_English`, `English_in_Telugu`, `Image_Name`, `Audio_Name`, `Notes`, `Description`, `Created_Date`, `Last_Updated`) VALUES
 #  (1, 'animal', 1, 0, 'చీమ', 'ant', 'chiima', 'యాంట్', 'ant.jpg', 'ant.jpg', 'getbetterpicture', 'descexists', '2017-11-03 01:01:08', '2017-11-03 01:01:20');
 # (2, 'animal', 1, 0, 'పిల్లి', 'cat', 'pilli', 'క్యాట్', 'cat.jpg', 'cat.mp3', '', '', '2017-11-03 01:01:08', '2017-11-03 01:01:20'),
 # (3, 'animal', 1, 0, 'కుక్క', 'dog', 'kukka', 'డాగ్', 'dog.jpg', 'dog.mp3', '', '', '2017-11-03 01:01:08', '2017-11-03 01:01:20'),
@@ -321,30 +344,6 @@ CREATE TABLE IF NOT EXISTS `words`(
 # (33, 'house1', 1, 0, 'కుండ', '', '', 'paat', 'pot.jpg', 'pot.mp3', '', '', '2017-11-03 01:01:08', '2017-11-03 01:01:20'),
 # (34, 'house1', 1, 0, 'చరవాణి', '', '', '', 'cell_phone.png', 'cell_phone.mp3', '', '', '2017-11-03 01:01:08', '2017-11-03 01:01:20'),
 # (35, 'house1', 1, 0, 'తలగడ', '', '', '', '', 'pillow.mp3', '', '', '2017-11-03 01:01:08', '2017-11-03 01:01:20');
-
-
-
---
--- Table structure for table `topics`
---
-DROP TABLE IF EXISTS `topics`;
-CREATE TABLE IF NOT EXISTS `topics`(
-  `topic` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `topics`
---
-
-INSERT INTO `topics` (`topic`) VALUES
-  ('Animals'),
-  ('Foods'),
-  ('Household'),
-  ('Machines'),
-  ('Plants'),
-  ('School'),
-  ('Toys'),
-  ('Universe');
 
 --
 -- Indexes for dumped tables
@@ -387,9 +386,7 @@ ALTER TABLE `words`
 --
 -- Constraints for dumped tables
 --
-
-
-
+SET foreign_key_checks = 0;
 --
 -- Constraints for table `words`
 --
@@ -400,5 +397,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
