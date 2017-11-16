@@ -21,6 +21,34 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <script>
+        $( function() {
+            var spinner = $( "#spinner" ).spinner();
+
+            $( "#disable" ).on( "click", function() {
+                if ( spinner.spinner( "option", "disabled" ) ) {
+                    spinner.spinner( "enable" );
+                } else {
+                    spinner.spinner( "disable" );
+                }
+            });
+            $( "#destroy" ).on( "click", function() {
+                if ( spinner.spinner( "instance" ) ) {
+                    spinner.spinner( "destroy" );
+                } else {
+                    spinner.spinner();
+                }
+            });
+            $( "#getvalue" ).on( "click", function() {
+                alert( spinner.spinner( "value" ) );
+            });
+            $( "#setvalue" ).on( "click", function() {
+                spinner.spinner( "value", 5 );
+            });
+
+            $( "button" ).button();
+        } );
+    </script>
     <link rel="stylesheet" href="styles/custom_nav.css" type="text/css">
     <style>
         .selected {
@@ -202,6 +230,7 @@ echo '
 // Build the explore mode list
 //echo '
 ?>
+
 <h2 class="list-header" style="font-weight: bold !important;">Change Mode</h2>
 <div id="mode-list" class="flow">
     <ul>
@@ -211,12 +240,12 @@ echo '
             </a>
         </li>
         <li id="modeLevel" class="mode-choice">
-            <a href="explorer.php" onClick="setMode('Level')">
-                Level
+            <a href="explorer.php" onClick="setMode('Label')">
+                Label
             </a>
         </li>
         <li id="modeReading" class="mode-choice">
-            <a href="explorer.php" onClick="setMode('Read');">
+            <a href="explorer.php" onClick="setMode('Reading');">
                 Reading
             </a>
         </li>
@@ -227,6 +256,26 @@ echo '
         </li>
     </ul>
 </div>
+
+<h2 class="list-header" style="font-weight: bold !important;">Level</h2>
+<div style="margin: 10px; padding: 5px" class="flow">
+    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="setMode('Explore');">
+        0
+    </a>
+    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="setMode('Level')">
+        1
+    </a>
+    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="setMode('Reading');">
+        2
+    </a>
+    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="setMode('Vocabulary');">
+        3
+    </a>
+    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="setMode('Vocabulary');">
+        4
+    </a>
+</div>
+
 <?php
 //';
 
@@ -314,69 +363,74 @@ if (count($cards) > 0) {
 }
 ?>
 
+<div class="footer">
+    <p>@ School of India for Languages and Culture (SILC)</p>
+</div>
 <script type="text/javascript">
     window.onload=setMode(getCookie("mode"));
 
-    function getCookie(name) {
-        var value = "; " + document.cookie;
-        var parts = value.split("; " + name + "=");
-        if (parts.length == 2) {
-            document.write("true");
-            return (parts.pop().split(";").shift());
-        } else {
-            document.write("false");
-            return "";
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                document.write("mode cookie= " + c.substring(name.length, c.length) + "<br/>");
+                return c.substring(name.length, c.length);
+            }
         }
-
+        document.write("No cookie") + "<br/>";
+        return "";
     }
+
     function setMode(mode){
-        document.write("Mode=" + mode);
-        document.getElementById("modeExplore").setAttribute("class", "mode-choice selected");
+        document.write("Mode=" + mode + "<br/>");
+        document.write("Mode=" + mode + "<br/>");
+        var test = document.getElementById("modeExplore");
+        document.write(test.innerHTML);
+
+        // Check for no mode value
+        if (!mode) this.setMode("Explore");
+
         switch (mode) {
             case "Explore":
-                document.write("Explore chosen");
+                document.write("Explore chosen" + "<br/>");
                 document.getElementById('modeExplore').setAttribute("class", "mode-choice selected");
-                document.getElementById("modeLevel").setAttribute("class", "mode-choice");
+                document.getElementById("modeLabel").setAttribute("class", "mode-choice");
                 document.getElementById("modeReading").setAttribute("class", "mode-choice");
                 document.getElementById("modeVocabulary").setAttribute("class", "mode-choice");
                 break;
             case "Level":
-                document.write("Level chosen");
+                document.write("Label chosen" + "<br/>");
                 document.getElementById("modeExplore").setAttribute("class", "mode-choice");
-                document.getElementById("modeLevel").setAttribute("class", "mode-choice selected");
+                document.getElementById("modeLabel").setAttribute("class", "mode-choice selected");
                 document.getElementById("modeReading").setAttribute("class", "mode-choice");
                 document.getElementById("modeVocabulary").setAttribute("class", "mode-choice");
                 break;
             case "Reading":
-                document.write("Reading chosen");
+                document.write("Reading chosen" + "<br/>");
                 document.getElementById("modeExplore").setAttribute("class", "mode-choice");
-                document.getElementById("modeLevel").setAttribute("class", "mode-choice");
+                document.getElementById("modeLabel").setAttribute("class", "mode-choice");
                 document.getElementById("modeReading").setAttribute("class", "mode-choice selected");
                 document.getElementById("modeVocabulary").setAttribute("class", "mode-choice");
                 break;
             case "Vocabulary":
-                document.write("Vocabulary chosen");
+                document.write("Vocabulary chosen" + "<br/>");
                 document.getElementById("modeExplore").setAttribute("class", "mode-choice");
-                document.getElementById("modeLevel").setAttribute("class", "mode-choice");
+                document.getElementById("modeLabel").setAttribute("class", "mode-choice");
                 document.getElementById("modeReading").setAttribute("class", "mode-choice");
                 document.getElementById("modeVocabulary").setAttribute("class", "mode-choice selected");
                 break;
-            case "":
-                mode = "Explore";
-                document.write("Empty chosen");
-                document.getElementById("modeExplore").setAttribute("class", "mode-choice selected");
-                document.getElementById("modeLevel").setAttribute("class", "mode-choice");
-                document.getElementById("modeReading").setAttribute("class", "mode-choice");
-                document.getElementById("modeVocabulary").setAttribute("class", "mode-choice");
-                break;
         }
         document.cookie = "mode=" + mode;
-        document.write(mode);
+        document.write(mode + "<br/>");
+        //window.location.reload();
     }
 </script>
-<div class="footer">
-    <p>@ School of India for Languages and Culture (SILC)</p>
-</div>
 
 </body>
 </html>
