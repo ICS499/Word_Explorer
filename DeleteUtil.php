@@ -13,6 +13,9 @@ function deleteAllData()
     $sqlDeleteWords = 'DELETE FROM words ';
     run_sql($sqlDeleteWords);
 
+    $sqlDeleteTopics = 'DELETE FROM topics ';
+    run_sql($sqlDeleteTopics);
+
     run_sql('SET foreign_key_checks = 0;');
     run_sql('ALTER TABLE words AUTO_INCREMENT = 1;');
 }

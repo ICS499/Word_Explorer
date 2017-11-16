@@ -28,24 +28,15 @@ function insertIntoWordsTable($topic, $length, $level, $telugu_word, $english_wo
 
     if ($num_rows == 0) {
         //insert each new word into words table.
+        insertIntoTopicsTable($topic);
         $sqlAddWord = 'INSERT INTO words (topic, length, level, telugu_word, english_word, telugu_in_english, english_in_telugu,
 				image_name, audio_name, description, notes) VALUES (\'' . $topic . '\', \'' . $length . '\', \'' . $level . '\', \'' . $telugu_word . '\',
 				 \'' . $english_word . '\', \'' . $telugu_in_english . '\', 
 				\'' . $english_in_telugu . '\', \'' . $image_name . '\', \'' . $audio_name . '\',
 				 \'' . $description . '\' ,\'' . $notes . '\');';
 
-        $result = run_sql($sqlAddWord);
-        $word_id = $result;
-        $logicalChars = getWordChars($topic);
+        run_sql($sqlAddWord);
 
-        for ($j = 0; $j < count($logicalChars); $j++) {
-            //insert each letter into char table.
-            if($logicalChars[$j] != " ") {
-                $sqlAddLetters = 'INSERT INTO characters (word_id, character_index, character_value) VALUES 
-(\'' . $word_id . '\', \'' . $j . '\', \'' . $logicalChars[$j] . '\');';
-                run_sql($sqlAddLetters);
-            }
-        }
         echo '<h2 style="color:	green;" class="upload">Success: Word is added.</h2>';
     } else {
         //The words already exists in the database.
@@ -59,37 +50,8 @@ function insertIntoWordsTable($topic, $length, $level, $telugu_word, $english_wo
  * @param $topic
  */
 function insertIntoTopicsTable($topic){
-    $sqlAddWord = 'INSERT INTO topics select distinct on topic FROM words (\'' . $topic . '\');';
-    $result = run_sql($sqlAddWord);
-
-    $sqlCheck = 'SELECT DISTINCT topic FROM words = \'' . $topic . '\';';
-    $result = run_sql($sqlCheck);
-
-
-}
-
-/**
- * Inserts the characters of the given word into the Characters Table
- * Uses IndicTextAnalyzer method to break down the words into characters
- * @param $word
- */
-function insertIntoCharactersTable($word)
-{
-    // Get words id
-    $sql = 'SELECT word_id FROM words WHERE word =\'' . $word . '\';';
-    $result = run_sql($sql);
-    $row = $result->fetch_assoc();
-    $word_id = $row["word_id"];
-
-    $logicalChars = getWordChars($word);
-
-    for ($j = 0; $j < count($logicalChars); $j++) {
-        //insert each letter into char table.
-        if($logicalChars[$j] != " ") {
-            $sqlAddLetters = 'INSERT INTO characters (word_id, character_index, character_value) VALUES (\'' . $word_id . '\', \'' . $j . '\', \'' . $logicalChars[$j] . '\');';
-            run_sql($sqlAddLetters);
-        }
-    }
+    $sqlAddTopic = 'REPLACE INTO topics SET topic = (\'' . $topic . '\');';
+    run_sql($sqlAddTopic);
 }
 
 ?>

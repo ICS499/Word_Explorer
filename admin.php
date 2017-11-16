@@ -124,16 +124,6 @@ if ($error) {
 </div>
 <script>
 
-    //    function backUpMessage(){
-    //        var x = document.getElementsByClassName('backUpSuccess');
-    //        if (x.style.display === 'none') {
-    //            x.style.visibility = 'block';
-    //        }// else {
-    //        //    x.style.visibility = 'hidden';
-    //        //}
-    //        return false;
-    //    }
-
     function backUpMessage() {
         //document.getElementById("demo").innerHTML = "The database backup has been saved in the Sql_Scripts Folder.";
         alert('The database backup has been saved in the htdocs Folder.');

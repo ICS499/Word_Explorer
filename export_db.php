@@ -11,6 +11,7 @@ class Table
      * Constructor for Table class that initializes all table values
      * @param string $tableName of table you want to want to export from database
      * @param array $fields specify the exact fields you want to export else exports all
+     * @return void
      */
     function Table($tableName, $fields)
     {
@@ -91,6 +92,7 @@ class ExcelExporter
      * Constructor that in that initializes all excelExporter values and parameters
      * @param array $tables to be exported
      * @param string $fileName to be exported to
+     * @return void
      */
     function excelExporter($tables, $fileName)
     {
@@ -172,10 +174,11 @@ class ExcelExporter
  */
 function createAllTables()
 {
-    $wordsTable = new Table('words', array('word_id', 'Topic', 'Length', 'Level', 'Telugu_Word', 'English_Word', 'Telugu_in_English', 'English_in_Telugu', 'Image_Name', 'Audio_Name', 'Notes', 'Description'));
-    $charTable = new Table('characters', array('word_id', 'character_index', 'character_value'));
+    $wordsTable = new Table('words', array('word_id', 'Topic', 'Length', 'Level', 'Telugu_Word', 'English_Word', 'Telugu_in_English', 'English_in_Telugu', 'Image_Name', 'Audio_Name', 'Description', 'Notes'));
+    //$charTable = new Table('characters', array('word_id', 'character_index', 'character_value'));
 
-    return array($wordsTable, $charTable);
+    //return array($wordsTable, $charTable);
+    return array($wordsTable);
 }
 
 /**

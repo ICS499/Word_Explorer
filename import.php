@@ -28,10 +28,27 @@
 		$sheet = $objPHPExcel->getSheet(0);
 		$highestRow = $sheet->getHighestRow();
 		$highestColumn = $sheet->getHighestColumn();
+		// Tally up topics - may be unnecessary
+		$uniqueTopics = array();
   		
 		for ($row = 2; $row <= $highestRow; $row++) {
-			//  Read the row of data into an array
+            //  Read the row of data into an array
             $topic = $sheet->getCell('B' . $row )->getValue();
+
+			// Check for topic uniqueness
+			/*
+			$unique = true;
+			foreach($uniqueTopics as $eachTopic) {
+				if (strcasecmp($eachTopic, $topic)){
+					$unique = false;
+					break;
+				}
+			}
+			if ($unique) {
+				array_push($uniqueTopics, $topic);
+			}
+			*/
+
             $length = $sheet->getCell('C' . $row )->getValue();
             $level = $sheet->getCell('D' . $row )->getValue();
             $telugu_word = $sheet->getCell('E' . $row )->getValue();
@@ -69,6 +86,7 @@
 			//insertIntoCharactersTable($topic);
 
 		}
+
 		echo '<h2 style="color:	green;" class="upload">Import Successful!</h2>';
 	}
 ?>
