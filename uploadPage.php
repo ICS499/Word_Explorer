@@ -35,6 +35,7 @@ echo getTopNav();
 <div id="export">
     <br><br>
     <h2 class="upload">Import the word list (Source: Excel File; Target: Database)</h2><br><br>
+    <h2 class="upload" style="color: red;">THIS WILL DELETE ALL CURRENT DATA</h2><br><br>
     <div id="import">
         <p id="error" style="display: none;">Error: You must select a file to import</p>
         <?php

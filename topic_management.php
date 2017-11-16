@@ -24,7 +24,7 @@ session_cache_limiter(false);
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="styles/custom_nav.css" type="text/css">
-    <title>Word Explorer Word List</title>
+    <title>Word Explorer Topic List</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css"
@@ -36,7 +36,7 @@ session_cache_limiter(false);
 <body class="body_background">
 <div id="wrap">
     <div class="container">
-        <h3>Word List</h3>
+        <h3>Topic List</h3>
         <table id="info" cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered"
                width="100%">
             <thead>
@@ -50,39 +50,23 @@ session_cache_limiter(false);
 
             <?php
             require 'db_configuration.php';
-            $sql = "SELECT *FROM words";
+            $sql = "SELECT * FROM topics";
             $result = run_sql($sql);
 
             if ($result->num_rows > 0) {
                 // output data of each
                 while ($row = $result->fetch_assoc()) {
                     echo '<tr>
-                        <td>' . $row["Topic"] . "</td>
-                        <td>" . $row["Length"] . "</td>
-                        <td>" . $row["Telugu_Word"] . "</td>
-                        <td>" . $row["English_Word"] . "</td>
-                        <td>" . $row["Telugu_in_English"] . "</td>
-                        <td>" . $row["English_in_Telugu"] . "</td>
-                        <td><img class=\"thumbnailSize\" src=\"./Images/" . $row["Image_Name"] . "\" alt =\"" . $row["Image_Name"] . "\" ></td>
-                        <td><audio controls>
-                            <source src=\"./audio/" . $row["Audio_Name"] . "\" alt=\"" . $row["Audio_Name"] . "\">
-                        </audio></td>
-                        <td>" . $row["Description"] . "</td>
-                        <td>" . $row["Notes"] . "</td> 
-                        <td>" . $row["Created_Date"] . "</td>
-                        <td>" . $row["Last_Updated"] . "</td>
+                        <td>' . $row["topic"] . "</td>
+                        <td>" . $row["topic"] . "</td>
                         <td>
-                            <a href='word_card.php?id=" . $row["word_id"] . "&button=edit'>
-                                <img class=\"table_image\" src=\"pic/play.png\" alt=\"Investigate " . $row["word_id"] . " word\">
+                            <a href='admin_edit_synonyms.php?id=" . $row["topic"] . "&button=edit'>
+                                <img class=\"table_image\" src=\"pic/edit.jpg\" alt=\"Edit " . $row["topic"] . " word\">
                             </a>
-                            <a href='admin_edit_synonyms.php?id=" . $row["word_id"] . "&button=edit'>
-                                <img class=\"table_image\" src=\"pic/edit.jpg\" alt=\"Edit " . $row["word_id"] . " word\">
-                            </a>
-                            <a href='list.php?id=" . $row["word_id"] . "&button=delete'>
+                            <a href='list.php?id=" . $row["topic"] . "&button=delete'>
                                 <img class=\"table_image\" src=\"pic/delete.png\" alt=\"deleteWord\">
                             </a>
                             <form class=\"upload\" method=\"post\" name=\"importFrom\" enctype=\"multipart/form-data\" onsubmit=\"return validateForm()\">
-                                  <label class=\"upload\"><input class=\"upload\" type=\"file\" name=\"fileToUpload\" id=\"fileToUpload\"></label>
                                   <input class=\"upload\" type=\"hidden\" name=\"topic\" value=\"" . $row["topic"] . "\" />
                                   <input class=\"upload\" type=\"submit\" value=\"Rename\" name=\"submit\">
                             </form> 

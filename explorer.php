@@ -20,6 +20,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="styles/custom_nav.css" type="text/css">
     <style>
         .selected {
@@ -199,41 +200,35 @@ echo '
 ';
 
 // Build the explore mode list
-echo '
+//echo '
+?>
 <h2 class="list-header" style="font-weight: bold !important;">Change Mode</h2>
 <div id="mode-list" class="flow">
     <ul>
-        <li class="mode-choice selected">
-            <a href="explorer.php?mode=' . $topicChoice["topic"] . '">
+        <li id="modeExplore" class="mode-choice">
+            <a href="explorer.php" onClick="setMode('Explore');">
                 Explore
             </a>
         </li>
-        <li class="mode-choice">
-            <a href="explorer.php?mode=' . $topicChoice["topic"] . '">
+        <li id="modeLevel" class="mode-choice">
+            <a href="explorer.php" onClick="setMode('Level')">
                 Level
-                <!--
-                Add level field for word data.
-                -->
             </a>
         </li>
-        <li class="mode-choice">
-            <a href="explorer.php?mode=' . $topicChoice["topic"] . '">
+        <li id="modeReading" class="mode-choice">
+            <a href="explorer.php" onClick="setMode('Read');">
                 Reading
             </a>
         </li>
-        <li class="mode-choice">
-            <a href="explorer.php?mode=' . $topicChoice["topic"] . '">
+        <li id="modeVocabulary" class="mode-choice">
+            <a href="explorer.php" onClick="setMode('Vocabulary');">
                 Vocabulary
-            </a>
-        </li>
-        <li class="mode-choice">
-            <a href="explorer.php?mode=' . $topicChoice["topic"] . '">
-                Quiz
             </a>
         </li>
     </ul>
 </div>
-';
+<?php
+//';
 
 echo '</div>';
 
@@ -319,6 +314,66 @@ if (count($cards) > 0) {
 }
 ?>
 
+<script type="text/javascript">
+    window.onload=setMode(getCookie("mode"));
+
+    function getCookie(name) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length == 2) {
+            document.write("true");
+            return (parts.pop().split(";").shift());
+        } else {
+            document.write("false");
+            return "";
+        }
+
+    }
+    function setMode(mode){
+        document.write("Mode=" + mode);
+        document.getElementById("modeExplore").setAttribute("class", "mode-choice selected");
+        switch (mode) {
+            case "Explore":
+                document.write("Explore chosen");
+                document.getElementById('modeExplore').setAttribute("class", "mode-choice selected");
+                document.getElementById("modeLevel").setAttribute("class", "mode-choice");
+                document.getElementById("modeReading").setAttribute("class", "mode-choice");
+                document.getElementById("modeVocabulary").setAttribute("class", "mode-choice");
+                break;
+            case "Level":
+                document.write("Level chosen");
+                document.getElementById("modeExplore").setAttribute("class", "mode-choice");
+                document.getElementById("modeLevel").setAttribute("class", "mode-choice selected");
+                document.getElementById("modeReading").setAttribute("class", "mode-choice");
+                document.getElementById("modeVocabulary").setAttribute("class", "mode-choice");
+                break;
+            case "Reading":
+                document.write("Reading chosen");
+                document.getElementById("modeExplore").setAttribute("class", "mode-choice");
+                document.getElementById("modeLevel").setAttribute("class", "mode-choice");
+                document.getElementById("modeReading").setAttribute("class", "mode-choice selected");
+                document.getElementById("modeVocabulary").setAttribute("class", "mode-choice");
+                break;
+            case "Vocabulary":
+                document.write("Vocabulary chosen");
+                document.getElementById("modeExplore").setAttribute("class", "mode-choice");
+                document.getElementById("modeLevel").setAttribute("class", "mode-choice");
+                document.getElementById("modeReading").setAttribute("class", "mode-choice");
+                document.getElementById("modeVocabulary").setAttribute("class", "mode-choice selected");
+                break;
+            case "":
+                mode = "Explore";
+                document.write("Empty chosen");
+                document.getElementById("modeExplore").setAttribute("class", "mode-choice selected");
+                document.getElementById("modeLevel").setAttribute("class", "mode-choice");
+                document.getElementById("modeReading").setAttribute("class", "mode-choice");
+                document.getElementById("modeVocabulary").setAttribute("class", "mode-choice");
+                break;
+        }
+        document.cookie = "mode=" + mode;
+        document.write(mode);
+    }
+</script>
 <div class="footer">
     <p>@ School of India for Languages and Culture (SILC)</p>
 </div>
