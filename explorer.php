@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/main_style.css" type="text/css">
     <link rel="stylesheet" href="styles/cards.css" type="text/css">
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -60,7 +61,33 @@ function IsNullOrEmptyString($question){
     return (!isset($question) || trim($question)==='');
 }
 $topic = $_GET['topic'];
-$sqlQueryWords = 'SELECT * FROM words WHERE topic = \'' . $topic . '\';';
+if (!(isset($_COOKIE['level']))){
+    $sqlQueryWords = 'SELECT * FROM words WHERE topic = \'' . $topic . '\';';
+} else {
+    switch ($_COOKIE['level']) {
+        case "":
+            $sqlQueryWords = 'SELECT * FROM words WHERE topic = \'' . $topic . '\';';
+            break;
+        case "levelall":
+            $sqlQueryWords = 'SELECT * FROM words WHERE topic = \'' . $topic . '\';';
+            break;
+        case "level0":
+            $sqlQueryWords = 'SELECT * FROM words WHERE topic = \'' . $topic . '\' AND level = 0;';
+            break;
+        case "level1":
+            $sqlQueryWords = 'SELECT * FROM words WHERE topic = \'' . $topic . '\' AND level = 1;';
+            break;
+        case "level2":
+            $sqlQueryWords = 'SELECT * FROM words WHERE topic = \'' . $topic . '\' AND level = 2;';
+            break;
+        case "level3":
+            $sqlQueryWords = 'SELECT * FROM words WHERE topic = \'' . $topic . '\' AND level = 3;';
+            break;
+        case "level4":
+            $sqlQueryWords = 'SELECT * FROM words WHERE topic = \'' . $topic . '\' AND level = 4;';
+            break;
+    }
+}
 $result = run_sql($sqlQueryWords);
 $cards = array();
 foreach( $result as $row){
@@ -119,25 +146,25 @@ echo '
 // Build the explore mode list
 ?>
 
-<h2 class="list-header" style="font-weight: bold !important;">Change Mode</h2>
+<h2 class="list-header" style="font-weight: bold !important;">Options</h2>
 <div id="mode-list" class="flow">
     <ul>
-        <li id="modeExplore" class="mode-choice">
+        <li id="modeExplore" class="mode-choice <?PHP if($_COOKIE['mode'] == "Explore") { echo 'selected'; }; ?>">
             <a href="explorer.php" onClick="setMode('Explore');">
                 Explore
             </a>
         </li>
-        <li id="modeLevel" class="mode-choice">
+        <li id="modeLevel" class="mode-choice <?PHP if($_COOKIE['mode'] == "Label") { echo 'selected'; }; ?>">
             <a href="explorer.php" onClick="setMode('Label')">
                 Label
             </a>
         </li>
-        <li id="modeReading" class="mode-choice">
+        <li id="modeReading" class="mode-choice <?PHP if($_COOKIE['mode'] == "Reading") { echo 'selected'; }; ?>">
             <a href="explorer.php" onClick="setMode('Reading');">
                 Reading
             </a>
         </li>
-        <li id="modeVocabulary" class="mode-choice">
+        <li id="modeVocabulary" class="mode-choice <?PHP if($_COOKIE['mode'] == "Vocabulary") { echo 'selected'; }; ?>">
             <a href="explorer.php" onClick="setMode('Vocabulary');">
                 Vocabulary
             </a>
@@ -147,19 +174,22 @@ echo '
 
 <h2 class="list-header" style="font-weight: bold !important;">Level</h2>
 <div style="margin: 10px; padding: 5px" class="flow">
-    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="filterLevel('level0');">
+    <a class="mode-choice <?PHP if($_COOKIE['level'] == "levelall") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('levelall');">
+        All
+    </a>
+    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level0") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level0');">
         0
     </a>
-    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="filterLevel('level1')">
+    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level1") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level1')">
         1
     </a>
-    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="filterLevel('level2');">
+    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level2") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level2');">
         2
     </a>
-    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="filterLevel('level3');">
+    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level3") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level3');">
         3
     </a>
-    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="filterLevel('level4');">
+    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level4") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level4');">
         4
     </a>
 </div>
@@ -246,7 +276,7 @@ if (count($cards) > 0) {
         </div>
     ';
 } else {
-    echo 'No words in this category';
+    echo '<div style="min-height: 250px"></div>';
 }
 ?>
 

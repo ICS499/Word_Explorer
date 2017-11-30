@@ -25,8 +25,6 @@ function getCookie(cname) {
 
 // Set the explorer mode based on "mode" cookie value
 function setMode(mode){
-    document.write("mode = " + mode + "<br/>");
-
     // Check for no "mode" cookie value, if the session was just started
     if (!mode) {
         return this.setMode("Explore");
@@ -37,28 +35,24 @@ function setMode(mode){
 
     switch (mode) {
         case "Explore":
-            document.write("Explore chosen" + "<br/>");
             document.getElementById('modeExplore').setAttribute("class", "mode-choice selected");
             document.getElementById("modeLabel").setAttribute("class", "mode-choice");
             document.getElementById("modeReading").setAttribute("class", "mode-choice");
             document.getElementById("modeVocabulary").setAttribute("class", "mode-choice");
             break;
         case "Label":
-            document.write("Label chosen" + "<br/>");
             document.getElementById("modeExplore").setAttribute("class", "mode-choice");
             document.getElementById("modeLabel").setAttribute("class", "mode-choice selected");
             document.getElementById("modeReading").setAttribute("class", "mode-choice");
             document.getElementById("modeVocabulary").setAttribute("class", "mode-choice");
             break;
         case "Reading":
-            document.write("Reading chosen" + "<br/>");
             document.getElementById("modeExplore").setAttribute("class", "mode-choice");
             document.getElementById("modeLabel").setAttribute("class", "mode-choice");
             document.getElementById("modeReading").setAttribute("class", "mode-choice selected");
             document.getElementById("modeVocabulary").setAttribute("class", "mode-choice");
             break;
         case "Vocabulary":
-            document.write("Vocabulary chosen" + "<br/>");
             document.getElementById("modeExplore").setAttribute("class", "mode-choice");
             document.getElementById("modeLabel").setAttribute("class", "mode-choice");
             document.getElementById("modeReading").setAttribute("class", "mode-choice");
@@ -69,8 +63,6 @@ function setMode(mode){
 
 // Set explorer to filter for the level difficulty, based on the "level" cookie value
 function filterLevel(level) {
-    document.write("level = " + level + "<br/>");
-
     // Check for no "level" cookie value, if none was selected
     if (!level) {
         return;
