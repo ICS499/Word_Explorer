@@ -21,121 +21,8 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script>
-        $( function() {
-            var spinner = $( "#spinner" ).spinner();
-
-            $( "#disable" ).on( "click", function() {
-                if ( spinner.spinner( "option", "disabled" ) ) {
-                    spinner.spinner( "enable" );
-                } else {
-                    spinner.spinner( "disable" );
-                }
-            });
-            $( "#destroy" ).on( "click", function() {
-                if ( spinner.spinner( "instance" ) ) {
-                    spinner.spinner( "destroy" );
-                } else {
-                    spinner.spinner();
-                }
-            });
-            $( "#getvalue" ).on( "click", function() {
-                alert( spinner.spinner( "value" ) );
-            });
-            $( "#setvalue" ).on( "click", function() {
-                spinner.spinner( "value", 5 );
-            });
-
-            $( "button" ).button();
-        } );
-    </script>
     <link rel="stylesheet" href="styles/custom_nav.css" type="text/css">
-    <style>
-        .selected {
-            padding-left: 10px;
-            background-color: #2bb0dc;
-            width: 100%;
-        }
-        .topic-choice {
-            width: 100%;
-        }
-        .list-header {
-            margin: 10px;
-        }
-        .flow {
-            display: inline-block;
-            vertical-align: top;
-        }
-        .left-content {
-            height: 500px;
-            width: 300px;
-        }
-        #word-image {
-            max-width: 600px;
-            max-height: 600px;
-        }
-        #topic-list {
-            background-color: #FFFFFF;
-            margin: 10px;
-            border: 2px solid #888;
-            max-height: 300px;
-            width: 100%;
-            overflow-y: auto;
-        }
-        .topic-choice {
-            border: 2px solid #888;
-            font-size: 30px;
-            padding: 2px;
-            margin: 0px;
-        }
-        #mode-list {
-            background-color: #FFFFFF;
-            margin: 10px;
-            border: 2px solid #888;
-            max-height: 300px;
-            width: 100%;
-        }
-        .mode-choice {
-            border: 2px solid #888;
-            font-size: 30px;
-            padding: 2px;
-            margin: 0px;
-        }
-        ul, li {
-            list-style: none;
-            padding: 0px;
-            margin: 0px;
-        }
-        #myCarousel {
-            width:auto;
-            height: auto;
-            margin: 20px;
-            background-color: #FFFFFF;
-        }
-        .carousel-border {
-            border: 3px solid #2bb0dc;
-        }
-        .center-block {
-            vertical-align: middle;
-
-            display: block;
-            width: 400px;
-            height: 400px;
-            margin-top: 50px;
-
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .carousel-inner {
-            vertical-align: middle;
-            width: 800px;
-            height: 100%;
-            margin: auto;
-        }
-        .carousel-control {
-            width: 5% !important;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/explorer.css" type="text/css">
 </head>
 <title>Word Explorer Edit Words</title>
 <body>
@@ -145,6 +32,7 @@ echo getTopNav();
 // Card objects are used in the carousel
 class Card {
     public $topic = "";
+    public $level = "";
     public $telugu_word = "";
     public $english_word = "";
     public $telugu_in_english = "";
@@ -178,6 +66,7 @@ $cards = array();
 foreach( $result as $row){
     $newCard = new Card();
     $newCard->topic = $row["Topic"];
+    $newCard->level = $row["Level"];
     $newCard->telugu_word = $row["Telugu_Word"];
     $newCard->english_word = $row["English_Word"];
     $newCard->telugu_in_english = $row["Telugu_in_English"];
@@ -228,7 +117,6 @@ echo '
 ';
 
 // Build the explore mode list
-//echo '
 ?>
 
 <h2 class="list-header" style="font-weight: bold !important;">Change Mode</h2>
@@ -259,25 +147,24 @@ echo '
 
 <h2 class="list-header" style="font-weight: bold !important;">Level</h2>
 <div style="margin: 10px; padding: 5px" class="flow">
-    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="setMode('Explore');">
+    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="filterLevel('level0');">
         0
     </a>
-    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="setMode('Level')">
+    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="filterLevel('level1')">
         1
     </a>
-    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="setMode('Reading');">
+    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="filterLevel('level2');">
         2
     </a>
-    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="setMode('Vocabulary');">
+    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="filterLevel('level3');">
         3
     </a>
-    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="setMode('Vocabulary');">
+    <a class="mode-choice" style="width: 50px; display:inline-block; text-align: center" href="explorer.php" onClick="filterLevel('level4');">
         4
     </a>
 </div>
 
 <?php
-//';
 
 echo '</div>';
 
@@ -318,7 +205,7 @@ if (count($cards) > 0) {
 
 
         echo '
-            </div>
+            </div name="level' . $card->level . '">
                 <div class="container carousel-border img-responsive" style="height: 100%; width: 100%; background-color: white; ">
                     <div class="row" style="height: auto;">
                         <div class="col-md-4 text-center" style="font-size: 30px">' . $card->telugu_word . '</div>
@@ -366,71 +253,7 @@ if (count($cards) > 0) {
 <div class="footer">
     <p>@ School of India for Languages and Culture (SILC)</p>
 </div>
-<script type="text/javascript">
-    window.onload=setMode(getCookie("mode"));
 
-    function getCookie(cname) {
-        var name = cname + "=";
-        var decodedCookie = decodeURIComponent(document.cookie);
-        var ca = decodedCookie.split(';');
-        for(var i = 0; i <ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-                document.write("mode cookie= " + c.substring(name.length, c.length) + "<br/>");
-                return c.substring(name.length, c.length);
-            }
-        }
-        document.write("No cookie") + "<br/>";
-        return "";
-    }
-
-    function setMode(mode){
-        document.write("Mode=" + mode + "<br/>");
-        document.write("Mode=" + mode + "<br/>");
-        var test = document.getElementById("modeExplore");
-        document.write(test.innerHTML);
-
-        // Check for no mode value
-        if (!mode) this.setMode("Explore");
-
-        switch (mode) {
-            case "Explore":
-                document.write("Explore chosen" + "<br/>");
-                document.getElementById('modeExplore').setAttribute("class", "mode-choice selected");
-                document.getElementById("modeLabel").setAttribute("class", "mode-choice");
-                document.getElementById("modeReading").setAttribute("class", "mode-choice");
-                document.getElementById("modeVocabulary").setAttribute("class", "mode-choice");
-                break;
-            case "Level":
-                document.write("Label chosen" + "<br/>");
-                document.getElementById("modeExplore").setAttribute("class", "mode-choice");
-                document.getElementById("modeLabel").setAttribute("class", "mode-choice selected");
-                document.getElementById("modeReading").setAttribute("class", "mode-choice");
-                document.getElementById("modeVocabulary").setAttribute("class", "mode-choice");
-                break;
-            case "Reading":
-                document.write("Reading chosen" + "<br/>");
-                document.getElementById("modeExplore").setAttribute("class", "mode-choice");
-                document.getElementById("modeLabel").setAttribute("class", "mode-choice");
-                document.getElementById("modeReading").setAttribute("class", "mode-choice selected");
-                document.getElementById("modeVocabulary").setAttribute("class", "mode-choice");
-                break;
-            case "Vocabulary":
-                document.write("Vocabulary chosen" + "<br/>");
-                document.getElementById("modeExplore").setAttribute("class", "mode-choice");
-                document.getElementById("modeLabel").setAttribute("class", "mode-choice");
-                document.getElementById("modeReading").setAttribute("class", "mode-choice");
-                document.getElementById("modeVocabulary").setAttribute("class", "mode-choice selected");
-                break;
-        }
-        document.cookie = "mode=" + mode;
-        document.write(mode + "<br/>");
-        //window.location.reload();
-    }
-</script>
-
+<script type="text/javascript" src="js/explorerFunctions.js"></script>
 </body>
 </html>
