@@ -1,4 +1,10 @@
+
+<?PHP
+session_start();
+require('session_validation.php');
+?>
 <!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -16,10 +22,6 @@
 <title>Word Explorer Reports</title>
 <body>
 
-<?PHP
-session_start();
-require('session_validation.php');
-?>
 <?PHP echo getTopNav(); ?>
 <div id="container" align="center">
     <?php

@@ -51,9 +51,14 @@
 
             $length = $sheet->getCell('C' . $row )->getValue();
             $level = $sheet->getCell('D' . $row )->getValue();
+            if ($level == null) {
+            	$level = 0;
+			} else if ($level > 4) {
+            	$level = 4;
+			}
             $telugu_word = $sheet->getCell('E' . $row )->getValue();
-			$english_word = $sheet->getCell('F'.$row)->getValue();
-            $telugu_in_english = $sheet->getCell('G'.$row)->getValue();
+			$english_word = $sheet->getCell('F' . $row)->getValue();
+            $telugu_in_english = $sheet->getCell('G' . $row)->getValue();
             $english_in_telugu = $sheet->getCell('H' . $row )->getValue();
             $image_name = $sheet->getCell('I' . $row )->getValue();
             $audio_name = $sheet->getCell('J' . $row )->getValue();

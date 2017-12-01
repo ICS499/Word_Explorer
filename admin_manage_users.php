@@ -1,3 +1,9 @@
+
+<?PHP
+//session_start();
+require('session_validation.php');
+include('admin_manage_users_helper.php')
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,11 +20,6 @@
         <link rel="stylesheet" href="styles/custom_nav.css" type="text/css">
         <title>Word Explorer Users</title>
     </head>
-<?PHP
-//session_start();
-require('session_validation.php');
-include('admin_manage_users_helper.php')
-?>
     <body>
     <?PHP echo getTopNav(); ?>
     <!-- NOTE: How do we want to handle edit and delete? Should we do an a link and put info in url or should it be private and wrap form around table? -->

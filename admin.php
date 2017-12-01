@@ -1,3 +1,16 @@
+
+<?PHP
+require('session_validation.php');
+require('language_processor_functions.php');
+//require('import.php');
+/*
+if ((!isset($_SESSION['valid_admin'])){
+    echo "<meta http-equiv=\"refresh\" content=\"0;URL=login.php\">";
+}
+else{
+}
+*/
+?>
 <!--FIXME: random user can get to page by putting admin.php into the url need to change so that only an admin can load the page-->
 <!DOCTYPE html>
 <html>
@@ -16,18 +29,6 @@
     <link rel="stylesheet" href="styles/custom_nav.css" type="text/css">
     <title>Word Explorer Admin</title>
 </head>
-<?PHP
-require('session_validation.php');
-require('language_processor_functions.php');
-//require('import.php');
-/*
-if ((!isset($_SESSION['valid_admin'])){
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=login.php\">";
-}
-else{
-}
-*/
-?>
 
 <body>
 

@@ -1,3 +1,9 @@
+
+<?PHP
+session_start();
+require('session_validation.php');
+header("Location: explorer.php");
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -19,11 +25,6 @@
   </head>
   <title>Word Explorer</title>
   <body>
-    <?PHP
-    session_start();
-    require('session_validation.php');
-    header("Location: explorer.php");
-    ?>
     <?PHP
     echo getTopNav();
     ?>

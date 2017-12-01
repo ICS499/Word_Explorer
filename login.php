@@ -1,12 +1,13 @@
+
+<?PHP
+require('session_validation.php');
+require_once('db_configuration.php');
+require_once("utility_functions.php");
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
-  <?PHP
-    require('session_validation.php');
-    require_once('db_configuration.php');
-    require_once("utility_functions.php");
-    ?>
     <style>
       .divContainer {
         position: relative;
