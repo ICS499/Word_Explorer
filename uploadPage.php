@@ -1,4 +1,3 @@
-
 <?PHP
 require('session_validation.php');
 //require('import.php');

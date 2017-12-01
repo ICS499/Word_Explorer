@@ -1,10 +1,9 @@
-
 <?PHP
+session_start();
 require_once('db_configuration.php');
 require_once('create_puzzle.php');
 require_once('add_words_process.php');
 require('InsertUtil.php');
-session_start();
 require('session_validation.php');
 ?>
 <!DOCTYPE html>
@@ -38,7 +37,6 @@ if (isset($_GET['id'])) {
         $telugu_in_english = $row["Telugu_in_English"];
         $english_in_telugu = $row["English_in_Telugu"];
         $audio_name = $row["Audio_Name"];
-        var_dump($audio_name);
         $description = $row["Description"];
         $notes = $row["Notes"];
         $image_name = $row["Image_Name"];

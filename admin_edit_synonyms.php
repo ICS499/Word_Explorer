@@ -1,10 +1,9 @@
-
 <?PHP
+session_start();
 require_once('db_configuration.php');
 require_once('create_puzzle.php');
 require_once('add_words_process.php');
 require('InsertUtil.php');
-session_start();
 require('session_validation.php');
 ?>
 <!DOCTYPE html>

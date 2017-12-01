@@ -1,5 +1,5 @@
-
 <?PHP
+session_start();
 require('session_validation.php');
 require('language_processor_functions.php');
 //require('import.php');
