@@ -60,6 +60,7 @@ if (!(isset($_GET['topic']))) {
 function IsNullOrEmptyString($question){
     return (!isset($question) || trim($question)==='');
 }
+
 $topic = $_GET['topic'];
 if (!(isset($_COOKIE['level']))){
     $sqlQueryWords = 'SELECT * FROM words WHERE topic = \'' . $topic . '\';';
@@ -195,11 +196,52 @@ echo '
 </div>
 
 <?php
+// Determining composition of the explorer cards.
+// Left granularity for turning each element on/off
+$showImage = true;
+$showAudio = true;
+$showTelugu = true;
+$showEnglish = true;
+$showTeluguInEnglish = true;
+$showEnglishInTelugu = true;
+if(isset($_COOKIE['mode'])) {
+    switch ($_COOKIE['mode']) {
+        case "":
+            break;
+        case "Explore":
+            break;
+        case "Label":
+            // Only text
+            $showImage = false;
+            $showAudio = false;
+            $showTelugu = true;
+            $showEnglish = true;
+            $showTeluguInEnglish = true;
+            $showEnglishInTelugu = true;
+            break;
+        case "Reading":
+            // No image
+            $showImage = false;
+            $showAudio = true;
+            $showTelugu = true;
+            $showEnglish = true;
+            $showTeluguInEnglish = true;
+            $showEnglishInTelugu = true;
+            break;
+        case "Vocabulary":
+            // No image
+            $showImage = false;
+            $showAudio = true;
+            $showTelugu = true;
+            $showEnglish = true;
+            $showTeluguInEnglish = true;
+            $showEnglishInTelugu = true;
+            break;
+    }
+}
 
 echo '</div>';
-
 // Build the carousel
-
 if (count($cards) > 0) {
     $count = 0;
     echo '
@@ -238,19 +280,21 @@ if (count($cards) > 0) {
             </div name="level' . $card->level . '">
                 <div class="container carousel-border img-responsive" style="height: 100%; width: 100%; background-color: white; ">
                     <div class="row" style="height: auto;">
-                        <div class="col-md-4 text-center" style="font-size: 30px">' . $card->telugu_word . '</div>
+                        <div class="col-md-4 text-center" style="font-size: 30px; '; if(!$showTelugu) {echo "display: none;";} echo '">' . $card->telugu_word . '</div>
                         <div class="col-md-4 text-center"></div>
-                        <div class="col-md-4 text-center" style="font-size: 30px">' . $card->english_word . '</div>
+                        <div class="col-md-4 text-center" style="font-size: 30px; '; if(!$showEnglish) {echo "display: none;";} echo '">' . $card->english_word . '</div>
                     </div>
                     <div class="row" style="height: 600px;">
-                        <div class="col-md-12 img-responsive"><img id="word-image" class="center-block img-responsive" src="./images/' . $card->image_name . '" /></div>
+                        <div class="col-md-12 img-responsive" style="'; if(!$showImage) {echo "display: none;";} echo '"><img id="word-image" class="center-block img-responsive" src="./images/' . $card->image_name . '" /></div>
                     </div>
                     <div class="row" style="height: auto">
-                        <div class="col-md-4 text-center img-responsive" style="font-size: 30px">' . $card->telugu_in_english . '</div>
-                        <div class="col-md-4 text-center img-responsive"><audio controls>
-                            <source src="./audio/' . $card->audio_name . '" alt="' . $card->audio_name . '">
-                        </audio></div>
-                        <div class="col-md-4 text-center img-responsive" style="font-size: 30px">' . $card->english_in_telugu . '</div>
+                        <div class="col-md-4 text-center img-responsive" style="font-size: 30px; '; if(!$showTeluguInEnglish) {echo "display: none;";} echo '">' . $card->telugu_in_english . '</div>
+                        <div class="col-md-4 text-center img-responsive">
+                            <div style="'; if(!$showAudio) {echo "display: none;";} echo '">
+                                <audio controls><source src="./audio/' . $card->audio_name . '" alt="' . $card->audio_name . '" /></audio>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center img-responsive" style="font-size: 30px; '; if(!$showEnglishInTelugu) {echo "display: none;";} echo '">' . $card->english_in_telugu . '</div>
                     </div>
                 </div>
             </div>
@@ -263,13 +307,11 @@ if (count($cards) > 0) {
             </div>
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" style="background:none !important; color: #000;">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true">
-                    <!--<img src="./pic/arrow_left.jpg" />-->
                 </span>
                 <span class="sr-only">Previous</span>
             </a>
             <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" style="background:none !important; color: #000;">
                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">
-                    <!--<img src="./pic/arrow_right.png" />-->
                 </span>
                 <span class="sr-only">Next</span>
             </a>

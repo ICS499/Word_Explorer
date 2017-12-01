@@ -32,33 +32,6 @@ function setMode(mode){
 
     // Set the new cookie value
     document.cookie = "mode=" + mode;
-
-    switch (mode) {
-        case "Explore":
-            document.getElementById('modeExplore').setAttribute("class", "mode-choice selected");
-            document.getElementById("modeLabel").setAttribute("class", "mode-choice");
-            document.getElementById("modeReading").setAttribute("class", "mode-choice");
-            document.getElementById("modeVocabulary").setAttribute("class", "mode-choice");
-            break;
-        case "Label":
-            document.getElementById("modeExplore").setAttribute("class", "mode-choice");
-            document.getElementById("modeLabel").setAttribute("class", "mode-choice selected");
-            document.getElementById("modeReading").setAttribute("class", "mode-choice");
-            document.getElementById("modeVocabulary").setAttribute("class", "mode-choice");
-            break;
-        case "Reading":
-            document.getElementById("modeExplore").setAttribute("class", "mode-choice");
-            document.getElementById("modeLabel").setAttribute("class", "mode-choice");
-            document.getElementById("modeReading").setAttribute("class", "mode-choice selected");
-            document.getElementById("modeVocabulary").setAttribute("class", "mode-choice");
-            break;
-        case "Vocabulary":
-            document.getElementById("modeExplore").setAttribute("class", "mode-choice");
-            document.getElementById("modeLabel").setAttribute("class", "mode-choice");
-            document.getElementById("modeReading").setAttribute("class", "mode-choice");
-            document.getElementById("modeVocabulary").setAttribute("class", "mode-choice selected");
-            break;
-    }
 }
 
 // Set explorer to filter for the level difficulty, based on the "level" cookie value
@@ -70,18 +43,4 @@ function filterLevel(level) {
 
     // Set the new cookie value
     document.cookie = "level=" + level;
-
-    var levels = ["level0", "level1", "level2", "level3", "level4"];
-    for (var i = 0; i < levels.length; i++){
-        var elements = document.getElementsByName(level);
-        if (elements[i] == level){
-            for(var j = 0; j < elements.length; i++){
-                elements[j].setAttribute("style", "block");
-            }
-        } else {
-            for(var j = 0; j < elements.length; i++){
-                elements[j].setAttribute("style", "none");
-            }
-        }
-    }
 }
