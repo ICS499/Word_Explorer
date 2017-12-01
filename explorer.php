@@ -286,7 +286,7 @@ if (count($cards) > 0) {
                         <div class="col-md-4 text-center" style="font-size: 30px; '; if(!$showEnglish) {echo "display: none;";} echo '">' . $card->english_word . '</div>
                     </div>
                     <div class="row" style="height: 600px;">
-                        <div class="col-md-12 img-responsive" style="'; if(!$showImage) {echo "display: none;";} echo '"><img id="word-image" class="center-block img-responsive" src="./images/' . $card->image_name . '" /></div>
+                        <div class="col-md-12 img-responsive" style="'; if(!$showImage) {echo "display: none;";} echo '"><img id="word-image" class="center-block img-responsive" src="images/' . $card->image_name . '" /></div>
                     </div>
                     <div class="row" style="height: auto">
                         <div class="col-md-4 text-center img-responsive" style="font-size: 30px; '; if(!$showTeluguInEnglish) {echo "display: none;";} echo '">' . $card->telugu_in_english . '</div>

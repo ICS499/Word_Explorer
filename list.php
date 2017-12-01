@@ -82,7 +82,7 @@ session_cache_limiter(false);
                         <td>" . $row["English_Word"] . "</td>
                         <td>" . $row["Telugu_in_English"] . "</td>
                         <td>" . $row["English_in_Telugu"] . "</td>
-                        <td><img class=\"thumbnailSize\" src=\"./Images/" . $row["Image_Name"] . "\" alt =\"" . $row["Image_Name"] . "\" ></td>
+                        <td><img class=\"thumbnailSize\" src=\"images/" . $row["Image_Name"] . "\" alt =\"" . $row["Image_Name"] . "\" ></td>
                         <td><audio controls>
                             <source src=\"./audio/" . $row["Audio_Name"] . "\" alt=\"" . $row["Audio_Name"] . "\">
                         </audio></td>
