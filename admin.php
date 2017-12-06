@@ -33,7 +33,6 @@ else{
 <body>
 
 <?PHP
-session_start();
 echo getTopNav();
 ?>
 <!--<div id="export">
