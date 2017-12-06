@@ -13,7 +13,7 @@ class Table
      * @param array $fields specify the exact fields you want to export else exports all
      * @return void
      */
-    function Table($tableName, $fields)
+    function __construct($tableName, $fields)
     {
         $this->tableName = $tableName;
         if (is_array($fields)) {
@@ -94,7 +94,7 @@ class ExcelExporter
      * @param string $fileName to be exported to
      * @return void
      */
-    function excelExporter($tables, $fileName)
+    function __construct($tables, $fileName)
     {
         if (is_array($tables)) {
             $this->tables = $tables;
