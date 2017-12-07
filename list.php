@@ -125,18 +125,21 @@ session_cache_limiter(false);
 
             if (isset($_POST['submit'])) {
                 $inputFileName = $_FILES["fileToUpload"]["tmp_name"];
-                $target_dir = "./Images/";
-                $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-                $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-                $imageName = basename($_FILES["fileToUpload"]["name"]);
-                copy($inputFileName, $target_file);
-                $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-                if ($check !== false) {
-                    $sql = 'UPDATE words SET image_name=\'' . $imageName . '\' WHERE word_id=' . $_POST['word_id'] . ';';
-                    $result = run_sql($sql);
-                    echo ' <script> alert(\'Image Upload Successful!!\'); window.location.replace("list.php"); </script>';
-                } else {
-                    echo ' <script> alert(\'Image is not valid!\');</script>';
+                // Check for no image selection
+                if($inputFileName != "") {
+                    $target_dir = "./Images/";
+                    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+                    $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+                    $imageName = basename($_FILES["fileToUpload"]["name"]);
+                    copy($inputFileName, $target_file);
+                    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+                    if ($check !== false) {
+                        $sql = 'UPDATE words SET image_name=\'' . $imageName . '\' WHERE word_id=' . $_POST['word_id'] . ';';
+                        $result = run_sql($sql);
+                        echo ' <script> alert(\'Image Upload Successful!!\'); window.location.replace("list.php"); </script>';
+                    } else {
+                        echo ' <script> alert(\'Image is not valid!\');</script>';
+                    }
                 }
             }
             ?>
