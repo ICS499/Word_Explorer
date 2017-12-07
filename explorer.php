@@ -178,13 +178,10 @@ echo '
     <a class="mode-choice <?PHP if($_COOKIE['level'] == "levelall") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('levelall');">
         All
     </a>
-    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level0") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level0');">
-        0
-    </a>
-    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level1") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level1')">
+    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level1") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level1');">
         1
     </a>
-    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level2") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level2');">
+    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level2") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level2')">
         2
     </a>
     <a class="mode-choice <?PHP if($_COOKIE['level'] == "level3") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level3');">
@@ -192,6 +189,9 @@ echo '
     </a>
     <a class="mode-choice <?PHP if($_COOKIE['level'] == "level4") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level4');">
         4
+    </a>
+    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level5") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level5');">
+        5
     </a>
 </div>
 
