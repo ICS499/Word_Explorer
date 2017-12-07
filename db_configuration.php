@@ -2,15 +2,15 @@
 DEFINE('DATABASE_HOST', 'localhost');
 DEFINE('DATABASE_DATABASE', 'metroics_words');
 
-// To be used on the local host
-DEFINE('DATABASE_USER', 'root');
-DEFINE('DATABASE_PASSWORD', '');
-
-// To be used on the remote host
-//DEFINE('DATABASE_USER', 'metro_ics499');
-//DEFINE('DATABASE_PASSWORD', 'Metro_ics123');
-
-
+if($_SERVER['SERVER_ADDR'] != "::1" && $_SERVER['SERVER_ADDR'] != "127.0.0.1") {
+    // To be used on the remote host
+    DEFINE('DATABASE_USER', 'metro_ics499');
+    DEFINE('DATABASE_PASSWORD', 'Metro_ics123');
+} else {
+    // To be used on the local host
+    DEFINE('DATABASE_USER', 'root');
+    DEFINE('DATABASE_PASSWORD', '');
+}
 
 $db = new mysqli(DATABASE_HOST, DATABASE_USER, DATABASE_PASSWORD, DATABASE_DATABASE);
 $db->set_charset("utf8");
