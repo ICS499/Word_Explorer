@@ -35,7 +35,13 @@ class wordProcessor {
 	// That may work for English, but not for other multi-byte languages
 	protected $code_points = array();
 
-	// constructor
+	// Fix deprecated constructor pattern
+    public function __construct($word, $language)
+    {
+        $this->wordProcessor($word, $language);
+    }
+
+    // constructor
 	function wordProcessor($word, $language) {
 		if(is_string($word)) return $this->setWord($word, $language);
 	}
