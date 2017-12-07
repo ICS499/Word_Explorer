@@ -127,7 +127,7 @@ session_cache_limiter(false);
                 $inputFileName = $_FILES["fileToUpload"]["tmp_name"];
                 // Check for no image selection
                 if($inputFileName != "") {
-                    $target_dir = "./Images/";
+                    $target_dir = "./images/";
                     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
                     $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
                     $imageName = basename($_FILES["fileToUpload"]["name"]);

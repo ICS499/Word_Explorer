@@ -81,7 +81,7 @@ require_once('InsertUtil.php');
 
                     function addTableRows() {
                         // No more than 10 words
-                        if (entry > 9) { return };
+                        if (entry > 9) { return }
                         var rows = document.getElementById("formRows");
                         // Create the entry row
                         var newEntryRow = document.createElement("tr");
@@ -250,7 +250,7 @@ require_once('InsertUtil.php');
                             // Image
                             if ( isset($_FILES["fileToUpload".$counter]['name'])){
                                 $inputFileName = $_FILES["fileToUpload".$counter]["tmp_name"];
-                                $target_File = "./Images/".basename($_FILES["fileToUpload".$counter]['name']);
+                                $target_File = "./images/".basename($_FILES["fileToUpload".$counter]['name']);
                                 $imageFileType = pathinfo($target_File,PATHINFO_EXTENSION);
                                 $imageName = basename($_FILES["fileToUpload".$counter]["name"]);
                                 if (!empty($imageName)) {

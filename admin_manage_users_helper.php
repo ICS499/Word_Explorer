@@ -87,7 +87,7 @@ class User
      * @param integer $isVerified 1 if user is verified else 0
      * @param integer $isAdmin 1 if user is admin else 0
      */
-    function User($name, $email, $password, $isVerified, $activationCode, $isAdmin)
+    function __construct($name, $email, $password, $isVerified, $activationCode, $isAdmin)
     {
         $this->name = $name;
         $this->email = $email;

@@ -59,8 +59,8 @@
 					<a href="./help.php" style="padding: 0; margin: 2px;"><img style="height: 75px;" src="./pic/help.png"></a>
 				</li>
 				<li> 
-					<a href="./logout.php" style="padding: 0; margin: 2px;"><img style="height: 75px;" src="./pic/Logout.png"></a>
-				</li>
+					<a href="./logout.php" style="padding: 0; margin: 2px;"><img style="height: 75px;" src="./pic/logout.png"></a>
+				</lil
 			</ul>
 			</div><!--.nav-collapse --></div></nav>';
 		}
@@ -88,7 +88,7 @@
 					<a href="./help.php" style="padding: 0; margin: 2px;"><img style="height: 75px;" src="./pic/help.png"></a>
 				</li>
 				<li> 
-					<a href="./logout.php" style="padding: 0; margin: 2px;"><img style="height: 75px;" src="./pic/Logout.png"></a>
+					<a href="./logout.php" style="padding: 0; margin: 2px;"><img style="height: 75px;" src="./pic/logout.png"></a>
 				</li>
 			</ul>
 			</div><!--.nav-collapse --></div></nav>';
@@ -120,7 +120,7 @@
 					<a href="./help.php" style="padding: 0; margin: 2px;"><img style="height: 75px;" src="./pic/help.png"></a>
 				</li>
 				<li> 
-					<a href="./logout.php" style="padding: 0; margin: 2px;"><img style="height: 75px;" src="./pic/Login.png"></a>
+					<a href="./logout.php" style="padding: 0; margin: 2px;"><img style="height: 75px;" src="./pic/login.png"></a>
 				</li>
 			</ul>
 			</div>

@@ -1,6 +1,7 @@
 <?php
-$hostname = gethostname();
 
+$hostname = gethostname();
+ 
 if ($hostname == 'box287.bluehost.com') {
     DEFINE('DATABASE_HOST', 'localhost');
     DEFINE('DATABASE_DATABASE', 'metroics_words');
@@ -13,6 +14,7 @@ else {
     DEFINE('DATABASE_USER', 'root');
     DEFINE('DATABASE_PASSWORD', '');
 }
+
 
 $db = new mysqli(DATABASE_HOST, DATABASE_USER, DATABASE_PASSWORD, DATABASE_DATABASE);
 $db->set_charset("utf8");
