@@ -1,6 +1,6 @@
 <?PHP
 session_start();
-require_once('db_configuration.php');
+require('db_configuration.php');
 require_once('create_puzzle.php');
 require_once('add_words_process.php');
 require('InsertUtil.php');
@@ -25,35 +25,36 @@ require('session_validation.php');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/main_style.css" type="text/css">
 </head>
-<title>Rebus Edit Words</title>
+<title>Edit Word</title>
     <body>
     <?PHP echo getTopNav();
 
         if (isset($_GET['id'])) {
             $word_id = $_GET['id'];
-            if ($word_id != NULL) {
-                $sqlcheck = 'SELECT * FROM words WHERE word_id = \'' . $word_id. '\';';
-                $result = run_sql($sqlcheck);
-                $row = $result->fetch_assoc();
-                $topic = $row["Topic"];
-                $telugu_word = $row["Telugu_Word"];
-                $english_word = $row["English_Word"];
-                $telugu_in_english = $row["Telugu_in_English"];
-                $english_in_telugu = $row["English_in_Telugu"];
-                $audio_name = $row["Audio_Name"];
-                $description = $row["Description"];
-                $notes = $row["Notes"];
-                $image_name = $row["Image_Name"];
-            }
+            $sqlcheck = 'SELECT * FROM words WHERE word_id = \'' . $word_id. '\';';
+            $result = run_sql($sqlcheck);
+            $row = $result->fetch_assoc();
+            $topic = $row["Topic"];
+            $level = $row["Level"];
+            $telugu_word = $row["Telugu_Word"];
+            $english_word = $row["English_Word"];
+            $telugu_in_english = $row["Telugu_in_English"];
+            $english_in_telugu = $row["English_in_Telugu"];
+            $image_name = $row["Image_Name"];
+            $audio_name = $row["Audio_Name"];
+            $description = $row["Description"];
+            $notes = $row["Notes"];
+            $image_name = $row["Image_Name"];
         }
 
     echo '<div>
         <br>
         <br>
-        <table class="table table-condensed main-tables" id="word_table" style="margin-left:11%;">
+        <table class="datatable table table-condensed table-bordered" id="word_table" style="margin-left:10px;table-layout:fixed;width:95%">
             <thead>
             <tr>
                 <th>Topic</th>
+                <th>Level</th>
                 <th>Telugu Word</th>
                 <th>English Word</th>
                 <th>Telugu In English</th>
@@ -62,24 +63,26 @@ require('session_validation.php');
                 <th>Audio Name</th>
                 <th>Description</th>
                 <th>Notes</th>
-                <th>Update Thumbnail</th>
-                <th>Action</th>
+                <th style="width:200px">Update</th>
             </tr>
             </thead>
             <tbody>
                 <form action="" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
                     <tr>
-                        <td><input type="textbox" name="topic" id="topic" value='.$topic.'></td>
-                        <td><input type="textbox" name="telugu_word" id="telugu_word" value='.$telugu_word.'></td>
-                        <td><input type="textbox" name="english_word" id="english_word" value='.$english_word.'></td>
-                        <td><input type="textbox" name="telugu_in_english" id="telugu_in_english" value='.$telugu_in_english.'></td>
-                        <td><input type="textbox" name="english_in_telugu" id="english_in_telugu" value='.$english_in_telugu.'></td>
-                        <td><img class="thumbnailSize" src="./Images/' . $row['Image_Name'] . '" alt ="' . $row['Image_Name'] . '"></td>
-                        <td><input type="textbox" name="audio_name" id="audio_name" value='.$audio_name.'></td>
-                        <td><input type="textbox" name="description" id="description" value='.$description.'></td>
-                        <td><input type="textbox" name="notes" id="notes" value='.$notes.'></td>
-                        <td><input class="upload" type="file" name="fileToUpload" id="fileToUpload" /></td>
-                        <td><input class="upload" type="submit" value="Update Word" name="submit" onclick="success()"/></td>
+                        <td><input class="textbox" type="textbox" name="topic" id="topic" value='.$topic.'></td>
+                        <td><input class="textbox" type="textbox" name="level" id="level" value='.$level.'></td>
+                        <td><input class="textbox" type="textbox" name="telugu_word" id="telugu_word" value='.$telugu_word.'></td>
+                        <td><input class="textbox" type="textbox" name="english_word" id="english_word" value='.$english_word.'></td>
+                        <td><input class="textbox" type="textbox" name="telugu_in_english" id="telugu_in_english" value='.$telugu_in_english.'></td>
+                        <td><input class="textbox" type="textbox" name="english_in_telugu" id="english_in_telugu" value='.$english_in_telugu.'></td>
+                        <td><img class="thumbnailSize" src="./Images/' . $image_name . '" alt ="' . $image_name . '"></td>
+                        <td><input class="textbox" type="textbox" name="audio_name" id="audio_name" value='.$audio_name.'></td>
+                        <td><input class="textbox" type="textbox" name="description" id="description" value='.$description.'></td>
+                        <td><input class="textbox" type="textbox" name="notes" id="notes" value='.$notes.'></td>
+                        <td>
+                        <input class="textbox" class="upload" type="file" name="file_to_upload" id="file_to_upload" />
+                        <input class="textbox" class="upload" type="submit" value="Update Word" name="submit" onclick="success()"/>
+                        </td>
                     </tr>
                 </form>
             </tbody>
@@ -126,20 +129,22 @@ require('session_validation.php');
                 //$deleteCharacters = 'DELETE FROM characters WHERE word_id = ' . $word_id . ' ; ';
                 //run_sql($deleteCharacters);
 
-                $sql = 'UPDATE words SET Topic = \''.$topic.
-                    '\', Telugu_Word = \''.$telugu_word.
-                    '\', English_Word = \''.$english_word.
-                    '\', Image_Name =\''.$image_name.
-                    '\', Telugu_in_English =\''.$telugu_in_english.
-                    '\', English_in_Telugu =\''.$english_in_telugu.
-                    '\', Audio_Name =\''.$audio_name.
-                    '\', Description =\''.$description.
-                    '\', Notes =\''.$notes.
-                    '\' WHERE word_id = '.$word_id.';';
+                $sql = 'UPDATE words SET Topic=\''.$topic.
+                    '\', Level=\''.$level.
+                    '\', Telugu_Word=\''.$telugu_word.
+                    '\', English_Word=\''.$english_word.
+                    '\', Image_Name=\''.$imageName.
+                    '\', Telugu_in_English=\''.$telugu_in_english.
+                    '\', English_in_Telugu=\''.$english_in_telugu.
+                    '\', Audio_Name=\''.$audio_name.
+                    '\', Description=\''.$description.
+                    '\', Notes=\''.$notes.
+                    '\' WHERE word_id='.$word_id.';';
                 $result = run_sql($sql);
                 $uploadOk = 1;
 
                 //update the characters table
+                /*
                 $logicalChars = getWordChars($word);
 
                 for ($j = 0; $j < count($logicalChars); $j++) {
@@ -149,6 +154,7 @@ require('session_validation.php');
                         run_sql($sqlAddLetters);
                     }
                 }
+                */
 
                 echo '<script>window.location.href = "list.php"</script>';
             }

@@ -38,6 +38,14 @@
   left: 12%;
 }
 
+.textbox {
+  margin: 0px;
+  width: 95%;
+}
+tr {
+  padding: 0px !important;
+}
+
 #name-textbox {
   background-color: transparent;
   border: 0px solid;

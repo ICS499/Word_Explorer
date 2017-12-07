@@ -31,7 +31,6 @@ else{
 </head>
 
 <body>
-
 <?PHP
 echo getTopNav();
 ?>

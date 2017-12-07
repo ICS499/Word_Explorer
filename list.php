@@ -24,10 +24,7 @@ session_cache_limiter(false);
     <link rel="stylesheet" href="styles/custom_nav.css" type="text/css">
     <title>Word Explorer Word List</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css"
-          rel="stylesheet"/>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet"/>
     <style>
         .container{
             margin-left: 20px;
@@ -41,7 +38,7 @@ session_cache_limiter(false);
     <div class="container">
         <h3>Word List</h3>
         <table id="info" cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered"
-               width="100%">
+               width="95%">
             <thead>
             <tr>
                 <th>Word ID</th>
@@ -53,7 +50,7 @@ session_cache_limiter(false);
                 <th>Telugu In English</th>
                 <th>English In Telugu</th>
                 <th>Image</th>
-                <th>Audio Name</th>
+                <th>Audio</th>
                 <th>Description</th>
                 <th>Notes</th>
                 <th>Created Date</th>
@@ -166,7 +163,7 @@ session_cache_limiter(false);
                 <th>Telugu In English</th>
                 <th>English In Telugu</th>
                 <th>Image Name</th>
-                <th>Audio Name</th>
+                <th>Audio</th>
                 <th>Description</th>
                 <th>Notes</th>
                 <th>Created Date</th>
