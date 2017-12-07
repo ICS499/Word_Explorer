@@ -1,13 +1,15 @@
 <?php
-DEFINE('DATABASE_HOST', 'localhost');
-DEFINE('DATABASE_DATABASE', 'metroics_words');
+$hostname = gethostname();
 
-if($_SERVER['SERVER_ADDR'] != "::1" && $_SERVER['SERVER_ADDR'] != "127.0.0.1") {
-    // To be used on the remote host
-    DEFINE('DATABASE_USER', 'metro_ics499');
+if ($hostname == 'box287.bluehost.com') {
+    DEFINE('DATABASE_HOST', 'localhost');
+    DEFINE('DATABASE_DATABASE', 'metroics_words');
+    DEFINE('DATABASE_USER', 'metroics_ics499');
     DEFINE('DATABASE_PASSWORD', 'Metro_ics123');
-} else {
-    // To be used on the local host
+}
+else {
+    DEFINE('DATABASE_HOST', 'localhost');
+    DEFINE('DATABASE_DATABASE', 'metroics_words');
     DEFINE('DATABASE_USER', 'root');
     DEFINE('DATABASE_PASSWORD', '');
 }
