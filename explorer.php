@@ -27,6 +27,7 @@ require('session_validation.php');
 </head>
 <title>Word Explorer Edit Words</title>
 <body>
+<div>
 <?PHP
 echo getTopNav();
 
@@ -45,7 +46,7 @@ class Card {
 }
 
 // Get the available topics
-$sqlQueryTopics = 'SELECT DISTINCT topic FROM words';// switched to words table need to filter still
+$sqlQueryTopics = 'SELECT DISTINCT topic FROM words';
 $resultTopics = run_sql($sqlQueryTopics);
 
 // Set to first topic, if no topic is selected
@@ -321,7 +322,7 @@ if (count($cards) > 0) {
     echo '<div style="min-height: 250px"></div>';
 }
 ?>
-
+</div>
 <div class="footer">
     <p>@ School of India for Languages and Culture (SILC)</p>
 </div>
