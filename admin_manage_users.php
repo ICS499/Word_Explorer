@@ -1,5 +1,5 @@
 <?PHP
-session_start();
+session_start(); //need this
 require('session_validation.php');
 include('admin_manage_users_helper.php')
 ?>
