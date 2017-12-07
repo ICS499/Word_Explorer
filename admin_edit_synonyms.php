@@ -24,6 +24,12 @@ require('session_validation.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/main_style.css" type="text/css">
+    <style type="text/css">
+        tr td:last-child{
+            width:1%;
+            white-space:nowrap;
+        }
+    </style>
 </head>
 <title>Edit Word</title>
     <body>
@@ -31,26 +37,28 @@ require('session_validation.php');
 
         if (isset($_GET['id'])) {
             $word_id = $_GET['id'];
-            $sqlcheck = 'SELECT * FROM words WHERE word_id = \'' . $word_id. '\';';
-            $result = run_sql($sqlcheck);
-            $row = $result->fetch_assoc();
-            $topic = $row["Topic"];
-            $level = $row["Level"];
-            $telugu_word = $row["Telugu_Word"];
-            $english_word = $row["English_Word"];
-            $telugu_in_english = $row["Telugu_in_English"];
-            $english_in_telugu = $row["English_in_Telugu"];
-            $image_name = $row["Image_Name"];
-            $audio_name = $row["Audio_Name"];
-            $description = $row["Description"];
-            $notes = $row["Notes"];
-            $image_name = $row["Image_Name"];
+            if ($word_id != NULL) {
+                $sqlcheck = 'SELECT * FROM words WHERE word_id = \'' . $word_id . '\';';
+                $result = run_sql($sqlcheck);
+                $row = $result->fetch_assoc();
+                $topic = $row["Topic"];
+                $level = $row["Level"];
+                $telugu_word = $row["Telugu_Word"];
+                $english_word = $row["English_Word"];
+                $telugu_in_english = $row["Telugu_in_English"];
+                $english_in_telugu = $row["English_in_Telugu"];
+                $image_name = $row["Image_Name"];
+                $audio_name = $row["Audio_Name"];
+                $description = $row["Description"];
+                $notes = $row["Notes"];
+                $image_name = $row["Image_Name"];
+            }
         }
 
     echo '<div>
         <br>
         <br>
-        <table class="datatable table table-condensed table-bordered" id="word_table" style="margin-left:10px;table-layout:fixed;width:95%">
+        <table class="datatable table table-condensed table-bordered" id="word_table" style="margin-left:10px;width:95%">
             <thead>
             <tr>
                 <th>Topic</th>
@@ -63,7 +71,7 @@ require('session_validation.php');
                 <th>Audio Name</th>
                 <th>Description</th>
                 <th>Notes</th>
-                <th style="width:200px">Update</th>
+                <th>Update</th>
             </tr>
             </thead>
             <tbody>
@@ -76,54 +84,64 @@ require('session_validation.php');
                         <td><input class="textbox" type="textbox" name="telugu_in_english" id="telugu_in_english" value='.$telugu_in_english.'></td>
                         <td><input class="textbox" type="textbox" name="english_in_telugu" id="english_in_telugu" value='.$english_in_telugu.'></td>
                         <td><img class="thumbnailSize" src="./Images/' . $image_name . '" alt ="' . $image_name . '"></td>
-                        <td><input class="textbox" type="textbox" name="audio_name" id="audio_name" value='.$audio_name.'></td>
+                        <td><audio controls>
+                            <source src="./audio/' . $audio_name . '">
+                        </audio></td>
                         <td><input class="textbox" type="textbox" name="description" id="description" value='.$description.'></td>
                         <td><input class="textbox" type="textbox" name="notes" id="notes" value='.$notes.'></td>
                         <td>
-                        <input class="textbox" class="upload" type="file" name="file_to_upload" id="file_to_upload" />
-                        <input class="textbox" class="upload" type="submit" value="Update Word" name="submit" onclick="success()"/>
+                            <input class="textbox upload" type="submit" value="Update Word" name="submit" onclick="success()"/>
                         </td>
                     </tr>
                 </form>
             </tbody>
         </table>
+        <br/>
+        <form action="" method="post" enctype="multipart/form-data" >
+            <div style="border: solid; border-width: 1px; padding: 5px; margin: 5px; display: inline-block">
+                <h3>Upload a new image file.</h3>
+                <input class="textbox" class="upload" type="file" name="image_to_upload" id="image_to_upload" />
+                <br/>
+                <input class="textbox" class="upload" type="submit" value="Upload Image" name="submit1" onclick="success()"/>
+            </div>
+        </form>
+        <form action="" method="post" enctype="multipart/form-data" >
+            <div style="border: solid; border-width: 1px; padding: 5px; margin: 5px; display: inline-block">
+                <h3>Upload a new audio file.</h3>
+                <input class="textbox" class="upload" type="file" name="audio_to_upload" id="audio_to_upload" />
+                <br/>
+                <input class="textbox" class="upload" type="submit" value="Upload Audio" name="submit2" onclick="success()"/>
+            </div>
+        </form>
+        <br/>
     </div>';
         ?>
 
             <?php
             if (isset($_POST['submit'])) {
                 if (isset($_POST['topic'])) {
-                    $word = $_POST['topic'];
+                    $topic = $_POST['topic'];
+                }
+                if (isset($_POST['level'])) {
+                    $level = $_POST['level'];
                 }
                 if (isset($_POST['telugu_word'])) {
-                    $word = $_POST['telugu_word'];
+                    $telugu_word = $_POST['telugu_word'];
                 }
                 if (isset($_POST['english_word'])) {
-                    $eng = $_POST['english_word'];
+                    $english_word = $_POST['english_word'];
                 }
                 if (isset($_POST['telugu_in_english'])) {
-                    $eng = $_POST['telugu_in_english'];
+                    $telugu_in_english = $_POST['telugu_in_english'];
                 }
                 if (isset($_POST['english_in_telugu'])) {
-                    $eng = $_POST['english_in_telugu'];
-                }
-                if (isset($_POST['audio_name'])) {
-                    $eng = $_POST['audio_name'];
+                    $english_in_telugu = $_POST['english_in_telugu'];
                 }
                 if (isset($_POST['description'])) {
-                    $eng = $_POST['description'];
+                    $description = $_POST['description'];
                 }
                 if (isset($_POST['notes'])) {
-                    $eng = $_POST['notes'];
-                }
-                $inputFileName = $_FILES["fileToUpload"]["tmp_name"];
-                $target_dir = "./Images/";
-                $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-                $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-                $imageName = basename($_FILES["fileToUpload"]["name"]);
-
-                if(!empty($imageName)) {
-                    copy($inputFileName, $target_file);
+                    $notes = $_POST['notes'];
                 }
 
                 //$deleteCharacters = 'DELETE FROM characters WHERE word_id = ' . $word_id . ' ; ';
@@ -133,10 +151,8 @@ require('session_validation.php');
                     '\', Level=\''.$level.
                     '\', Telugu_Word=\''.$telugu_word.
                     '\', English_Word=\''.$english_word.
-                    '\', Image_Name=\''.$imageName.
                     '\', Telugu_in_English=\''.$telugu_in_english.
                     '\', English_in_Telugu=\''.$english_in_telugu.
-                    '\', Audio_Name=\''.$audio_name.
                     '\', Description=\''.$description.
                     '\', Notes=\''.$notes.
                     '\' WHERE word_id='.$word_id.';';
@@ -156,6 +172,38 @@ require('session_validation.php');
                 }
                 */
 
+                echo '<script>window.location.href = "list.php"</script>';
+            }
+
+            // upload image
+            if(isset($_POST['submit1'])) {
+                $inputImageFileName = $_FILES["image_to_upload"]["tmp_name"];
+                $target_image_dir = "./images/";
+                $target_image_file = $target_image_dir . basename($_FILES["image_to_upload"]["name"]);
+                $imageFileType = pathinfo($target_image_file, PATHINFO_EXTENSION);
+                $imageName = basename($_FILES["image_to_upload"]["name"]);
+                if(!empty($imageName)) {
+                    copy($inputImageFileName, $target_image_file);
+                    $sqlimage = 'UPDATE words SET Image_Name=\''.$imageName.
+                        '\' WHERE word_id='.$word_id.';';
+                    run_sql($sqlimage);
+                }
+                echo '<script>window.location.href = "list.php"</script>';
+            }
+
+            // upload audio
+            if(isset($_POST['submit2'])){
+                $inputAudioFileName = $_FILES["audio_to_upload"]["tmp_name"];
+                $target_audio_dir = "./audio/";
+                $target_audio_file = $target_audio_dir . basename($_FILES["audio_to_upload"]["name"]);
+                $audioFileType = pathinfo($target_audio_file, PATHINFO_EXTENSION);
+                $audioName = basename($_FILES["audio_to_upload"]["name"]);
+                if(!empty($audioName)) {
+                    copy($inputAudioFileName, $target_audio_file);
+                    $sqlaudio = 'UPDATE words SET Audio_Name=\''.$audioName.
+                        '\' WHERE word_id='.$word_id.';';
+                    run_sql($sqlaudio);
+                }
                 echo '<script>window.location.href = "list.php"</script>';
             }
             ?>
