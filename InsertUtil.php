@@ -1,9 +1,9 @@
 <?php
-header('Content-Type: text/html; charset=utf-8');
 require_once('db_configuration.php');
 require_once('language_processor_functions.php');
 require_once('utility_functions.php');
 require_once('common_sql_functions.php');
+//header('Content-Type: text/html; charset=utf-8');
 
 /**
  * @param $topic

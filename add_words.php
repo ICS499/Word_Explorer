@@ -1,6 +1,8 @@
 <?PHP
 session_start();
 require('session_validation.php');
+require_once('db_configuration.php');
+require_once('InsertUtil.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,10 +31,6 @@ require('session_validation.php');
 </head>
 
 <body>
-<?php
-require('db_configuration.php');
-require('InsertUtil.php');
-?>
 <?PHP echo getTopNav(); ?>
 <div id="pop_up_fail" class="container pop_up" style="display:none">
     <div class="pop_up_background">
