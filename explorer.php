@@ -73,9 +73,6 @@ if (!(isset($_COOKIE['level']))){
         case "levelall":
             $sqlQueryWords = 'SELECT * FROM words WHERE topic = \'' . $topic . '\';';
             break;
-        case "level0":
-            $sqlQueryWords = 'SELECT * FROM words WHERE topic = \'' . $topic . '\' AND level = 0;';
-            break;
         case "level1":
             $sqlQueryWords = 'SELECT * FROM words WHERE topic = \'' . $topic . '\' AND level = 1;';
             break;
@@ -87,6 +84,9 @@ if (!(isset($_COOKIE['level']))){
             break;
         case "level4":
             $sqlQueryWords = 'SELECT * FROM words WHERE topic = \'' . $topic . '\' AND level = 4;';
+            break;
+        case "level5":
+            $sqlQueryWords = 'SELECT * FROM words WHERE topic = \'' . $topic . '\' AND level = 5;';
             break;
     }
 }
