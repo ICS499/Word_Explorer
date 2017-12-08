@@ -27,7 +27,6 @@ require('session_validation.php');
 </head>
 <title>Word Explorer Edit Words</title>
 <body>
-<div>
 <?PHP
 echo getTopNav();
 
@@ -112,6 +111,7 @@ foreach( $result as $row){
     array_push($cards, $newCard);
 }
 
+echo '<div style="display: inline-block">';
 echo '
 <div class="left-content flow">
     <h2 class="list-header" style="font-weight: bold !important;">Select a Topic</h2>
@@ -179,19 +179,19 @@ echo '
     <a class="mode-choice <?PHP if($_COOKIE['level'] == "levelall") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('levelall');">
         All
     </a>
-    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level1") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level1');">
+    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level1") { echo 'selected'; }; ?>" style="width: 40px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level1');">
         1
     </a>
-    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level2") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level2')">
+    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level2") { echo 'selected'; }; ?>" style="width: 40px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level2')">
         2
     </a>
-    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level3") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level3');">
+    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level3") { echo 'selected'; }; ?>" style="width: 40px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level3');">
         3
     </a>
-    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level4") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level4');">
+    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level4") { echo 'selected'; }; ?>" style="width: 40px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level4');">
         4
     </a>
-    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level5") { echo 'selected'; }; ?>" style="width: 50px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level5');">
+    <a class="mode-choice <?PHP if($_COOKIE['level'] == "level5") { echo 'selected'; }; ?>" style="width: 40px; display:inline-block; color: black; text-align: center" href="explorer.php" onClick="filterLevel('level5');">
         5
     </a>
 </div>
@@ -323,8 +323,10 @@ if (count($cards) > 0) {
 }
 ?>
 </div>
-<div class="footer">
-    <p>@ School of India for Languages and Culture (SILC)</p>
+<div style="display: block ">
+    <div class="footer">
+        <p>@ School of India for Languages and Culture (SILC)</p>
+    </div>
 </div>
 
 <script type="text/javascript" src="js/explorerFunctions.js"></script>
